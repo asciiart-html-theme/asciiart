@@ -1,4 +1,8 @@
-// Custom JS
+// Demo JS
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("My Custom Theme Loaded!");
+  const btn = document.getElementById("btn-demo");
+  if(btn){
+    btn.addEventListener("click", () => alert("Aciiiart JS works! 🎨"));
+  }
+  console.log("Aciiiart Theme Loaded!");
 });
