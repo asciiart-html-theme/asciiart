@@ -1,6 +1,4 @@
-.banner {
-  width: 100vw;
-  
+.banner { 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,9 +8,8 @@
 .main-nav {
   display: flex;
   justify-content: center;
-
-  width: 100vw;
   border: 1px dashed $color-border;
+  width: 100%;
   
   ul {
     list-style: none;
@@ -29,4 +26,15 @@
       }
     }
   }  
+}
+
+.banner-inline { 
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+
+  .main-nav {
+    height: 100%;
+  }
 }

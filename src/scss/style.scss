@@ -1,9 +1,15 @@
 @import 'color';
 @import 'head';
 @import 'table';
+@import 'layout';
+
+html {
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 
 body {
-  width: 100%;
   font-family: "Fira Code", "Consolas", "Courier New", monospace;
   color: $color-text;
   background-color: $color-bg;
@@ -14,6 +20,7 @@ a {
   color: $color-link;
   font-weight: bold;
 }
+
 
 section {
   margin-top: 3px;

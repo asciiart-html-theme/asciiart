@@ -1,0 +1,23 @@
+main {
+  width:80%;
+  margin: auto;
+  overflow-x: scroll;
+}
+
+.sidebar-layout {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:stretch;
+  margin-top: 3px;
+
+  main {
+    width: auto !important;
+    margin: 1px !important;
+  }
+
+  aside {
+    width:40%;
+  }
+}

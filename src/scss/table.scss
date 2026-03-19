@@ -3,7 +3,22 @@
 $head-color-bg: $color-fe;
 $head-color-fe: $color-bg;
 
+table {
+    border-collapse: collapse;
+}
+
 thead {
     background-color: $head-color-bg;
     color: $head-color-fe;
+    margin: 0 auto;
+}
+
+td,th {
+    padding: 6px 12px;
+}
+
+tfoot {
+    td,th {
+        border: 1px dashed $color-border;
+    }
 }
