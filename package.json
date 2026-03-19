@@ -8,7 +8,7 @@
     "watch:scss": "sass  src/scss/style.scss dist/css/style.css --no-source-map --watch",
     "build": "npm run build:scss && npm run build:js",
     "serve": "live-server dist",
-    "start": "npm-run-all watch:scss serve"
+    "start": "npm-run-all --parallel  watch:scss serve"
   },
   "author": "Dimitrios Desyllas <pcmagas@disroot.org>",
   "license": "MIT",
