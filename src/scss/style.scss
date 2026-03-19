@@ -1,14 +1,6 @@
-$color-bg: #000000;
-$color-fe: #ffffff;
-
-$color-text: $color-fe;
-$color-link: $color-fe;
-
-$color-hover-bg: $color-fe;
-$color-hover-fe: $color-bg;
-
-$color-border: $color-fe;
-$color-link: $color-fe;
+@import 'color';
+@import 'head';
+@import 'table';
 
 body {
   width: 100%;
@@ -17,41 +9,20 @@ body {
   background-color: $color-bg;
 }
 
-.banner {
-  width: 100vw;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+a {
+  text-decoration: none;
+  color: $color-link;
+  font-weight: bold;
 }
 
-.main-nav {
-  display: flex;
-  justify-content: center;
-
-  width: 100vw;
-  border: 1px dashed $color-border;
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;  
-    li {
-      display: inline-block;
-      padding: 1em;
-      &:hover {
-        background-color: $color-hover-bg;
-        * {
-          color: $color-hover-fe;
-        }
-      }
-    }
+section {
+  margin-top: 3px;
+  h1 {
+    text-align: center;
   }
+}
 
-  a {
-    text-decoration: none;
-    color: $color-link;
-    font-weight: bold;
-  }
+hr {
+  border-top: 1px dashed $color-border;
+  border-bottom: none;
 }

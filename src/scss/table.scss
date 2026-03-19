@@ -1,0 +1,9 @@
+@import 'color';
+
+$head-color-bg: $color-fe;
+$head-color-fe: $color-bg;
+
+thead {
+    background-color: $head-color-bg;
+    color: $head-color-fe;
+}
