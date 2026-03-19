@@ -1,17 +1,46 @@
-/* Main SCSS file */
-$primary-color: #3498db;
+// Define color variables
+$color-bg: #000000;
+$color-text: #ffffff;
+$color-link: #ffffff;
+$color-link-hover: #007BFF;
+$color-border: #ffffff;
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  width: 100%;
+  font-family: "Fira Code", "Consolas", "Courier New", monospace;
+  color: $color-text;
+  background-color: $color-bg;
 }
 
-a {
-  color: $primary-color;
-  text-decoration: none;
+.banner {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  flex-direction: column;
 }
 
-a:hover {
-  text-decoration: underline;
+.main-nav {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  border: 1px dashed $color-border;
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;  
+    li {
+      display: inline-block;
+      padding: 1em;
+      &:hover {
+        background-color: $color-link-hover;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-link;
+    font-weight: bold;
+  }
 }

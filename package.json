@@ -5,9 +5,8 @@
   "main": "dist/js/script.min.js",
   "scripts": {
     "build:scss": "sass src/scss/style.scss dist/css/style.css --no-source-map --style=compressed",
-    "build:less": "sass2less src/scss/style.scss dist/less/style.less",
     "build:js": "terser src/js/main.js -o dist/js/script.min.js -c -m",
-    "build": "npm run build:scss && npm run build:js && npm run build:less",
+    "build": "npm run build:scss && npm run build:js",
     "start": "live-server dist"
   },
   "author": "Dimitrios Desyllas <pcmagas@disroot.org>",
