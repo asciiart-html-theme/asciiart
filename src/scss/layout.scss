@@ -15,9 +15,11 @@ main {
   main {
     width: auto !important;
     margin: 1px !important;
+    overflow-y: scroll;
   }
 
   aside {
     width:40%;
+    padding: 1px;
   }
 }
