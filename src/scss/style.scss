@@ -1,9 +1,14 @@
-// Define color variables
 $color-bg: #000000;
-$color-text: #ffffff;
-$color-link: #ffffff;
-$color-link-hover: #007BFF;
-$color-border: #ffffff;
+$color-fe: #ffffff;
+
+$color-text: $color-fe;
+$color-link: $color-fe;
+
+$color-hover-bg: $color-fe;
+$color-hover-fe: $color-bg;
+
+$color-border: $color-fe;
+$color-link: $color-fe;
 
 body {
   width: 100%;
@@ -13,15 +18,18 @@ body {
 }
 
 .banner {
-  display: flex;
-  justify-content: center;
   width: 100vw;
+  
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-nav {
   display: flex;
   justify-content: center;
+
   width: 100vw;
   border: 1px dashed $color-border;
   
@@ -33,7 +41,10 @@ body {
       display: inline-block;
       padding: 1em;
       &:hover {
-        background-color: $color-link-hover;
+        background-color: $color-hover-bg;
+        * {
+          color: $color-hover-fe;
+        }
       }
     }
   }
