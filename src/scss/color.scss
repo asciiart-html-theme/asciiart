@@ -1,5 +1,6 @@
-$color-bg: #000000;
-$color-fe: #ffffff;
+
+@import 'pallete/pallete.scss';
+
 
 $color-text: $color-fe;
 $color-link: $color-fe;
