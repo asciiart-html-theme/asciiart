@@ -1,12 +1,28 @@
-
 @import 'pallete/pallete.scss';
 
+@mixin color_def {
+  --color-text: var(--color-fe);
+  --color-link: var(--color-fe);
+  
+  --color-hover-bg: var(--color-fe);
+  --color-hover-fe: var(--color-bg);
 
-$color-text: $color-fe;
-$color-link: $color-fe;
+  --color-border: var(--color-fe);
 
-$color-hover-bg: $color-fe;
-$color-hover-fe: $color-bg;
+  --head-color-bg: var(--color-fe);
+  --head-color-fe: var(--color-bg)
+}
 
-$color-border: $color-fe;
-$color-link: $color-fe;
+:root {
+    @include color_def()
+}
+
+.color-amber {
+    --color-fe: var(--color-amber);
+    @include color_def();
+}
+
+.color-green {
+    --color-fe: var(--color-green);
+    @include color_def();
+}

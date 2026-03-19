@@ -11,13 +11,14 @@ html {
 
 body {
   font-family: "Fira Code", "Consolas", "Courier New", monospace;
-  color: $color-text;
-  background-color: $color-bg;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: $color-link;
+  color: var(--color-link);
   font-weight: bold;
 }
 
@@ -36,6 +37,6 @@ section,article {
 }
 
 hr {
-  border-top: 1px dashed $color-border;
+  border-top: 1px dashed var(--color-border);
   border-bottom: none;
 }

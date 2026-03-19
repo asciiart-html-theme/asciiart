@@ -1,15 +1,10 @@
-@import 'color';
-
-$head-color-bg: $color-fe;
-$head-color-fe: $color-bg;
-
 table {
     border-collapse: collapse;
 }
 
 thead {
-    background-color: $head-color-bg;
-    color: $head-color-fe;
+    background-color: var(--head-color-bg);
+    color: var(--head-color-fe);
     margin: 0 auto;
 }
 
@@ -19,6 +14,6 @@ td,th {
 
 tfoot {
     td,th {
-        border: 1px dashed $color-border;
+        border: 1px dashed var(--color-border);
     }
 }
