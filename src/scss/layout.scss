@@ -22,4 +22,11 @@ main {
     width:40%;
     padding: 1px;
   }
+
+  aside.sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
 }
