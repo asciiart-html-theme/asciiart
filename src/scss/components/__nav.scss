@@ -21,7 +21,7 @@
   flex-wrap: nowrap;
   border: 1px dashed var(--color-border);
   background-color: var(--color-bg);
-  align-items:baseline;
+  align-items: stretch;
 
   .main-nav {
     border: none !important;
@@ -32,10 +32,17 @@
 
   .lead {
     align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+   
+    * {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
   }
 
-  button,a {
-    padding: 15px;
+  button {
     font-weight: bold;
   }
 }
