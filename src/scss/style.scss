@@ -2,6 +2,7 @@
 @import 'head';
 @import 'table';
 @import 'layout';
+@import 'misc';
 
 html {
   margin: 0;
@@ -35,9 +36,4 @@ section {
   p {
     text-align: left;
   }
-}
-
-hr {
-  border-top: 1px dashed var(--color-border);
-  border-bottom: none;
 }

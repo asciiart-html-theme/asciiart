@@ -1,0 +1,10 @@
+hr {
+  border-top: 1px dashed var(--color-border);
+  border-bottom: none;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    background-color: --var(--color-bg);
+}
