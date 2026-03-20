@@ -1,0 +1,27 @@
+button {
+    padding: 10px;
+    background-color: var(--color-button-bg);
+    color: var(--color-button-fe);
+    text-align: center;
+    text-decoration: none;
+    border: none;
+}
+
+button::before {
+    content: "[";
+}
+button::after {
+    content: "]";
+}
+
+button:hover {
+    background-color: var(--color-hover-bg);
+    color: var(--color-hover-fe);
+}
+
+.button-expand {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: auto;
+}

@@ -1,8 +1,10 @@
 @use 'color/_color';
 @use '__layout';
 @use '__base';
+@use 'content/__article';
+
 @use 'components/__misc';
 @use 'components/__table';
 @use 'components/_nav';
 @use 'components/__scrollbar';
-@use 'content/__article';
+@use 'components/__button';

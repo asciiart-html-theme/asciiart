@@ -33,6 +33,11 @@
   .lead {
     align-self: flex-start;
   }
+
+  button,a {
+    padding: 15px;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 600px) {

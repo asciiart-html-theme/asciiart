@@ -13,7 +13,10 @@
   --head-color-fe: var(--color-bg);
 
   --color-scrollbar-thumb: var(--color-fe);
-  --color-scrollbar-track: var(--color-fe);
+  --color-scrollbar-track: var(--color-bg);
+
+  --color-button-bg: var(--color-bg)
+  --collor-button-fe: var(--color-fe)
 }
 
 :root {
