@@ -28,3 +28,27 @@
     --color-fe: var(--color-green);
     @include color_def();
 }
+
+
+@media print {
+    :root {
+        --color-bg: var(--color-white);
+        --color-fe: var(--color-black);
+        @include color_def();
+    }
+
+    .color-amber {
+        --color-fe: var(--color-black);
+        @include color_def();
+    }
+
+    .color-green {
+        --color-fe: var(--color-black);
+        @include color_def();
+    }
+
+    body, body * {
+        background-color: var(--color-bg) !important;
+        color: var(--color-fe) !important;
+    }
+}

@@ -12,3 +12,10 @@ article,section {
     text-align: left;
   }
 }
+
+@media print {
+  article,section {
+    margin-top: 0;
+    padding: 1pt;
+  }
+}
