@@ -1,12 +1,9 @@
 .main-nav {
-
   display: flex;
   justify-content: center;
   border: 1px dashed var(--color-border);
   background-color: var(--color-bg);
   flex-wrap: nowrap;
-  overflow-x: scroll;
-
   a:hover {
     background-color: var(--color-hover-bg);
     color: var(--color-hover-fe);
@@ -24,11 +21,13 @@
   flex-wrap: nowrap;
   border: 1px dashed var(--color-border);
   background-color: var(--color-bg);
+  align-items:baseline;
 
   .main-nav {
     border: none !important;
     outline: none !important;
     flex-grow: 3;
+    height: 100%;
   }
 
   .lead {
