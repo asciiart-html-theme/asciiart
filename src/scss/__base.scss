@@ -22,18 +22,3 @@ hr {
   border-top: 1px dashed var(--color-border);
   border-bottom: none;
 }
-
-section {
-  margin-top: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    text-align: center;
-  }
-
-  p {
-    text-align: left;
-  }
-}
