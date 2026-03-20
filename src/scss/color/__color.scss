@@ -1,4 +1,4 @@
-@import 'pallete/pallete.scss';
+@import '__pallete.scss';
 
 @mixin color_def {
   --color-text: var(--color-fe);

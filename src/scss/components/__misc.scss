@@ -1,0 +1,12 @@
+.banner { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    background-color: --var(--color-bg);
+}

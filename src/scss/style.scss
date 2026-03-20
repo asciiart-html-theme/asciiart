@@ -1,39 +1,6 @@
-@import 'color';
-@import 'head';
-@import 'table';
-@import 'layout';
-@import 'misc';
-
-html {
-  margin: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-body {
-  font-family: "Fira Code", "Consolas", "Courier New", monospace;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-link);
-  font-weight: bold;
-}
-
-
-section {
-  margin-top: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    text-align: center;
-  }
-
-  p {
-    text-align: left;
-  }
-}
+@import 'color/_color';
+@import '__layout';
+@import '__base';
+@import 'components/__misc';
+@import 'components/__table';
+@import 'components/_nav';
