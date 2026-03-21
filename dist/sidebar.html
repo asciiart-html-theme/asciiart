@@ -7,7 +7,7 @@
 
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="css/style.css">
-
+  <script type="application/javascript" src="./js/main.min.js"></script>
 </head>
 <body>
   <header>
@@ -23,16 +23,25 @@
     </div>
   </header>
 
-  <nav class="main-nav">
-    <a href="/">Index</a>
-    <a href="./sidebar.html">Sidebar Layout</a>
-    <a href="./aside-banner.html">Banner Aside</a>
-    <a href="./amber.html">Color amber</a>
-    <a href="./green.html">Color Green</a>
-  </nav>
+ <div class="nav-wrapper sticky-top">
+    <div class="lead">
+      <button role="button" 
+        class="button-expand button-toggle" 
+        data-control-element="#sidebar"
+        onclick="toggleSidebar(this)"
+      ></button>
+    </div>
+    <nav class="main-nav">
+      <a href="/">Index</a>
+      <a href="./sidebar.html">Sidebar Layout</a>
+      <a href="./aside-banner.html">Banner Aside</a>
+      <a href="./amber.html">Color amber</a>
+      <a href="./green.html">Color Green</a>
+    </nav>
+  </div>
 
   <div class="sidebar-layout">
-    <div class="aside-wrapper">
+    <div class="aside-wrapper" id="sidebar">
       <aside>
           Aside Content
       </aside>
