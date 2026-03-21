@@ -5,13 +5,15 @@ button {
     text-decoration: none;
     border: none;
     text-decoration: bold;
-}
 
-button::before {
-    content: "[";
-}
-button::after {
-    content: "]";
+    &::before {
+        content: "[";
+    }
+
+    &::after {
+        content: "]";
+    }
+
 }
 
 button:hover {
@@ -23,4 +25,20 @@ button:hover {
     width: 100%;
     height: 100%;
     margin: 0px;
+}
+
+
+.button-toggle {
+
+  &[data-element-hidden=true]::after {
+    content: ">" !important; // override when false
+  }
+
+  &::after {
+     content: "<";
+  }
+
+  &::before {
+    content:""
+  }
 }
