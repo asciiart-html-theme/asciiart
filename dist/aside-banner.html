@@ -7,13 +7,12 @@
 
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="css/style.css">
-
+  <script type="application/javascript" src="./js/main.min.js"></script>
 </head>
 <body class="sidebar-layout">
-  <div class="aside-wrapper">
-
-    <aside>
-    <pre>
+  <div id="sidebar" class="aside-wrapper">
+    <header  class="banner">
+        <pre>
   ___           _ _  ___       _   
  / _ \         (_|_)/ _ \     | |  
 / /_\ \___  ___ _ _/ /_\ \_ __| |_ 
@@ -21,6 +20,8 @@
 | | | \__ \ (__| | | | | | |  | |_ 
 \_| |_/___/\___|_|_\_| |_/_|   \__|
     </pre>
+    </header>
+    <aside>
         Aside Content
     </aside>
     <footer>
@@ -30,7 +31,11 @@
   <div class="main-wrapper">
     <div class="nav-wrapper sticky-top">
         <div class="lead">
-          <button role="button" class="button-expand button-toggle" data-element-hidden="true"></button>
+          <button role="button" 
+            class="button-expand button-toggle" 
+            data-control-element="#sidebar"
+            onclick="toggleSidebar(this)"
+          ></button>
         </div>
         <nav class="main-nav">
           <a href="/">Index</a>

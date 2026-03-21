@@ -30,7 +30,7 @@ button:hover {
 
 .button-toggle {
 
-  &[data-element-hidden=true]::after {
+  &[data-element-hidden="true"]::after {
     content: ">" !important; // override when false
   }
 
@@ -41,4 +41,16 @@ button:hover {
   &::before {
     content:""
   }
+
+
+    @media screen and (max-width: 1020px) {
+        &[data-element-hidden="true"]::after {
+            content: "-" !important; // override when false
+        }
+
+        &::after {
+            content: "+";
+        }
+    }
 }
+
