@@ -70,7 +70,7 @@ function toggleVisibilityOnClick(button) {
  */
 function hideVisibilityOnClick(button){
   button = getDomElement(button)
-  let elementToToggle = getControlElement(elementToToggle)
+  let elementToToggle = getControlElement(button)
   elementToToggle.dataset.visible=false;
   button.dataset.elementHidden=true
 }

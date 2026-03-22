@@ -18,6 +18,16 @@ div[data-visible="false"] {
 }
 ```
 
+Keep in mind that theme uses sass though therefore it is reccomended to use this:
+
+```
+div {
+  *[data-visible="false"] {
+    display: none;
+  }
+}
+```
+
 ## Changing Visibility
 
 If an event on an element changes visibility, the element should define the following data attributes:
@@ -47,3 +57,6 @@ The logic works as follows:
 2. Set the `data-visible` attribute on that element to either `true` or `false`.
 3. CSS determines how the element is hidden based on this attribute.
 4. If the element becomes hidden, set `data-element-hidden="true"` upon the control element. Otherwise, it should be `false`.
+
+
+Upon css using 
