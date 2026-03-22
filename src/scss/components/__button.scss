@@ -54,3 +54,19 @@ button:hover {
     }
 }
 
+.button-close {
+  width: 2em;
+  height: 2em;
+  font-size: 2em;
+  z-index: 9999999;
+  float: right;
+  margin-left: calc(100% - 2em);
+  padding: 1px;
+  &::after {
+     content: "X]";
+  }
+
+  &::before {
+    content:"["
+  }
+}
