@@ -33,6 +33,10 @@ main {
       display: flex;
       flex-direction: column;
       
+      &[data-visible="false"]{
+        display: none;
+      }
+
       aside {
         flex-grow:3;
         height: 100vh;
