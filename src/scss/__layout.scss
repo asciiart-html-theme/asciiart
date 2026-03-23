@@ -33,8 +33,12 @@ main {
       display: flex;
       flex-direction: column;
       
-      &[data-visible="false"]{
+      .button-close {
         display: none;
+      }
+
+      &[data-visible="false"]{
+        display: none !important;
       }
 
       aside {
@@ -61,6 +65,14 @@ main {
 
         &.aside-wrapper-top60 {
           top: 60px !important; 
+        }
+
+        .button-close {
+          display: block;
+        }
+
+        &[data-visible="true"]{
+          display: flex !important;
         }
       }
 }

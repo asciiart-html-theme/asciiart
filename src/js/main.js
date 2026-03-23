@@ -37,6 +37,17 @@ function getControlElement(controllerElement){
   return elementToToggle
 }
 
+function updateVisibilityToControlElements(controlledElement){
+  if(!controlledElement){
+    throw new Error("No element was provided")
+  }
+
+  const elementToToggleDom = getDomElement(controlledElement)
+
+  document.querySelectorAll("data-control=")
+
+}
+
 /**
  * Upon Button clikc toggle visibility
  * It should be used upon an event listener.
@@ -56,6 +67,8 @@ function toggleVisibilityOnClick(button) {
     
   let visible = elementToToggle.checkVisibility()
   elementToToggle.dataset.visible=!visible;
+
+  // TODO update visibility
   // The check visibiltiy is called again because we need to recheck whether css has updated the visibility
   button.dataset.elementHidden=!elementToToggle.checkVisibility()
 }
@@ -72,5 +85,7 @@ function hideVisibilityOnClick(button){
   button = getDomElement(button)
   let elementToToggle = getControlElement(button)
   elementToToggle.dataset.visible=false;
+
+  // TODO update visibility upon all buttons.
   button.dataset.elementHidden=true
 }
