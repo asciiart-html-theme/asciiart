@@ -15,9 +15,7 @@ function getDomElement(element) {
 
 /**
  * Get the controlled element from original controller
- * 
- * 
- * 
+ *
  * @param {HTMLElement} controllerElement 
  * @returns {HTMLElement} the element that controllerElementControlls
  */
@@ -67,9 +65,6 @@ function toggleVisibilityOnClick(button) {
     
   let visible = elementToToggle.checkVisibility()
   elementToToggle.dataset.visible=!visible;
-
-  // TODO update visibility
-  // The check visibiltiy is called again because we need to recheck whether css has updated the visibility
   button.dataset.elementHidden=!elementToToggle.checkVisibility()
 }
 
@@ -86,6 +81,5 @@ function hideVisibilityOnClick(button){
   let elementToToggle = getControlElement(button)
   elementToToggle.dataset.visible=false;
 
-  // TODO update visibility upon all buttons.
   button.dataset.elementHidden=true
 }

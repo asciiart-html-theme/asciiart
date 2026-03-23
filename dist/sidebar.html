@@ -10,6 +10,13 @@
   <script type="application/javascript" src="./js/main.min.js"></script>
 </head>
 <body>
+  <div class="top-left-responsive">
+     <button role="button" 
+        class="button-expand button-toggle" 
+        data-control-element="#sidebar"
+        onclick="toggleVisibilityOnClick(this)"
+      ></button>
+  </div>
   <header>
     <div class="banner">
     <pre>
@@ -24,13 +31,6 @@
   </header>
 
  <div class="nav-wrapper sticky-top">
-    <div class="lead">
-      <button role="button" 
-        class="button-expand button-toggle" 
-        data-control-element="#sidebar"
-        onclick="toggleVisibilityOnClick(this)"
-      ></button>
-    </div>
     <nav class="main-nav">
       <a href="/">Index</a>
       <a href="./sidebar.html">Sidebar Layout</a>

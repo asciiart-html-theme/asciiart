@@ -1,6 +1,3 @@
-
-
-
 main {
   width:80%;
   margin: auto;
@@ -13,7 +10,41 @@ main {
   }
 }
 
+@mixin sidebar_common(){
+  float:left;
+  width:40%;
+  padding: 1px;
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 
+  aside {
+    flex-grow:3;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  
+  footer {
+    padding: 0;
+    align-self: flex-end;
+  }
+}
+
+@mixin sidebar_offcanvas() {
+  display: none;
+  position: fixed;
+  left: 0;
+  z-index: 999999;
+  width: 50%;
+  background-color: var(--color-bg);
+  padding: 1px;
+}
+
+@mixin sidebar_offcanvas_sm(){
+  width: 100%;
+  border: none;
+}
 
 .sidebar-layout {
   margin: auto;
@@ -24,62 +55,61 @@ main {
   margin-top: 3px;
   height: 100vh;
   
+  .aside-wrapper-fullheight {
+    @include sidebar_common();
+
+    &[data-visible="false"]{
+      display: none;
+    }
+
+    @media screen and (max-width: 1700px) {
+      @include sidebar_offcanvas();
+      border-right: 2px dashed var(--color-fe);
+      top: 60px !important; 
+
+      &[data-visible="true"]{
+        display: flex !important;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      @include sidebar_offcanvas_sm();
+    }
+  }
+
   .aside-wrapper {
-      float:left;
-      width:40%;
-      padding: 1px;
-      height: 100%;
-      overflow-y: scroll;
-      display: flex;
-      flex-direction: column;
-      
-      .button-close {
+    @include sidebar_common();
+    width:40%;
+    .button-close {
+      display: none;
+    }
+
+    @media screen and (max-width: 1600px) {
+      @include sidebar_offcanvas();
+      border: 2px dashed var(--color-fe);
+      top:0;
+
+      &[data-visible="false"]{
         display: none;
       }
 
-      &[data-visible="false"]{
-        display: none !important;
+      &[data-visible="true"]{
+        display: flex;
       }
 
-      aside {
-        flex-grow:3;
-        height: 100vh;
-        overflow-y: scroll;
+      .button-close {
+        display: block;
       }
-
-      footer {
-        padding: 0;
-        align-self: flex-end;
-      }
-
-      @media screen and (max-width: 1600px) {
-        & {
-          display: none;
-          position: fixed;
-          top:0;
-          left: 0;
-          z-index: 999999;
-          width: 50%;
-          background-color: var(--color-bg);
-        }
-
-        &.aside-wrapper-top60 {
-          top: 60px !important; 
-        }
-
-        .button-close {
-          display: block;
-        }
-
-        &[data-visible="true"]{
-          display: flex !important;
-        }
-      }
+    }
+    
+    @media screen and (max-width: 800px) {
+      @include sidebar_offcanvas_sm();
+    }
+  }
 }
 
-
 .main-wrapper {
-  float: right;
+    float: right;
     width: auto !important;
     margin: 1px !important;
     height: 100%;
@@ -90,8 +120,30 @@ main {
         width: 100%;
       }
     }
+}
+
+.top-left-responsive {
+  display: none;
+  position: sticky;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem !important;
+  border: 1px dashed;
+  top:0;
+  left:0;
+  
+  @media screen and (max-width:1600px) {
+    & {
+      display:flex;
+      align-items: center;
+      justify-content: center;
+
+    
+    }
   }
 }
+
+
 
 
 @media screen and (max-width: 800px) {
