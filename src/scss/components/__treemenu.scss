@@ -1,3 +1,4 @@
+@use '../color/_color';
 
 .treemenu {
   list-style: none;
@@ -19,19 +20,37 @@
 
     &:has(> ul) {
       padding-left: 20px;
+      &::before {
+        content: "├─ +" !important;
+      }
+    }
+
+    &:last-child:has(> ul)::before {
+      content: "└─" !important;
     }
 
     &:last-child::before {
       content: "└─";
     }
 
-    &:has(> ul)::before {
-      content: "├─ +" !important;
-    }
+    a,button {
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0.1 rem;
+      text-align: center;
 
+      &::before {
+        content: "";
+      }
+      
+      &::after {
+        content: "";
+      }
 
-    &:last-child:has(> ul)::before {
-      content: "└─ +" !important;
+      &:hover {
+        background-color: var(--color-fe);
+        color: var(--color-bg);
+      }
     }
   }  
 }

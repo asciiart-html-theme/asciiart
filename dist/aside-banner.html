@@ -8,6 +8,11 @@
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="css/style.css">
   <script type="application/javascript" src="./js/main.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new Treemenu(".treemenu");
+    });
+  </script>
 </head>
 <body class="sidebar-layout">
   <div id="sidebar" class="aside-wrapper-fullheight">
@@ -22,16 +27,19 @@
     </pre>
     </header>
     <aside>
-      <ul class="treemenu">
-        <li>Item</li>
-        <li>
-          Menu
-          <ul>
-            <li>Item</li>
-            <li>Item</li>
-          </ul>
-        </li>
-      </ul>
+      <nav aria-label="Sidebar navigation">
+        <ul class="treemenu">
+          <li><a href="#">Item</a></li>
+          <li>
+            <button aria-expanded="false">Menu</button>
+            <ul>
+              <li><a href="#">Item</a></li>
+              <li><a href="#">Item</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Item</a></li>
+        </ul>
+      </nav>
     </aside>
     <footer>
       Copyright Dimitrios Desyllas
