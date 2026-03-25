@@ -10,19 +10,28 @@
     position: relative;
     padding-left: 10px;
     margin: 4px 0;
-  }
 
-  li:first-child::before {
-    content:"+"
-  }
+    &::before {
+      content: "├─";
+      position: absolute;
+      left: -20px;
+    }
 
-  li::before {
-    content: "├─";
-    position: absolute;
-    left: -20px;
-  }
+    &:has(> ul) {
+      padding-left: 20px;
+    }
 
-  li:last-child::before {
-    content: "└─";
-  }
+    &:last-child::before {
+      content: "└─";
+    }
+
+    &:has(> ul)::before {
+      content: "├─ +" !important;
+    }
+
+
+    &:last-child:has(> ul)::before {
+      content: "└─ +" !important;
+    }
+  }  
 }
