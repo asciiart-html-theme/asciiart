@@ -15,9 +15,10 @@ class Treemenu {
   toggleMenu(button) {
     const submenu = button.nextElementSibling;
     const parent = button.parentNode
-    console.log(parent);
+    
     const visible=submenu.checkVisibility() ? "false" : "true"    
     parent.dataset.visible = visible;
+    
   }
 }
 
