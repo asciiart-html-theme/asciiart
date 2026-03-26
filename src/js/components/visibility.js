@@ -59,3 +59,8 @@ export function hideVisibilityOnClick(button){
 
   button.dataset.elementHidden=true
 }
+
+if (typeof window !== "undefined") {
+  window.toggleVisibilityOnClick = toggleVisibilityOnClick;
+  window.hideVisibilityOnClick = hideVisibilityOnClick;
+}
