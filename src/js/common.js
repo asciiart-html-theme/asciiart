@@ -13,6 +13,6 @@ function getDomElement(element) {
   return null;
 }
 
-export default {
+export {
     getDomElement
 };

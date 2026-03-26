@@ -1,3 +1,3 @@
-import "../components/visibility";
+import "./components/visibility";
 import {Treemenu} from "./components/treemenu"
 
