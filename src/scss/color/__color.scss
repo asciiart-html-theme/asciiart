@@ -35,6 +35,10 @@
     @include color_def();
 }
 
+.color-dos {
+    --color-bg: #0000AA;
+    @include color_def();
+}
 
 @media print {
     :root {
