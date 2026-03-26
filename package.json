@@ -4,7 +4,7 @@
   "description": "A fully responsive, customizable HTML/CSS theme inspired by the charm of 7-bit ASCII art.",
   "scripts": {
     "build:scss": "sass src/scss/style.scss dist/css/style.css --style=compressed",
-    "build:js": "node build.js",
+    "build:js": "node build.mjs",
     "watch:js": "chokidar \"src/js/**/*.js\" -c \"npm run build:js\"",
     "watch:scss": "sass  src/scss/style.scss dist/css/style.css --no-source-map --watch",
     "build": "npm run build:scss && npm run build:js",
