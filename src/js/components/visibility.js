@@ -31,7 +31,7 @@ function getControlElement(controllerElement){
  * 
  * @param {HTMLElement|string} button 
  */
-function toggleVisibilityOnClick(button) {
+export function toggleVisibilityOnClick(button) {
   if(!button){
     throw new Error("Button Not defined")
   }
@@ -52,7 +52,7 @@ function toggleVisibilityOnClick(button) {
  * 
  * @param {HTMLElement|string} button 
  */
-function hideVisibilityOnClick(button){
+export function hideVisibilityOnClick(button){
   button = getDomElement(button)
   let elementToToggle = getControlElement(button)
   elementToToggle.dataset.visible=false;
