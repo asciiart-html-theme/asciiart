@@ -8,6 +8,7 @@ async function buildFile(entry, outfile, format, globalName) {
     outfile,
     bundle: true,
     minify: true,
+    sourcemap: true,
     format,
     ...(globalName ? { globalName } : {})
   })
