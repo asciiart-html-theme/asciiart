@@ -10,7 +10,6 @@
   li {
     position: relative;
     padding-left: 10px;
-    margin: 4px 0;
 
     &::before {
       content: "├─";
@@ -20,17 +19,39 @@
 
     &:has(> ul) {
       padding-left: 20px;
+
       &::before {
-        content: "├─ +" !important;
+        content: "└─[-]";
+      }
+
+      &[data-visible="false"]{
+        ul {
+          display:none;
+        }
+
+        &::before {
+          content: "├─[+]";
+        }
       }
     }
 
-    &:last-child:has(> ul)::before {
-      content: "└─" !important;
-    }
+    &:last-child {
+      &::before {
+        content: "└─";
 
-    &:last-child::before {
-      content: "└─";
+      }
+
+      &:has(> ul){
+        &::before {
+          content: "└─[-]";
+        }
+
+        &[data-visible="false"]{
+          &::before {
+            content: "└─[+]";
+          }
+        }
+      }
     }
 
     a,button {
