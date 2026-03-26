@@ -7,3 +7,9 @@ export {
   hideVisibilityOnClick, 
   Treemenu 
 };
+
+if (typeof window !== "undefined") {
+  window.toggleVisibilityOnClick = toggleVisibilityOnClick;
+  window.hideVisibilityOnClick = hideVisibilityOnClick;
+  window.Treemenu = Treemenu;
+}
