@@ -21,7 +21,6 @@ class Sidebar {
                button.addEventListener("click",()=>this.hide(button));
                return; 
             }
-            
             button.addEventListener("click",()=>this.toggle(button));
         })
     }
@@ -30,27 +29,29 @@ class Sidebar {
   toggle(button){
     let visible = this.sidebar.checkVisibility()
     this.sidebar.dataset.visible=!visible;
-    button.dataset.elementHidden=!this.sidebar.checkVisibility()
+    this.updateButtons()
   }
 
   hide(button){
     this.sidebar.dataset.visible=false;
-    button.dataset.elementHidden=true
+    this.updateButtons()
   }
 
   handleResize() {
     if (window.innerWidth > this.breakpoint) {
       this.sidebar.removeAttribute('data-visible');
-      
-      const id = this.sidebar.id
+      this.updateButtons()
+    }
+  }
 
-        if(id){
-            document.querySelectorAll(`button[data-control-element="#`+id+`"`)
-            .forEach((button)=>{
-                this.sidebar.removeAttribute('data-element-hidden');
-            })
-        }
+  updateButtons(){
+    const id = this.sidebar.id
 
+    if(id){
+      document.querySelectorAll(`button[data-control-element="#`+id+`"`)
+        .forEach((button)=>{
+          button.dataset.elementHidden=!this.sidebar.checkVisibility()
+        })
     }
   }
 }

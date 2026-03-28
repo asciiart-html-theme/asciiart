@@ -29,6 +29,10 @@ main {
     padding: 0;
     align-self: flex-end;
   }
+
+  .button-close {
+    display: none;
+  }
 }
 
 @mixin sidebar_offcanvas() {
@@ -36,9 +40,13 @@ main {
   position: fixed;
   left: 0;
   z-index: 999999;
-  width: 50%;
+  width: 40%;
   background-color: var(--color-bg);
   padding: 1px;
+
+  .button-close {
+    display: block;
+  }
 }
 
 @mixin sidebar_offcanvas_sm(){
@@ -84,9 +92,7 @@ main {
   .aside-wrapper {
     @include sidebar_common();
     width:40%;
-    .button-close {
-      display: none;
-    }
+    
 
     @media screen and (max-width: 1600px) {
       @include sidebar_offcanvas();
@@ -99,10 +105,6 @@ main {
 
       &[data-visible="true"]{
         display: flex;
-      }
-
-      .button-close {
-        display: block;
       }
     }
     
@@ -146,9 +148,6 @@ main {
     }
   }
 }
-
-
-
 
 @media screen and (max-width: 800px) {
   .sidebar-layout {
