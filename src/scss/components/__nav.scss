@@ -59,6 +59,10 @@
   button {
     font-weight: bold;
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -67,11 +71,5 @@
     *{
       padding: 3px;
     }
-  }
-}
-
-@media print {
-  .main-nav {
-    display: none;
   }
 }
