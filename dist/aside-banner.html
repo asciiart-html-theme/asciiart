@@ -11,6 +11,7 @@
   <script type="application/javascript">
     document.addEventListener("DOMContentLoaded", () => {
       new Treemenu(".treemenu");
+      new Sidebar("#sidebar");
     });
   </script>
 </head>
@@ -58,7 +59,6 @@
           <button role="button" 
             class="button-expand button-toggle" 
             data-control-element="#sidebar"
-            onclick="toggleVisibilityOnClick(this)"
           ></button>
         </div>
         <nav class="main-nav">

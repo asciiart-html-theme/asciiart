@@ -65,7 +65,11 @@ main {
     @media screen and (max-width: 1700px) {
       @include sidebar_offcanvas();
       border-right: 2px dashed var(--color-fe);
-      top: 60px !important; 
+      top: 60px !important;
+
+      &[data-visible="false"] {
+        display: none !important;
+      }
 
       &[data-visible="true"]{
         display: flex !important;

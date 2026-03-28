@@ -8,13 +8,18 @@
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="css/style.css">
   <script type="application/javascript" src="./js/asciiart.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new Treemenu(".treemenu");
+      new Sidebar("#sidebar")
+    });
+  </script>
 </head>
 <body>
   <div class="top-left-responsive">
      <button role="button" 
         class="button-expand button-toggle" 
         data-control-element="#sidebar"
-        onclick="toggleVisibilityOnClick(this)"
       ></button>
   </div>
   <header>
@@ -42,9 +47,28 @@
 
   <div class="sidebar-layout">
     <div class="aside-wrapper" id="sidebar">
-      <button class="button-close" data-control-element="#sidebar" onclick="hideVisibilityOnClick(this)"></button>
+      <button class="button-close" data-control-element="#sidebar"></button>
       <aside>
-          Aside Content
+        <nav aria-label="Sidebar navigation">
+          <ul class="treemenu">
+            <li><a href="#">Item</a></li>
+            <li data-visible="false">
+              <button aria-expanded="false">Menu</button>
+              <ul>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Item</a></li>
+            <li>
+              <button aria-expanded="false">Menu</button>
+              <ul>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
       </aside>
     </div>
     <div class="main-wrapper">

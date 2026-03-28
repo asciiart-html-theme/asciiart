@@ -23,7 +23,7 @@ function getControlElement(controllerElement){
 }
 
 /**
- * Upon Button clikc toggle visibility
+ * Upon Button click toggle visibility
  * It should be used upon an event listener.
  * 
  * Whether the element would be hidden or not is dewtermined via data attributes.
