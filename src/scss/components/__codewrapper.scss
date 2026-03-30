@@ -1,0 +1,38 @@
+@use '../color/_color';
+
+.code-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed var(--color-fe);
+
+    div {
+        font-size: 1.2rem;
+        height: 1.4rem;
+        background-color: var(--color-fe);
+        color: var(--color-bg);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            float:right;
+            order: 99;
+        }
+
+        h5 {
+            flex-grow: 3;
+            padding-right:3px;
+            padding-left: 3px;
+        }
+    }
+    pre {
+        width: 100%;
+        padding: 0;
+        max-height: 1000px;
+        overflow-y: scroll;
+        code {
+            margin: 0;
+        }
+    }
+}

@@ -1,3 +1,5 @@
+@use '../color/_color';
+
 button {
     background-color: var(--color-button-bg);
     color: var(--color-button-fe);
