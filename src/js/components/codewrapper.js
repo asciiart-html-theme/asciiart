@@ -7,15 +7,25 @@ class CodeWrapper {
 
         this.copyButton = this.wrapperElement.querySelector(".copy")
 
-        this.copyButton.addEventListener("click",this.copyCodeIntoClipboard)
+        this.copyButton.addEventListener("click",()=>this.copyCodeIntoClipboard())
 
     }
 
     copyCodeIntoClipboard(){
         const codeElement = this.wrapperElement.querySelector("code")
-        const code = codeElement.innerText
-        console.log(code);
+        const code = codeElement.innerText.trim()
+        navigator.clipboard.writeText(code)
+            .then(() => {
+                console.log("Code copied to clipboard!");
+                // Optional: provide visual feedback
+                this.copyButton.innerText = "Copied!";
+                setTimeout(() => this.copyButton.innerText = "Copy", 2000);
+            })
+            .catch(err => {
+                console.error("Failed to copy code: ", err);
+            });
     }
 }
 
 export default CodeWrapper;
+window.CodeWrapper = CodeWrapper;
