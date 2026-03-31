@@ -1,9 +1,10 @@
-// gulpfile.js
 import gulp from "gulp";
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
+
 import * as esbuild from "esbuild";
 import dartSass from 'sass';
+
 import { join } from "path";
 import { mkdirSync, copyFileSync, readdirSync } from "fs";
 
@@ -63,7 +64,6 @@ export const jsBundle = async () => {
     minify: true,
     sourcemap: true,
     format: "esm",
-    globalName: "AsciiartTheme"
   });
 
   // Demo bundle
@@ -75,6 +75,7 @@ export const jsBundle = async () => {
     sourcemap: true
   });
 };
+
 
 // --- Compile Sass ---
 export const compileSass = () => {
@@ -102,6 +103,13 @@ export const copyJS = (done) => {
   done();
 };
 
+// Watch
+
+export const watch = () => {
+  gulp.watch("src/scss/**/*.scss", gulp.series(compileSass, copyCSS));
+  gulp.watch("src/js/**/*.js", gulp.series(jsBundle, copyJS));
+  // live-server handles HTML reload automatically
+};
 
 // --- Full Build ---
 export const build = gulp.series(jsBundle,compileSass,gulp.parallel(copyJS, copyCSS));
