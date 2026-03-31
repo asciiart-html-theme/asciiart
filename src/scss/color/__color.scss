@@ -1,0 +1,64 @@
+@use '__palette.scss';
+
+@mixin color_def {
+  --color-text: var(--color-fe);
+  --color-link: var(--color-fe);
+  
+  --color-hover-bg: var(--color-fe);
+  --color-hover-fe: var(--color-bg);
+
+  --color-border: var(--color-fe);
+
+  --head-color-bg: var(--color-fe);
+  --head-color-fe: var(--color-bg);
+
+  --color-scrollbar-thumb: var(--color-fe);
+  --color-scrollbar-track: var(--color-bg);
+
+  --color-button-bg: var(--color-bg)
+  --collor-button-fe: var(--color-fe)
+}
+
+:root {
+    --color-bg: var(--color-white);
+    --color-fe: var(--color-black);
+    @include color_def()
+}
+
+.color-amber {
+    --color-fe: var(--color-amber);
+    @include color_def();
+}
+
+.color-green {
+    --color-fe: var(--color-green);
+    @include color_def();
+}
+
+.color-dos {
+    --color-bg: #0000AA;
+    @include color_def();
+}
+
+@media print {
+    :root {
+        --color-bg: var(--color-white);
+        --color-fe: var(--color-black);
+        @include color_def();
+    }
+
+    .color-amber {
+        --color-fe: var(--color-black);
+        @include color_def();
+    }
+
+    .color-green {
+        --color-fe: var(--color-black);
+        @include color_def();
+    }
+
+    body, body * {
+        background-color: var(--color-bg) !important;
+        color: var(--color-fe) !important;
+    }
+}

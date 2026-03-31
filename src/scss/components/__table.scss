@@ -1,0 +1,52 @@
+@use '../color/_color';
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: var(--head-color-bg);
+    color: var(--head-color-fe);
+    margin: 0 auto;
+}
+
+td,th {
+    padding: 6px 12px;
+}
+
+tfoot {
+    td,th {
+        border: 1px dashed var(--color-border);
+    }
+}
+
+@media print {
+    table {
+        border-collapse: separate;
+        border: 0px solid #000000;
+        border-spacing: 0;
+        font-size: 11pt;
+        width: 100%;
+        border-color: #000000 ;
+        border-right: 1px solid;
+    }
+
+    tr {
+        border-color: #000000;
+        border-style: none;
+        border-width: 0;
+    }
+
+    td {
+        border-color: #000000;
+        border-left: 1px solid;
+        border-bottom: 1px solid;
+    }
+
+    th {
+        border-color: #000000;
+        border-left: 1px solid;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+    }
+}
