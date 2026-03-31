@@ -24,6 +24,3 @@ class Treemenu {
 
 export default Treemenu
 
-if (typeof window !== "undefined") {
-  window.Treemenu = Treemenu;
-}

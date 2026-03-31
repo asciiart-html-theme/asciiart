@@ -28,4 +28,3 @@ class CodeWrapper {
 }
 
 export default CodeWrapper;
-window.CodeWrapper = CodeWrapper;

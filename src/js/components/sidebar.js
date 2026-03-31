@@ -57,7 +57,3 @@ class Sidebar {
 }
 
 export default Sidebar
-
-if (typeof window !== "undefined") {
-  window.Sidebar = Sidebar;
-}

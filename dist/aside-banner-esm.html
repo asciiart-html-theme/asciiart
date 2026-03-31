@@ -7,8 +7,9 @@
 
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <script type="application/javascript" src="./js/asciiart.min.js"></script>
-  <script type="application/javascript">
+  <script type="module">
+    import {TreeMenu,Sidebar,Codewrapper} from './js/asciiart.esm.min.js';
+
     document.addEventListener("DOMContentLoaded", () => {
       new AsciiartTheme.Treemenu(".treemenu");
       new AsciiartTheme.Sidebar("#sidebar");
