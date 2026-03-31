@@ -12,27 +12,42 @@ const paths = {
   src: {
     js: "./src/js/asciiart.js",
     demoMain: "./src/demo/main.js",
-    css: "./dist/css",
     scss: "./src/scss/style.scss",
   },
   dist: {
     js: "./dist/js",
+    css: "./dist/css",
     demo: "./demo",
-    demoJS: "./demo/js",
-    demoCSS: "./demo/css",
-    cssDest: "./dist/css",
+  },
+  demo:{
+    js: "./demo/js",
+    css: "./demo/css",
   }
 };
 
-const sass = gulpSass(dartSass);
+const outfiles = {
+    asciiart: {
+        js: `${paths.dist.js}/asciiart.min.js`,
+        esm: `${paths.dist.js}/asciiart.esm.min.js`
+    },
+    demo: `${paths.dist.demo}/bundle.js`
+}
 
+const demofiles = {
+    asciiart: {
+        js: `${paths.demo.js}/asciiart.min.js`,
+        esm: `${paths.demo.js}/asciiart.esm.min.js`
+    },
+}
+
+const sass = gulpSass(dartSass);
 
 // --- JS Bundling ---
 export const jsBundle = async () => {
   // IIFE (normal script)
   await esbuild.build({
     entryPoints: [paths.src.js],
-    outfile: `${paths.dist.js}/asciiart.min.js`,
+    outfile: outfiles.asciiart.js,
     bundle: true,
     minify: true,
     sourcemap: true,
@@ -43,7 +58,7 @@ export const jsBundle = async () => {
   // ESM
   await esbuild.build({
     entryPoints: [paths.src.js],
-    outfile: `${paths.dist.js}/asciiart.esm.min.js`,
+    outfile: outfiles.asciiart.esm,
     bundle: true,
     minify: true,
     sourcemap: true,
@@ -55,7 +70,7 @@ export const jsBundle = async () => {
   await esbuild.build({
     entryPoints: [paths.src.demoMain],
     bundle: true,
-    outfile: `${paths.dist.demo}/bundle.js`,
+    outfile: outfiles.demo,
     format: "iife",
     sourcemap: true
   });
@@ -63,27 +78,27 @@ export const jsBundle = async () => {
 
 // --- Compile Sass ---
 export const compileSass = () => {
-  return gulp.src(paths.scss)
+  return gulp.src(paths.src.scss)
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(rename('style.css')) // optional if you want to rename
-    .pipe(gulp.dest(paths.cssDest));
+    .pipe(gulp.dest(paths.dist.css));
 };
 
 // --- Copy CSS ---
 export const copyCSS = (done) => {
-  mkdirSync(paths.dist.demoCSS, { recursive: true });
-  const files = readdirSync(paths.src.css);
+  mkdirSync(paths.demo.css, { recursive: true });
+  const files = readdirSync(paths.dist.css);
   for (const file of files) {
-    copyFileSync(join(paths.src.css, file), join(paths.dist.demoCSS, file));
+    copyFileSync(join(paths.dist.css, file), join(paths.demo.css, file));
   }
   done();
 };
 
 // --- Copy JS ---
 export const copyJS = (done) => {
-  mkdirSync(paths.dist.demoJS, { recursive: true });
-  copyFileSync(`${paths.dist.js}/asciiart.min.js`, `${paths.dist.demoJS}/asciiart.min.js`);
-  copyFileSync(`${paths.dist.js}/asciiart.esm.min.js`, `${paths.dist.demoJS}/asciiart.esm.min.js`);
+  mkdirSync(paths.demo.js, { recursive: true });
+  copyFileSync(outfiles.asciiart.js, demofiles.asciiart.js);
+  copyFileSync(outfiles.asciiart.js, demofiles.asciiart.esm);
   done();
 };
 

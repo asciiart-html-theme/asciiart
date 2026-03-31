@@ -12,11 +12,9 @@
     }
   },
   "scripts": {
-    "build:scss": "sass src/scss/style.scss dist/css/style.css --style=compressed",
-    "build:js": "node build.mjs",
     "watch:js": "chokidar \"src/js/**/*.js\" -c \"npm run build:js\"",
     "watch:scss": "sass  src/scss/style.scss dist/css/style.css --no-source-map --watch",
-    "build": "npm run build:scss && npm run build:js",
+    "build": "gulp",
     "serve": "live-server demo",
     "start": "npm-run-all --parallel watch:js watch:scss serve"
   },
@@ -33,6 +31,7 @@
   },
   "dependencies": {
     "gulp": "^5.0.1",
+    "gulp-rename": "^2.1.0",
     "gulp-sass": "^6.0.1"
   }
 }

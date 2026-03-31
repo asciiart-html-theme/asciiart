@@ -1,6 +1,9 @@
 node_modules/
 dist/css/
 dist/js/
-!dist/demo
+demo/js
+demo/css
+demo/bundle.js
+demo/bundle.js.map
 .env
 .DS_Store
