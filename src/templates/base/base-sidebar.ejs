@@ -35,14 +35,8 @@
     </div>
   </header>
 
- <div class="nav-wrapper sticky-top">
-    <nav class="main-nav">
-      <a href="/">Index</a>
-      <a href="./sidebar.html">Sidebar Layout</a>
-      <a href="./aside-banner.html">Banner Aside</a>
-      <a href="./amber.html">Color amber</a>
-      <a href="./green.html">Color Green</a>
-    </nav>
+  <div class="nav-wrapper sticky-top">
+        <%- include('../partials/main-nav') %>
   </div>
 
   <div class="sidebar-layout">
@@ -50,7 +44,7 @@
       <button class="button-close" data-control-element="#sidebar"></button>
       <aside>
         <nav aria-label="Sidebar navigation">
-          <%- sidebar-nav %>
+            <%- sidebar-nav %>
         </nav>
       </aside>
     </div>
