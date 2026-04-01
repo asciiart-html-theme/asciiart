@@ -99,16 +99,16 @@ export const copyCSS = (done) => {
 export const copyJS = (done) => {
   mkdirSync(paths.demo.js, { recursive: true });
   copyFileSync(outfiles.asciiart.js, demofiles.asciiart.js);
-  copyFileSync(outfiles.asciiart.js, demofiles.asciiart.esm);
+  copyFileSync(outfiles.asciiart.esm, demofiles.asciiart.esm);
   done();
 };
 
 // Watch
 
 export const watch = () => {
+  gulp.series(build)
   gulp.watch("src/scss/**/*.scss", gulp.series(compileSass, copyCSS));
   gulp.watch("src/js/**/*.js", gulp.series(jsBundle, copyJS));
-  // live-server handles HTML reload automatically
 };
 
 // --- Full Build ---

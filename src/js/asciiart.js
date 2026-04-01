@@ -1,4 +1,4 @@
-import  Treemenu  from "./components/treemenu";
+import Treemenu  from "./components/treemenu";
 import Sidebar from "./components/sidebar";
 import CodeWrapper from "./components/codewrapper";
 
