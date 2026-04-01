@@ -7,7 +7,7 @@
 
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <%- script %>
+  {% block scripts %}{% endblock %}
 </head>
 <body>
   <div class="top-left-responsive">
@@ -16,21 +16,22 @@
         data-control-element="#sidebar"
       ></button>
   </div>
+
   <header>
     <div class="banner">
-    <pre>
+      <pre>
   ___           _ _  ___       _   
  / _ \         (_|_)/ _ \     | |  
 / /_\ \___  ___ _ _/ /_\ \_ __| |_ 
 |  _  / __|/ __| | |  _  | '__| __|
 | | | \__ \ (__| | | | | | |  | |_ 
 \_| |_/___/\___|_|_\_| |_/_|   \__|
-    </pre>
+      </pre>
     </div>
   </header>
 
   <div class="nav-wrapper sticky-top">
-        <%- include('../partials/main-nav') %>
+    {% include '../partials/main-nav.html' %}
   </div>
 
   <div class="sidebar-layout">
@@ -38,15 +39,16 @@
       <button class="button-close" data-control-element="#sidebar"></button>
       <aside>
         <nav aria-label="Sidebar navigation">
-            <%- sidebar-nav %>
+            {% block sidebar %}{% endblock %}
         </nav>
       </aside>
     </div>
+
     <div class="main-wrapper">
       <main>
-        <%- content %> 
+        {% block content %}{% endblock %}
       </main>
     </div>
-</div>
+  </div>
 </body>
 </html>
