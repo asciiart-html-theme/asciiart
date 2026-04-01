@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
+import browserSync from "browser-sync";
 
 import * as esbuild from "esbuild";
 import dartSass from 'sass';
@@ -42,6 +43,8 @@ const demofiles = {
 }
 
 const sass = gulpSass(dartSass);
+const bs = browserSync.create();
+
 
 // --- JS Bundling ---
 export const jsBundle = async () => {
@@ -103,14 +106,45 @@ export const copyJS = (done) => {
   done();
 };
 
-// Watch
 
-export const watch = () => {
-  gulp.series(build)
-  gulp.watch("src/scss/**/*.scss", gulp.series(compileSass, copyCSS));
-  gulp.watch("src/js/**/*.js", gulp.series(jsBundle, copyJS));
+
+export const serve = (done) => {
+  bs.init({
+    server: {
+      baseDir: "./demo"
+    },
+    open: true,
+    notify: false
+  });
+  done();
 };
+
+export const reload = (done) => {
+  bs.reload();
+  done();
+};
+
 
 // --- Full Build ---
 export const build = gulp.series(jsBundle,compileSass,gulp.parallel(copyJS, copyCSS));
 export default build;
+
+// Watch
+export const watch = gulp.series(build, serve, function watchFiles() {
+
+  gulp.watch(
+    "src/scss/**/*.scss",
+    gulp.series(compileSass, copyCSS, reload)
+  );
+
+  gulp.watch(
+    "src/js/**/*.js",
+    gulp.series(jsBundle, copyJS, reload)
+  );
+
+  gulp.watch(
+    "./demo/*.html",
+    reload
+  );
+
+});
