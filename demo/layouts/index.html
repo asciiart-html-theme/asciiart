@@ -37,12 +37,13 @@
       <nav aria-label="Sidebar navigation">
         
 <ul class="treemenu">
+    <li><a href="">About</a></li>
     <li data-visible="true">
         <button aria-expanded="false">Layouts</button>
         <ul>
             <li><a href="#">No Sidebar</a></li>
-            <li><a href="#">Sidebar upon content </a></li>
             <li><a href="#">Sidebar Full</a></li>
+            <li><a href="#">Sidebar upon content</a></li>
         </ul>
     </li>
 </ul>
@@ -74,7 +75,126 @@
     <main>
         
 
+<section id="#about">
+    <h1>About</h1>
+    <p>
+        This theme supports 3 layouts:
+        <ul>
+            <li>Sidebar with header upon aside (aka Sidebar Full)</li>
+            <li>Sidebar upon content</li>
+            <li>No sidebar</li>
+        </ul>
+    </p>
+</section>
 
+<section>
+    <h1>Sidebar Full</h1>
+    <p>
+        This current page is a prime example of this layout. Sidebar is on the left side of the page taking over the full height of the page
+    </p>
+    <h2>Basic Html</h2>
+    <div class="code-wrapper">
+        <div><h5>Html code</h5><button class="copy">Copy</button></div>
+        <pre><code>
+  
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Default Title&lt;/title&gt;
+
+  &lt;!-- SCSS compiled CSS --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css&quot;&gt;
+  &lt;script type=&quot;application/javascript&quot; src=&quot;/js/asciiart.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;application/javascript&quot;&gt;
+    document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+      new AsciiartTheme.Sidebar(&quot;#sidebar&quot;);
+    });      
+  &lt;/script&gt;
+  
+&lt;/head&gt;
+&lt;body class=&quot;sidebar-layout&quot;&gt;
+  &lt;div id=&quot;sidebar&quot; class=&quot;aside-wrapper-fullheight&quot;&gt;
+    &lt;button class=&quot;button-close&quot; data-control-element=&quot;#sidebar&quot;&gt;&lt;/button&gt;
+
+    &lt;header class=&quot;banner&quot;&gt;
+      &lt;pre&gt;
+  ___           _ _  ___       _   
+ / _ &#92;         (_|_)/ _ &#92;     | |  
+/ /_&#92; &#92;___  ___ _ _/ /_&#92; &#92;_ __| |_ 
+|  _  / __|/ __| | |  _  | &#39;__| __|
+| | | &#92;__ &#92; (__| | | | | | |  | |_ 
+&#92;_| |_/___/&#92;___|_|_&#92;_| |_/_|   &#92;__|
+      &lt;/pre&gt;
+    &lt;/header&gt;
+
+    &lt;aside&gt;
+      &lt;nav aria-label=&quot;Sidebar navigation&quot;&gt;
+        
+Sidebar content Here could place menus or navigation links.
+
+
+      &lt;/nav&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+      Copyright Dimitrios Desyllas
+    &lt;/footer&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;main-wrapper&quot;&gt;
+    &lt;div class=&quot;nav-wrapper sticky-top&quot;&gt;
+        &lt;div class=&quot;lead&quot;&gt;
+          &lt;button role=&quot;button&quot; 
+            class=&quot;button-expand button-toggle&quot; 
+            data-control-element=&quot;#sidebar&quot;
+          &gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;nav class=&quot;main-nav&quot;&gt;
+  &lt;a href=&quot;/&quot;&gt;Index&lt;/a&gt;
+  &lt;a href=&quot;/layouts&quot;&gt;Layouts&lt;/a&gt;
+  &lt;a href=&quot;/components&quot;&gt;Components&lt;/a&gt;
+  &lt;a href=&quot;/documentation&quot;&gt;Documentation&lt;/a&gt;
+&lt;/nav&gt;
+    &lt;/div&gt;
+
+    &lt;main&gt;
+        
+&lt;!-- Main content place text, forms or anything else here --&gt;
+&lt;section&gt;
+    &lt;h1&gt;Acticle 1&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 2&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 3&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 4&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 5&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </div>
+</section>
 
 
     </main>

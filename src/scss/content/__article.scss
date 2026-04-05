@@ -5,11 +5,15 @@ article,section {
   align-items: center;
 
   h1 {
-    text-align: center;
+    text-align: left;
   }
 
   p {
     text-align: left;
+  }
+
+  * {
+    width: 100%;
   }
 }
 
