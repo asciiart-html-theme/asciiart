@@ -3,6 +3,9 @@ import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
 import browserSync from "browser-sync";
 
+import nunjucksRender from "gulp-nunjucks-render";
+import data from "gulp-data";
+
 import * as esbuild from "esbuild";
 import dartSass from 'sass';
 
@@ -15,6 +18,11 @@ const paths = {
     js: "./src/js/asciiart.js",
     demoMain: "./src/demo/main.js",
     scss: "./src/scss/style.scss",
+    templates: {
+      pages: "./src/templates/pages/**/*.+(html|njk)",
+      watch: "./src/templates/**/*.+(html|njk)",
+      base: "./src/templates"
+    }
   },
   dist: {
     js: "./dist/js",
@@ -107,6 +115,20 @@ export const copyJS = (done) => {
 };
 
 
+export const buildTemplates = () => {
+  return gulp.src(paths.src.templates.pages)
+    .pipe(data(() => ({})))
+    .pipe(
+      nunjucksRender({
+        path: [paths.src.templates.base]
+      })
+    )
+    .pipe(gulp.dest(paths.dist.demo));
+};
+
+// --- Full Build ---
+export const build = gulp.series(jsBundle,compileSass,buildTemplates,gulp.parallel(copyJS, copyCSS));
+export default build;
 
 export const serve = (done) => {
   bs.init({
@@ -123,11 +145,6 @@ export const reload = (done) => {
   bs.reload();
   done();
 };
-
-
-// --- Full Build ---
-export const build = gulp.series(jsBundle,compileSass,gulp.parallel(copyJS, copyCSS));
-export default build;
 
 // Watch
 export const watch = gulp.series(build, serve, function watchFiles() {
@@ -146,5 +163,10 @@ export const watch = gulp.series(build, serve, function watchFiles() {
     "./demo/*.html",
     reload
   );
-
+  
+  gulp.watch(
+    paths.src.templates.watch,
+    gulp.series(buildTemplates, reload)
+  );
 });
+
