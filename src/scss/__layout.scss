@@ -12,7 +12,7 @@ main {
 
 @mixin sidebar_common(){
   float:left;
-  width:40%;
+   width: 20%;
   padding: 1px;
   height: 100%;
   overflow-y: scroll;
@@ -95,7 +95,6 @@ main {
 
   .aside-wrapper {
     @include sidebar_common();
-    width:40%;
     
 
     @media screen and (max-width: 1600px) {
@@ -124,7 +123,7 @@ main {
     margin: 1px !important;
     height: 100%;
     overflow-y: scroll;
-
+    flex-grow: 4;
     @media screen and (max-width: 1600px) {
       & {
         width: 100%;

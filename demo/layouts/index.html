@@ -1,20 +1,22 @@
-{% set baseUrl = "/" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Default Title{% endblock %}</title>
+  <title>AsciiArt Theme - Layout</title>
 
   <!-- SCSS compiled CSS -->
-  <link rel="stylesheet" href="{{baseUrl}}css/style.css">
-  <script type="application/javascript" src="{{baseUrl}}js/asciiart.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/javascript" src="/js/asciiart.min.js"></script>
   <script type="application/javascript">
     document.addEventListener("DOMContentLoaded", () => {
       new AsciiartTheme.Sidebar("#sidebar");
     });      
   </script>
-  {% block scripts %}{% endblock %}
+  
+   
+
 </head>
 <body class="sidebar-layout">
   <div id="sidebar" class="aside-wrapper-fullheight">
@@ -33,7 +35,18 @@
 
     <aside>
       <nav aria-label="Sidebar navigation">
-        {% block sidebar %}{% endblock %}
+        
+<ul class="treemenu">
+    <li data-visible="true">
+        <button aria-expanded="false">Layouts</button>
+        <ul>
+            <li><a href="#">No Sidebar</a></li>
+            <li><a href="#">Sidebar upon content </a></li>
+            <li><a href="#">Sidebar Full</a></li>
+        </ul>
+    </li>
+</ul>
+
       </nav>
     </aside>
 
@@ -50,11 +63,20 @@
             data-control-element="#sidebar"
           ></button>
         </div>
-        {% include '../partials/main-nav.html' %}
+        <nav class="main-nav">
+  <a href="/">Index</a>
+  <a href="/layouts">Layouts</a>
+  <a href="/components">Components</a>
+  <a href="/documentation">Documentation</a>
+</nav>
     </div>
 
     <main>
-        {% block content %}{% endblock %}
+        
+
+
+
+
     </main>
   </div>
 </body>
