@@ -1,61 +1,9 @@
-{% set baseUrl = "/" %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Default Title{% endblock %}</title>
+{% extends './plain/base-sidebar-full.html' %}
 
-  <!-- SCSS compiled CSS -->
-  <link rel="stylesheet" href="{{baseUrl}}css/style.css">
-  <script type="application/javascript" src="{{baseUrl}}js/asciiart.min.js"></script>
-  <script type="application/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-      new AsciiartTheme.Sidebar("#sidebar");
-    });      
-  </script>
-  {% block scripts %}{% endblock %}
-</head>
-<body class="sidebar-layout">
-  <div id="sidebar" class="aside-wrapper-fullheight">
-    <button class="button-close" data-control-element="#sidebar"></button>
+{% block header %}
+  {% include '../partials/header.html' %}
+{% endblock %}
 
-    <header class="banner">
-      <pre>
-  ___           _ _  ___       _   
- / _ \         (_|_)/ _ \     | |  
-/ /_\ \___  ___ _ _/ /_\ \_ __| |_ 
-|  _  / __|/ __| | |  _  | '__| __|
-| | | \__ \ (__| | | | | | |  | |_ 
-\_| |_/___/\___|_|_\_| |_/_|   \__|
-      </pre>
-    </header>
-
-    <aside>
-      <nav aria-label="Sidebar navigation">
-        {% block sidebar %}{% endblock %}
-      </nav>
-    </aside>
-
-    <footer>
-      Copyright Dimitrios Desyllas
-    </footer>
-  </div>
-
-  <div class="main-wrapper">
-    <div class="nav-wrapper sticky-top">
-        <div class="lead">
-          <button role="button" 
-            class="button-expand button-toggle" 
-            data-control-element="#sidebar"
-          ></button>
-        </div>
-        {% include '../partials/main-nav.html' %}
-    </div>
-
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-  </div>
-</body>
-</html>
+{% block footer %}
+  {% include '../partials/footer.html' %}
+{% endblock %}

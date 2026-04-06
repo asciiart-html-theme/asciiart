@@ -53,19 +53,25 @@ main {
   background-color: var(--color-bg);
   padding: 1px;
   overflow-y: scroll;
+
   .button-close {
     display: block;
   }
 
   .banner {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
+
 }
 
 @mixin sidebar_offcanvas_sm(){
   width: 100%;
   border: none;
+  overflow-y: scroll;
 
+  .banner {
+    font-size: 1rem;
+  }
 }
 
 .sidebar-layout {
