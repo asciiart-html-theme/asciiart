@@ -12,12 +12,15 @@ main {
 
 @mixin sidebar_common(){
   float:left;
-  width: 35%;
+  width: 36%;
   padding: 1px;
   height: 100%;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
+
+  .banner {
+    font-size: 0.6rem;
+  }
 
   aside {
     flex-grow:3;
@@ -27,6 +30,8 @@ main {
   
   footer {
     padding: 0;
+    padding-top:2px;
+    padding-bottom: 2px;
     align-self: flex-end;
   }
 
@@ -47,15 +52,20 @@ main {
   width: 40%;
   background-color: var(--color-bg);
   padding: 1px;
-
+  overflow-y: scroll;
   .button-close {
     display: block;
+  }
+
+  .banner {
+    font-size: 1rem;
   }
 }
 
 @mixin sidebar_offcanvas_sm(){
   width: 100%;
   border: none;
+
 }
 
 .sidebar-layout {
