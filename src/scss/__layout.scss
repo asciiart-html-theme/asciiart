@@ -74,6 +74,10 @@ main {
   }
 }
 
+body.sidebar-layout {
+  overflow-y: hidden;
+}
+
 .sidebar-layout {
   margin: auto;
   display: flex;
@@ -82,6 +86,8 @@ main {
   align-items:stretch;
   margin-top: 3px;
   height: 100vh;
+
+  
   
   .aside-wrapper-fullheight {
     @include sidebar_common();
