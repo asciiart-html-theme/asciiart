@@ -12,7 +12,6 @@ main {
 
 @mixin sidebar_common(){
   float:left;
-  width: 36%;
   padding: 1px;
   height: 100%;
   display: flex;
@@ -33,6 +32,7 @@ main {
     padding-top:2px;
     padding-bottom: 2px;
     align-self: flex-end;
+    font-size: 0.8rem;
   }
 
   .button-close {

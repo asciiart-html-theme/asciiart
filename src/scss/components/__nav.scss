@@ -1,5 +1,7 @@
 @use '../color/_color';
 
+$linkPadding:15px;
+
 .main-nav {
   display: flex;
   justify-content: center;
@@ -13,7 +15,7 @@
   }
 
   a {
-    padding: 15px;
+    padding: $linkPadding;
     text-align: center;
     flex-grow: 1;
     
