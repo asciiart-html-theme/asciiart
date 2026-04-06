@@ -55,3 +55,7 @@ footer {
     scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
     scrollbar-width: thin; 
 }
+
+iframe {
+  border: 1px dashed var(--color-border);
+}

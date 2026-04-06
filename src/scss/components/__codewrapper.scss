@@ -10,17 +10,36 @@
         font-size: 1.2rem;
         height: 1.4rem;
         background-color: var(--color-fe);
-        color: var(--color-bg);
+        color: var(--color-bg) !important;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .copy {
+        // In your .code-wrapper div block
+        .copy, .button {
+            /* Reset defaults */
+            appearance: none;
+            background: transparent;
+            border: none;
+            margin: 0;
+            
+            /* Ensure typography matches */
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.4rem; // Match the parent div height
+            color: inherit;      // Inherit the color-bg from parent div
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
             order: 99;
+            flex-shrink: 4;
+            font-weight: normal;
+            width: 7%;
+            cursor: pointer;
         }
 
         h5 {
-            flex-grow: 3;
+            flex-grow: 4;
             padding-right:3px;
             padding-left: 3px;
         }

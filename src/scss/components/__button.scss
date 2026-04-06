@@ -1,12 +1,13 @@
 @use '../color/_color';
 
-button {
+@mixin button_common()
+{
     background-color: var(--color-button-bg);
     color: var(--color-button-fe);
     text-align: center;
     text-decoration: none;
     border: none;
-    text-decoration: bold;
+    curson: pointer;
 
     &::before {
         content: "[";
@@ -16,11 +17,21 @@ button {
         content: "]";
     }
 
+    &::hover {
+        background-color: var(--color-hover-bg);
+        color: var(--color-hover-fe);
+    }
 }
 
-button:hover {
-    background-color: var(--color-hover-bg);
-    color: var(--color-hover-fe);
+button {
+   @include button_common();
+}
+
+a {
+    &.button {
+      @include button_common();
+      text-decoration: none;
+    }
 }
 
 .button-expand {
