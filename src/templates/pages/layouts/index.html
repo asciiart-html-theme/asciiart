@@ -1,9 +1,15 @@
 {% extends 'base/base-sidebar-full.html' %}
 
-{% block title %}AsciiArt Theme - Layout{% endblock %}
+{% block title %}AsciiArt Theme - Layout Documentation{% endblock %}
 
 {% block scripts %}
-   
+    <script type="application/javascript" src="/js/asciiart.min.js"></script>
+    <script type="application/javascript">
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize the Sidebar component
+            new AsciiartTheme.Sidebar("#sidebar");
+        });
+    </script>
 {% endblock %}
 
 {% block sidebar %}
@@ -13,44 +19,28 @@
         <button aria-expanded="false">Layouts</button>
         <ul>
             <li><a href="#">No Sidebar</a></li>
-            <li><a href="#">Sidebar Full</a></li>
+            <li><a href="#full">Sidebar Full</a></li>
             <li><a href="#">Sidebar upon content</a></li>
         </ul>
     </li>
 </ul>
 {% endblock %}
 
-{% set demoHtml %}
-  {% include "pages/layouts/demos/sidebar-full.html" %}
-{% endset %}
 
 {% block content %}
 
-<section id="#about">
+<section id="about">
     <h1>About</h1>
     <p>
-        This theme supports 3 layouts:
-        <ul>
-            <li>Sidebar with header upon aside (aka Sidebar Full)</li>
-            <li>Sidebar upon content</li>
-            <li>No sidebar</li>
-        </ul>
+        The AsciiArt theme supports three primary layouts:
     </p>
+    <ul>
+        <li>No Sidebar</li>
+        <li>Sidebar Full – Sidebar with header upon aside</li>
+        <li>Sidebar upon content</li>
+    </ul>
 </section>
 
-<section>
-    <h1>Sidebar Full</h1>
-    <p>
-        This current page is a prime example of this layout. Sidebar is on the left side of the page taking over the full height of the page
-    </p>
-    <h2>Basic Html</h2>
-    <div class="code-wrapper">
-        <div><h5>Html code</h5><a src="/layouts/demos/sidebar-full.html" class="button"  target="_blank">Preview</a><button class="copy">Copy</button></div>
-        <pre><code>{{ demoHtml | escape }}</code></pre>
-    </div>
-
-</section>
+{% include "pages/layouts/content/sidebar-full.html" %}
 
 {% endblock %}
-
-
