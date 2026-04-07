@@ -1,3 +1,4 @@
+{% set active_page = 'layouts' %}
 {% extends 'base/base-sidebar-full.html' %}
 
 {% block title %}AsciiArt Theme - Layout Documentation{% endblock %}
@@ -43,9 +44,7 @@
 </section>
 
 {% include "partials/content/layouts/no-sidebar.html" %}
-<hr>
 {% include "partials/content/layouts/sidebar-full.html" %}
-<hr>
 {% include "partials/content/layouts/base-sidebar.html" %}
 
 {% endblock %}

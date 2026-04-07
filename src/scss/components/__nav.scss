@@ -9,11 +9,6 @@ $linkPadding:15px;
   background-color: var(--color-bg);
   flex-wrap: nowrap;
 
-  a:hover {
-    background-color: var(--color-hover-bg);
-    color: var(--color-hover-fe);
-  }
-
   a {
     padding: $linkPadding;
     text-align: center;
@@ -21,6 +16,16 @@ $linkPadding:15px;
     
     @media screen and (max-width: 640px) {
       font-size: 0.9rem;
+    }
+
+    &:hover {
+      background-color: var(--color-hover-bg);
+      color: var(--color-hover-fe);
+    }
+
+    &.active {
+      background-color: var(--color-fe);
+      color: var(--color-bg);
     }
   }
 
