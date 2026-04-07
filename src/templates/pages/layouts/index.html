@@ -18,9 +18,9 @@
     <li data-visible="true">
         <button aria-expanded="false">Layouts</button>
         <ul>
-            <li><a href="#">No Sidebar</a></li>
+            <li><a href="#no-sidebar">No Sidebar</a></li>
             <li><a href="#full">Sidebar Full</a></li>
-            <li><a href="#">Sidebar upon content</a></li>
+            <li><a href="#base-sidebar">Sidebar upon content</a></li>
         </ul>
     </li>
 </ul>
@@ -37,12 +37,14 @@
     <ul>
         <li>No Sidebar <a href="/layouts/demos/no-sidebar.html" class="button" target="_blank">Demo</a></li>
         <li>Sidebar Full – Sidebar with header upon aside. <a href="/layouts/demos/sidebar-full.html" class="button" target="_blank">Demo</a></li>
-        <li>Sidebar upon content</li>
+        <li>Sidebar upon content <a href="/layouts/demos/base-sidebar.html" class="button" target="_blank">Demo</a></li>
     </ul>
 </section>
 
 {% include "partials/content/layouts/no-sidebar.html" %}
-
+<hr>
 {% include "partials/content/layouts/sidebar-full.html" %}
+<hr>
+{% include "partials/content/layouts/base-sidebar.html" %}
 
 {% endblock %}

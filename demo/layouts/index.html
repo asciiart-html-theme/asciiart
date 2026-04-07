@@ -49,9 +49,9 @@
     <li data-visible="true">
         <button aria-expanded="false">Layouts</button>
         <ul>
-            <li><a href="#">No Sidebar</a></li>
+            <li><a href="#no-sidebar">No Sidebar</a></li>
             <li><a href="#full">Sidebar Full</a></li>
-            <li><a href="#">Sidebar upon content</a></li>
+            <li><a href="#base-sidebar">Sidebar upon content</a></li>
         </ul>
     </li>
 </ul>
@@ -93,7 +93,7 @@
     <ul>
         <li>No Sidebar <a href="/layouts/demos/no-sidebar.html" class="button" target="_blank">Demo</a></li>
         <li>Sidebar Full – Sidebar with header upon aside. <a href="/layouts/demos/sidebar-full.html" class="button" target="_blank">Demo</a></li>
-        <li>Sidebar upon content</li>
+        <li>Sidebar upon content <a href="/layouts/demos/base-sidebar.html" class="button" target="_blank">Demo</a></li>
     </ul>
 </section>
 
@@ -183,7 +183,7 @@
 </code></pre>
     </div>
 </section>
-
+<hr>
 
 
 
@@ -195,9 +195,11 @@
 <section id="full">
     <h1>Sidebar Full Layout</h1>
     <p>
-        This page demonstrates the "Sidebar Full" layout. The sidebar is positioned on the left and spans the full height of the page.
+        A page containing sidebar taking over the whole page height.<br>The main navigation rests next to sidebar wheread the content rests underenath it.
     </p>
-
+    <p>
+        Upon small screen or upon window resizing sidebar moves offcanvas allowing the user to focus on content.
+    </p>
     <h2>HTML Example</h2>
     <div class="code-wrapper">
         <div>
@@ -318,6 +320,166 @@ Sidebar content Here could place menus or navigation links.
 </code></pre>
     </div>
 
+    <p>
+        Alternatively, you can use an ES6 module to import and initialize the Sidebar component:
+    </p>
+    <div class="code-wrapper">
+        <div><h5>ES6 Module</h5><button class="copy">Copy</button></div>
+        <pre><code>
+&lt;script type=&quot;component&quot;&gt;
+    import { Sidebar } from &quot;js/asciiart.esm.min.js&quot;;
+
+    document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+        // Initialize the Sidebar using ES6 module
+        new Sidebar(&quot;#sidebar&quot;);
+    });
+&lt;/script&gt;
+</code></pre>
+    </div>
+</section>
+<hr>
+
+
+
+
+
+
+
+
+<section id="base-sidebar">
+    <h1>Sidebar upon content</h1>
+    <p>An extention of no-sidebar layout is to place underneath the main navigation a sidebar. <br>This is usefull for placing a secondary navigation upon main content.</p>
+    <p>When browser window shinks it bewcomes hidden allowing you to focus upon main content.</p>
+    <h2>Html Example</h2>
+    <p>Using this content you can generate the most basic html.</p>
+    <div class="code-wrapper">
+        <div>
+            <h5>HTML Code</h5>
+            <a href="/layouts/demos/base-sidebar.html" class="button" target="_blank">Preview</a>
+            <button class="copy">Copy</button>
+        </div>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Aciiiart Theme Demo&lt;/title&gt;
+
+  &lt;!-- SCSS compiled CSS --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css&quot;&gt;
+  &lt;script type=&quot;application/javascript&quot; src=&quot;/js/asciiart.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;application/javascript&quot;&gt;
+    document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+      new AsciiartTheme.Sidebar(&quot;#sidebar&quot;);
+    });      
+  &lt;/script&gt;
+  
+    
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;top-left-responsive&quot;&gt;
+     &lt;button role=&quot;button&quot; 
+        class=&quot;button-expand button-toggle&quot; 
+        data-control-element=&quot;#sidebar&quot;
+      &gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;header&gt;
+    
+  &lt;header class=&quot;banner&quot;&gt;
+   &lt;pre&gt;
+  ___           _ _  ___       _   
+ / _ &#92;         (_|_)/ _ &#92;     | |  
+/ /_&#92; &#92;___  ___ _ _/ /_&#92; &#92;_ __| |_ 
+|  _  / __|/ __| | |  _  | &#39;__| __|
+| | | &#92;__ &#92; (__| | | | | | |  | |_ 
+&#92;_| |_/___/&#92;___|_|_&#92;_| |_/_|   &#92;__|
+    &lt;/pre&gt;
+&lt;/header&gt;
+
+
+  &lt;/header&gt;
+
+  &lt;div class=&quot;nav-wrapper sticky-top&quot;&gt;
+    
+    &lt;nav class=&quot;main-nav&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;Index&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Page&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Another page&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Yet another page&lt;/a&gt;
+&lt;/nav&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class=&quot;sidebar-layout&quot;&gt;
+    &lt;div class=&quot;aside-wrapper&quot; id=&quot;sidebar&quot;&gt;
+      &lt;button class=&quot;button-close&quot; data-control-element=&quot;#sidebar&quot;&gt;&lt;/button&gt;
+      &lt;aside&gt;
+        &lt;nav aria-label=&quot;Sidebar navigation&quot;&gt;
+            
+Sidebar content Here could place menus or navigation links.
+
+        &lt;/nav&gt;
+      &lt;/aside&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;main-wrapper&quot;&gt;
+      &lt;main&gt;
+        
+    &lt;!-- Main content place text, forms or anything else here --&gt;
+    &lt;section&gt;
+    &lt;h1&gt;Acticle 1&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 2&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 3&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 4&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+    &lt;h1&gt;Acticle 5&lt;/h1&gt;
+    &lt;p&gt;Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.&lt;/p&gt;
+&lt;/section&gt;
+
+      &lt;/main&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+    <p>As you notice you need to include the css file.</p>
+    <div class="code-wrapper">
+        <div><h5>CSS</h5><button class="copy">Copy</button></div>
+        <pre><code>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css&quot;&gt;
+</code></pre>
+    </div>
+    <p>Furteromore you need to inclide the theme's javascript file and initialize the sidebar. Automatic initialization not supported.</p>
+    <div class="code-wrapper">
+        <div><h5>Javascript</h5><button class="copy">Copy</button></div>
+        <pre><code>
+&lt;script type=&quot;application/javascript&quot; src=&quot;/js/asciiart.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;application/javascript&quot;&gt;
+    document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+        // Initialize the Sidebar component
+        new AsciiartTheme.Sidebar(&quot;#sidebar&quot;);
+    });
+&lt;/script&gt;
+</code></pre>
+    </div>
     <p>
         Alternatively, you can use an ES6 module to import and initialize the Sidebar component:
     </p>

@@ -1,8 +1,61 @@
 {% set demoHtml %}
-    {% include "pages/layouts/demos/no-sidebar.html" %}
+    {% include "pages/layouts/demos/base-sidebar.html" %}
 {% endset %}
 
 {% set css %}
 <link rel="stylesheet" href="/css/style.css">
 {% endset %}
 
+{% set js %}
+<script type="application/javascript" src="/js/asciiart.min.js"></script>
+<script type="application/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        // Initialize the Sidebar component
+        new AsciiartTheme.Sidebar("#sidebar");
+    });
+</script>
+{% endset %}
+
+{% set mjs %}
+<script type="component">
+    import { Sidebar } from "js/asciiart.esm.min.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Initialize the Sidebar using ES6 module
+        new Sidebar("#sidebar");
+    });
+</script>
+{% endset %}
+
+<section id="base-sidebar">
+    <h1>Sidebar upon content</h1>
+    <p>An extention of no-sidebar layout is to place underneath the main navigation a sidebar. <br>This is usefull for placing a secondary navigation upon main content.</p>
+    <p>When browser window shinks it bewcomes hidden allowing you to focus upon main content.</p>
+    <h2>Html Example</h2>
+    <p>Using this content you can generate the most basic html.</p>
+    <div class="code-wrapper">
+        <div>
+            <h5>HTML Code</h5>
+            <a href="/layouts/demos/base-sidebar.html" class="button" target="_blank">Preview</a>
+            <button class="copy">Copy</button>
+        </div>
+        <pre><code>{{ demoHtml | escape | trim }}</code></pre>
+    </div>
+    <p>As you notice you need to include the css file.</p>
+    <div class="code-wrapper">
+        <div><h5>CSS</h5><button class="copy">Copy</button></div>
+        <pre><code>{{ css | escape }}</code></pre>
+    </div>
+    <p>Furteromore you need to inclide the theme's javascript file and initialize the sidebar. Automatic initialization not supported.</p>
+    <div class="code-wrapper">
+        <div><h5>Javascript</h5><button class="copy">Copy</button></div>
+        <pre><code>{{ js | escape }}</code></pre>
+    </div>
+    <p>
+        Alternatively, you can use an ES6 module to import and initialize the Sidebar component:
+    </p>
+    <div class="code-wrapper">
+        <div><h5>ES6 Module</h5><button class="copy">Copy</button></div>
+        <pre><code>{{ mjs | escape }}</code></pre>
+    </div>
+</section>
