@@ -1,0 +1,27 @@
+{% extends 'base/plain/base-sidebar.html' %}
+
+
+{% block title %}AsciiArt Theme - Sidebar upon content{% endblock %}
+
+{% block content %}
+    <!-- Main content place text, forms or anything else here -->
+    {% include "partials/content-demo.html" %}
+{% endblock %}
+
+{% block header %}
+  {% include 'partials/header.html' %}
+{% endblock %}
+
+
+{% block scripts %}
+    
+{% endblock %}
+
+
+{% block sidebar %}
+Sidebar content Here could place menus or navigation links.
+{% endblock %}
+
+{% block main_nav %}
+    {% include "partials/demo/menu.html" %}
+{% endblock %}

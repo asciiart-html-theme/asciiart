@@ -1,54 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aciiiart Theme Demo</title>
+{% extends './plain/base-sidebar-full.html' %}
 
-  <!-- SCSS compiled CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  {% block scripts %}{% endblock %}
-</head>
-<body>
-  <div class="top-left-responsive">
-     <button role="button" 
-        class="button-expand button-toggle" 
-        data-control-element="#sidebar"
-      ></button>
-  </div>
+{% block header %}
+  {% include '../partials/header.html' %}
+{% endblock %}
 
-  <header>
-    <div class="banner">
-      <pre>
-  ___           _ _  ___       _   
- / _ \         (_|_)/ _ \     | |  
-/ /_\ \___  ___ _ _/ /_\ \_ __| |_ 
-|  _  / __|/ __| | |  _  | '__| __|
-| | | \__ \ (__| | | | | | |  | |_ 
-\_| |_/___/\___|_|_\_| |_/_|   \__|
-      </pre>
-    </div>
-  </header>
+{% block footer %}
+  {% include '../partials/footer.html' %}
+{% endblock %}
 
-  <div class="nav-wrapper sticky-top">
-    {% include '../partials/main-nav.html' %}
-  </div>
-
-  <div class="sidebar-layout">
-    <div class="aside-wrapper" id="sidebar">
-      <button class="button-close" data-control-element="#sidebar"></button>
-      <aside>
-        <nav aria-label="Sidebar navigation">
-            {% block sidebar %}{% endblock %}
-        </nav>
-      </aside>
-    </div>
-
-    <div class="main-wrapper">
-      <main>
-        {% block content %}{% endblock %}
-      </main>
-    </div>
-  </div>
-</body>
-</html>
+{% block main-nav %}
+  {% include '../partials/main-nav.html' %}
+{% endblock %}

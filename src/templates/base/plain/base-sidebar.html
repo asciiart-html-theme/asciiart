@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aciiiart Theme Demo</title>
+
+  <!-- SCSS compiled CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/javascript" src="/js/asciiart.min.js"></script>
+  <script type="application/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+      new AsciiartTheme.Sidebar("#sidebar");
+    });      
+  </script>
+  {% block scripts %}{% endblock %}
+</head>
+<body>
+  <div class="top-left-responsive">
+     <button role="button" 
+        class="button-expand button-toggle" 
+        data-control-element="#sidebar"
+      ></button>
+  </div>
+
+  <header>
+    {% block header %}
+    {% endblock %}
+  </header>
+
+  <div class="nav-wrapper sticky-top">
+    {% block main_nav %}{% endblock %}
+  </div>
+
+  <div class="sidebar-layout">
+    <div class="aside-wrapper" id="sidebar">
+      <button class="button-close" data-control-element="#sidebar"></button>
+      <aside>
+        <nav aria-label="Sidebar navigation">
+            {% block sidebar %}{% endblock %}
+        </nav>
+      </aside>
+    </div>
+
+    <div class="main-wrapper">
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+</body>
+</html>
