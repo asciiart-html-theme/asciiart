@@ -8,7 +8,6 @@
 }
 
 @mixin icon_common($char){
-    display: inline-block;
     &::after{
         font-size: 2rem;
         font-style: bold;

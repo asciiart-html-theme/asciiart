@@ -16,8 +16,8 @@
 
 {% block sidebar %}
 <ul class="treemenu">
-    <li><a href="#about">About</a></li>
-    <li><a href="#typography"></a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#tables">Tables</a></li>
     <li data-visible="true">
         <button aria-expanded="false">Navbar</button>
         <ul>
@@ -27,5 +27,177 @@
     </li>
     <li><a href="#alerts">Alerts</a></li>
     <li><a href="#codewrapper">Codewrapper</a></li>
+    <li><a href="#treemenu">Treemenu</a></li>
 </ul>
+{% endblock %}
+
+
+{% block content %}
+<section id="typograhpy">
+<h1>Typograhpy</h1>
+    <article>
+        <h2>Headers</h2>
+        <div class="code-wrapper">
+        <pre>
+            <h1>h1. Header 1</h1>
+            <h2>h2. Header 2</h2>
+            <h3>h3. Header 3</h3>
+            <h4>h4. Header 4</h4>
+            <h5>h5. Header 5</h5>
+            <h6>h6. Header 6</h6>
+        </pre>
+        </div>
+    </article>
+    <article>
+        <h2>Pargagraphs</h2>
+        <p>Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.</p>
+    </article>
+    <article>
+        <h2>Links</h2>
+        <p>This is a normal <a href="#">link</a></p>
+        <p> 
+            This is a link styled as button <a href="#" class="button">link</a><br>
+            Use class <code>button</code> to style it:
+            <div class="code-wrapper">
+                <pre><code>&lt;a href="#" class="button"&gt;link&lt;/a&gt;</code></pre>
+            </div>
+        </p>
+    </article>
+</section>
+
+<section id="tables">
+    <h1>Tables</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+                <td>Row 1 Data 3</td>
+                <td>Row 1 Data 4</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+                <td>Row 2 Data 3</td>
+                <td>Row 2 Data 4</td>
+            </tr>
+            <tr>
+                <td>Row 3 Data 1</td>
+                <td>Row 3 Data 2</td>
+                <td>Row 3 Data 3</td>
+                <td>Row 3 Data 4</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+            <td>Footer 1</td>
+            <td>Footer 2</td>
+            <td>Footer 3</td>
+            <td>Footer 4</td>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+<section id="alerts">
+    <h1>Alerts</h1>
+    <article>
+    <h2>Alert Info</h2>
+    <p>Use this to notify user about an inportant information</p>
+    <div class="alert alert-info">
+        <i class="icon"></i>
+        Dear sir I am informing you about something....
+    </div>
+    <pre class="code-wrapper">
+        <code>
+            &lt;div class="alert alert-info"&gt;
+                &lt;i class="icon"&gt;&lt;/i&gt;
+                Dear sir I am informing you about something....
+            &lt;/div&gt;
+        </code>
+    </pre>
+    </article>
+    <article>
+        <h2>Alert Notice</h2>
+        <p>Notify user about something that should be seriouly concerned or strongly to pay notice upon.</p>
+        <div class="alert alert-notice">
+            <i class="icon"></i>
+            You must pay attention on what you are doing....
+        </div>
+        <pre class="code-wrapper">
+            <code>
+                &lt;div class="alert alert-notice"&gt;
+                    &lt;i class="icon"&gt;&lt;/i&gt;
+                    You must pay attention on what you are doing....
+                &lt;/div&gt;
+            </code>
+        </pre>
+    </article>
+    <article>
+        <h2>Alert Stop</h2>
+        <p>Notify user about a prohibiting action.</p>
+        <div class="alert alert-stop">
+            <i class="icon"></i>
+            Stop doing do this....
+        </div>
+        <pre class="code-wrapper">
+            <code>
+                &lt;div class="alert alert-stop"&gt;
+                    &lt;i class="icon"&gt;&lt;/i&gt;
+                    Stop doing do this....
+                &lt;/div&gt;
+            </code>
+        </pre>
+    </article>
+    <article>
+        <h2>Alert warning</h2>
+        <p>Another way to ensure user to pay attention about something.</p>
+        <div class="alert alert-warning">
+            Oh snap this is serious!!
+        </div>
+        <pre class="code-wrapper">
+            <code>
+                &lt;div class="alert alert-warning"&gt;
+                    Oh snap this is serious!!
+                &lt;/div&gt;
+            </code>
+        </pre>
+    </article>
+    <article>
+        <h2>Alert Danger</h2>
+        <p>Notify user about a dangerous situation</p>
+        <h3>Blinking text</h3>
+        <div class="alert alert-danger">
+            Oh snap this is serious!!
+        </div>
+        <pre class="code-wrapper">
+            <code>
+                &lt;div class="alert alert-danger"&gt;
+                    Oh snap this is serious!!
+                &lt;/div&gt;
+            </code>
+        </pre>
+        <h3>Blinking Background</h3>
+         <div class="alert alert-danger2">
+            Oh snap this is serious!!
+        </div>
+        <pre class="code-wrapper">
+            <code>
+                &lt;div class="alert alert-danger2"&gt;
+                    Oh snap this is serious!!
+                &lt;/div&gt;
+            </code>
+        </pre>
+    </article>
+
+</section>
 {% endblock %}
