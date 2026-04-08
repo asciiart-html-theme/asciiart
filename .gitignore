@@ -1,4 +1,6 @@
 node_modules/
 demo/**/*
+dist/js
+dist/css
 .env
 .DS_Store

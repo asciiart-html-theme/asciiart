@@ -1,0 +1,31 @@
+{% set active_page = 'components' %}
+{% extends 'base/base-sidebar-full.html' %}
+
+{% block title %}AsciiArt Theme - Setup{% endblock %}
+
+{% block scripts %}
+    <script type="application/javascript" src="/js/asciiart.min.js"></script>
+    <script type="application/javascript">
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize the Sidebar component
+            new AsciiartTheme.Sidebar("#sidebar");
+            new AsciiartTheme.Treemenu(".treemenu");
+        });
+    </script>
+{% endblock %}
+
+{% block sidebar %}
+<ul class="treemenu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#typography"></a></li>
+    <li data-visible="true">
+        <button aria-expanded="false">Navbar</button>
+        <ul>
+            <li><a href="#navbar-basic">Basic Usage</a></li>
+            <li><a href="#navbar-sidebat">Sidebar Control</a></li>
+        </ul>
+    </li>
+    <li><a href="#alerts">Alerts</a></li>
+    <li><a href="#codewrapper">Codewrapper</a></li>
+</ul>
+{% endblock %}
