@@ -3,6 +3,15 @@
 
 {% block title %}AsciiArt Theme - Setup{% endblock %}
 
+{% block scripts %}
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            console.log("Autoinit")
+            AsciiartTheme.autoinit.codewrapper()
+        })
+    </script>
+{% endblock %}
+
 {% block sidebar %}
 <ul class="treemenu">
     <li><a href="#typography">Typography</a></li>
@@ -307,6 +316,104 @@
             </pre>
         </div>
     </article>
+</section>
+
+<section id="codewrapper">
+    <h1>CodeWrapper</h1>
+    <p>If you want to place a piece of code into your documentation use:</p>
+    <div class="code-wrapper">
+        <div>
+            <h5>HTML</h5>
+            <button class="copy">COPY</button>
+        </div>
+        <pre>
+            <code>
+                &lt;div class="code-wrapper"&gt;
+    &lt;div&gt;
+        &lt;h5&gt;HTML&lt;/h5&gt;
+        &lt;button class="copy"&gt;COPY&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;pre&gt;
+        &lt;code&gt;
+            Piece of coide here            
+        &lt;/code&gt;
+    &lt;/pre&gt;
+&lt;/div&gt;
+            </code>
+        </pre>
+    </div>
+    <p>Once initialized then you also need to initialize the copy buttons:</p>
+    <div class="code-wrapper">
+        <div>
+            <h5>JS</h5>
+            <button class="copy">COPY</button>
+        </div>
+        <pre>
+            <code>
+                &lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
+                &lt;script&gt;
+                document.addEventListener("DOMContentLoaded",function(){
+                    AsciiartTheme.autoinit.codewrapper()
+                })
+                &lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+
+    <p>In case of using Modules</p>
+    <div class="code-wrapper">
+        <div>
+            <h5>JS</h5>
+            <button class="copy">COPY</button>
+        </div>
+        <pre>
+            <code>
+                &lt;script type=\"module\"&gt;
+                import { autoinit } from "/js/asciiart.esm.js"; 
+                document.addEventListener("DOMContentLoaded",function(){
+                    autoinit.codewrapper()
+                })
+                &lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+    <p>Otherwise you can use  the <code>CodeWrapper</code> class:</p>
+    <p><div class="code-wrapper">
+        <div>
+            <h5>JS</h5>
+            <button class="copy">COPY</button>
+        </div>
+        <pre>
+            <code>
+                &lt;script type=\"module\"&gt;
+                import { CodeWrapper } from "/js/asciiart.esm.js"; 
+                document.addEventListener("DOMContentLoaded",function(){
+                    new CodeWrapper("#mycontainer")
+                })
+                &lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+    </p>
+    <p>
+    <div class="code-wrapper">
+        <div>
+            <h5>JS</h5>
+            <button class="copy">COPY</button>
+        </div>
+        <pre>
+            <code>
+                &lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
+                &lt;script&gt;
+                document.addEventListener("DOMContentLoaded",function(){
+                    new AsciiartTheme.CodeWrapper("#mycontainer")
+                })
+                &lt;/script&gt;
+            </code>
+        </pre>
+    </div>
+    </p>
 
 </section>
+
 {% endblock %}

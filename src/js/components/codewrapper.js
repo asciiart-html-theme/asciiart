@@ -1,8 +1,9 @@
 import {getDomElement} from "../common";
 
-class CodeWrapper {
+export class CodeWrapper {
     
     constructor(wrapperElement){
+        console.log("Initializing ",wrapperElement)
         this.wrapperElement = getDomElement(wrapperElement)
 
         this.copyButton = this.wrapperElement.querySelector(".copy")
@@ -27,4 +28,7 @@ class CodeWrapper {
     }
 }
 
-export default CodeWrapper;
+export function autoinit(){
+    console.log("Initializing codewrappers")
+    document.querySelectorAll(".code-wrapper").forEach((element)=>new CodeWrapper(element))
+}
