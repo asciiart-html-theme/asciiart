@@ -2,7 +2,8 @@
 
 @mixin common(){
     font-size: 1.2rem;
-    margin-top: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 0.5rem;
     border: 1px dashed var(--color-border);
 }

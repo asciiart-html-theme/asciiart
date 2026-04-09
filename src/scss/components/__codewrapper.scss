@@ -49,14 +49,18 @@
             padding-left: 3px;
         }
     }
+
+    code {
+        margin: 0;
+        font-size: 1.1rem;
+        background-color: var(--color-bg) !important;
+        color: var(--color-fe) !important;
+    }
+
     pre {
         width: 100%;
         padding: 0;
         max-height: 1000px;
         overflow-y: scroll;
-        code {
-            margin: 0;
-            font-size: 1.1rem;
-        }
     }
 }
