@@ -23,7 +23,7 @@
         <ul>
             <li><a href="#navbar-basic">Basic Usage</a></li>
             <li><a href="#navbar-sticky">Sticky Top</a></li>
-            <li><a href="#navbar-sidebat">Sidebar Control</a></li>
+            <li><a href="#navbar-controls">Sidebar Control</a></li>
         </ul>
     </li>
     <li><a href="#alerts">Alerts</a></li>
@@ -106,6 +106,38 @@
             <pre>
                 <code>
                     &lt;div class="nav-wrapper sticky-top"&gt;
+                        &lt;nav class="main-nav"&gt;
+                            &lt;a href="#"&gt;Item 1&lt;/a&gt;
+                            &lt;a href="#"&gt;Item 2&lt;/a&gt;
+                            &lt;a href="#"&gt;Item 3&lt;/a&gt;
+                        &lt;/nav&gt;
+                    &lt;/div&gt;
+                </code>
+            </pre>
+        </div>
+    </article>
+    <article id="navbar-controls">
+        <h2>Navbar controls</h2>
+        <p>You can use <code>lead</code> class in order to place buttons or icons in front of main navigation:</p>
+        <div class="nav-wrapper">
+            <div class="lead"><span>*</span></div>
+            <nav class="main-nav">
+                <a href="#">Item 1</a>
+                <a href="#">Item 2</a>
+                <a href="#">Item 3</a>
+            </nav>
+        </div>
+         <div class="code-wrapper">
+            <div>
+                <h5>HTML</h5>
+                <button class="copy">COPY</button>
+            </div>
+            <pre>
+                <code>
+                    &lt;div class="nav-wrapper sticky-top"&gt;
+                        &lt;div class="lead"&gt;
+                            &lt;button&gt;*&lt;/button&gt;
+                        &lt;/div&gt;
                         &lt;nav class="main-nav"&gt;
                             &lt;a href="#"&gt;Item 1&lt;/a&gt;
                             &lt;a href="#"&gt;Item 2&lt;/a&gt;
