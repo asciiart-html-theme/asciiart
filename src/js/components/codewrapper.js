@@ -7,9 +7,9 @@ export class CodeWrapper {
         this.wrapperElement = getDomElement(wrapperElement)
 
         this.copyButton = this.wrapperElement.querySelector(".copy")
-
-        this.copyButton.addEventListener("click",()=>this.copyCodeIntoClipboard())
-
+        if(this.copyButton){
+            this.copyButton.addEventListener("click",()=>this.copyCodeIntoClipboard())
+        }
     }
 
     copyCodeIntoClipboard(){
