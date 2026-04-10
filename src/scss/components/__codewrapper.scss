@@ -1,4 +1,5 @@
 @use '../color/_color';
+@use '__tabcontainer';
 
 .code-wrapper {
     width: 100%;
@@ -40,18 +41,25 @@
             flex-shrink: 4;
             font-weight: normal;
             width: 7%;
+        }
+
+        button,a {
             cursor: pointer;
         }
 
+        .tab-button-container {
+            flex-shrink:10;
+        }
+
         h5 {
-            flex-grow: 4;
+            flex-grow: 3;
             padding-right:3px;
             padding-left: 3px;
         }
     }
 
     code {
-        margin: 0;
+        margin-left: 20px;
         font-size: 1.1rem;
         background-color: var(--color-bg) !important;
         color: var(--color-fe) !important;
@@ -59,7 +67,7 @@
 
     pre {
         width: 100%;
-        padding: 0;
+        padding: 3px;
         max-height: 1000px;
         overflow-y: scroll;
     }

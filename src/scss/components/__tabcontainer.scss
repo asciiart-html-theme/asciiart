@@ -1,0 +1,22 @@
+.tab-button-container {
+    display: flex;
+    button {
+        &[aria-selected="true"] {
+            &::before {
+                content: ">";
+            }
+            &::after {
+                content: "<";
+            }
+        }
+
+        &:hover {
+            &::before {
+                content: "[>";
+            }
+            &::after {
+                content: "<]";
+            }
+        }
+    }
+}

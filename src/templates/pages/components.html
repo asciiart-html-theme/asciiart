@@ -21,7 +21,7 @@
         <ul>
             <li><a href="#navbar-basic">Basic Usage</a></li>
             <li><a href="#navbar-sticky">Sticky Top</a></li>
-            <li><a href="#navbar-controls">Sidebar Control</a></li>
+            <li><a href="#navbar-controls">Leading Elements</a></li>
         </ul>
     </li>
     <li><a href="#alerts">Alerts</a></li>
@@ -32,7 +32,7 @@
 
 
 {% block content %}
-<section id="typograhpy">
+<section id="typography">
 <h1>Typograhpy</h1>
     <article>
         <h2>Headers</h2>
@@ -115,7 +115,7 @@
         </div>
     </article>
     <article id="navbar-controls">
-        <h2>Navbar controls</h2>
+        <h2>Leading Elements</h2>
         <p>You can use <code>lead</code> class in order to place buttons or icons in front of main navigation:</p>
         <div class="nav-wrapper">
             <div class="lead"><span>*</span></div>
@@ -130,20 +130,18 @@
                 <h5>HTML</h5>
                 <button class="copy">COPY</button>
             </div>
-            <pre>
-                <code>
-                    &lt;div class="nav-wrapper sticky-top"&gt;
-                        &lt;div class="lead"&gt;
-                            &lt;button&gt;*&lt;/button&gt;
-                        &lt;/div&gt;
-                        &lt;nav class="main-nav"&gt;
-                            &lt;a href="#"&gt;Item 1&lt;/a&gt;
-                            &lt;a href="#"&gt;Item 2&lt;/a&gt;
-                            &lt;a href="#"&gt;Item 3&lt;/a&gt;
-                        &lt;/nav&gt;
-                    &lt;/div&gt;
-                </code>
-            </pre>
+            <pre><code>
+&lt;div class="nav-wrapper sticky-top"&gt;
+    &lt;div class="lead"&gt;
+        &lt;button&gt;*&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;nav class="main-nav"&gt;
+        &lt;a href="#"&gt;Item 1&lt;/a&gt;
+        &lt;a href="#"&gt;Item 2&lt;/a&gt;
+        &lt;a href="#"&gt;Item 3&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/div&gt;
+            </code></pre>
         </div>
     </article>
 </section>
@@ -350,12 +348,12 @@
         </div>
         <pre>
             <code>
-                &lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
-                &lt;script&gt;
-                document.addEventListener("DOMContentLoaded",function(){
-                    AsciiartTheme.autoinit.codewrapper()
-                })
-                &lt;/script&gt;
+&lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
+&lt;script&gt;
+    document.addEventListener("DOMContentLoaded",function(){
+        AsciiartTheme.autoinit.codewrapper()
+    })
+&lt;/script&gt;
             </code>
         </pre>
     </div>
@@ -368,12 +366,12 @@
         </div>
         <pre>
             <code>
-                &lt;script type=\"module\"&gt;
-                import { autoinit } from "/js/asciiart.esm.js"; 
-                document.addEventListener("DOMContentLoaded",function(){
-                    autoinit.codewrapper()
-                })
-                &lt;/script&gt;
+&lt;script type=\"module\"&gt;
+    import { autoinit } from "/js/asciiart.esm.js"; 
+    document.addEventListener("DOMContentLoaded",function(){
+        autoinit.codewrapper()
+    })
+&lt;/script&gt;
             </code>
         </pre>
     </div>
@@ -381,16 +379,30 @@
     <p><div class="code-wrapper">
         <div>
             <h5>JS</h5>
+            <div class="tab-button-container">
+                <button class="btn-tab" role="tab" aria-selected="true" aria-controls="codewrapper-js">JS</button>
+                <button class="btn-tab" role="tab" aria-controls="codewrapper-esm">ESM</button>
+            </div>
             <button class="copy">COPY</button>
         </div>
-        <pre>
+        <pre id="codewrapper-esm">
             <code>
-                &lt;script type=\"module\"&gt;
-                import { CodeWrapper } from "/js/asciiart.esm.js"; 
-                document.addEventListener("DOMContentLoaded",function(){
-                    new CodeWrapper("#mycontainer")
-                })
-                &lt;/script&gt;
+&lt;script type=\"module\"&gt;
+    import { CodeWrapper } from "/js/asciiart.esm.js"; 
+    document.addEventListener("DOMContentLoaded",function(){
+        new CodeWrapper("#mycontainer")
+    })
+&lt;/script&gt;
+            </code>
+        </pre>
+        <pre id="codewrapper-js">
+            <code>
+&lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
+&lt;script&gt;
+    document.addEventListener("DOMContentLoaded",function(){
+        new AsciiartTheme.CodeWrapper("#mycontainer")
+    })
+&lt;/script&gt;
             </code>
         </pre>
     </div>
@@ -403,12 +415,12 @@
         </div>
         <pre>
             <code>
-                &lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
-                &lt;script&gt;
-                document.addEventListener("DOMContentLoaded",function(){
-                    new AsciiartTheme.CodeWrapper("#mycontainer")
-                })
-                &lt;/script&gt;
+&lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
+&lt;script&gt;
+    document.addEventListener("DOMContentLoaded",function(){
+        new AsciiartTheme.CodeWrapper("#mycontainer")
+    })
+&lt;/script&gt;
             </code>
         </pre>
     </div>
