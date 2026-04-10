@@ -380,12 +380,12 @@
         <div>
             <h5>JS</h5>
             <div class="tab-button-container">
-                <button class="btn-tab" role="tab" aria-selected="true" aria-controls="codewrapper-js">JS</button>
-                <button class="btn-tab" role="tab" aria-controls="codewrapper-esm">ESM</button>
+                <button class="btn-tab" role="tab" aria-selected="true" aria-controls="#codewrapper-js">JS</button>
+                <button class="btn-tab" role="tab" aria-controls="#codewrapper-esm">ESM</button>
             </div>
             <button class="copy">COPY</button>
         </div>
-        <pre id="codewrapper-esm">
+        <pre id="codewrapper-esm" class="tab-code">
             <code>
 &lt;script type=\"module\"&gt;
     import { CodeWrapper } from "/js/asciiart.esm.js"; 
@@ -395,7 +395,7 @@
 &lt;/script&gt;
             </code>
         </pre>
-        <pre id="codewrapper-js">
+        <pre id="codewrapper-js" class="tab-code">
             <code>
 &lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
 &lt;script&gt;

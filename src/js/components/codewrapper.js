@@ -1,15 +1,22 @@
 import {getDomElement} from "../common";
+import TabController from "./tabs"
 
 export class CodeWrapper {
     
     constructor(wrapperElement){
-        console.log("Initializing ",wrapperElement)
         this.wrapperElement = getDomElement(wrapperElement)
 
         this.copyButton = this.wrapperElement.querySelector(".copy")
         if(this.copyButton){
             this.copyButton.addEventListener("click",()=>this.copyCodeIntoClipboard())
         }
+
+        const tabSelector = this.wrapperElement.querySelector("tab-button-container")
+        
+        if(this.tabSelector){
+            this.tabSelector = new TabController(tabSelector);
+        }
+        
     }
 
     copyCodeIntoClipboard(){
@@ -29,6 +36,5 @@ export class CodeWrapper {
 }
 
 export function autoinit(){
-    console.log("Initializing codewrappers")
     document.querySelectorAll(".code-wrapper").forEach((element)=>new CodeWrapper(element))
 }
