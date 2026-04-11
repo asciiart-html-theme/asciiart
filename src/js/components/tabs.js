@@ -6,6 +6,8 @@ export default class TabController {
         this.wrapperElement = getDomElement(wrapperElement)
 
         Array.from(this.wrapperElement.children).forEach(element => {
+            element.addEventListener("click",()=>this.select(element))
+
             const elementToControl = getDomElement(element.getAttribute('aria-controls'))
 
             if(!elementToControl){
@@ -14,19 +16,18 @@ export default class TabController {
             }
 
             if(element.getAttribute('aria-selected')=="true"){
-                elementToControl.dataset.hidden="true"
+                elementToControl.hidden=false
                 return;
             }
 
-            elementToControl.hidden="false"
-
-            element.addEventListener("click",()=>this.select(element))
+            elementToControl.hidden=true
         });
     }
 
     select(clickedButton){
         Array.from(this.wrapperElement.children).forEach(element => {
             const elementToControl = getDomElement(element.getAttribute('aria-controls'))
+            console.log("Controlling Element",elementToControl)
 
             if(!elementToControl){
                 console.error("No element to controll skipping")
@@ -34,12 +35,13 @@ export default class TabController {
             }
 
             if (element === clickedButton) {
-                elementToControl.hidden="false"
+                console.log("Switching Element",elementToControl)
+                elementToControl.hidden=false
                 element.setAttribute('aria-selected','true')
                 return
             }
 
-            elementToControl.hidden="true"
+            elementToControl.hidden=true
             element.setAttribute('aria-selected','false')
         });
     }

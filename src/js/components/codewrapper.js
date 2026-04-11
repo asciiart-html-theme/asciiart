@@ -11,9 +11,10 @@ export class CodeWrapper {
             this.copyButton.addEventListener("click",()=>this.copyCodeIntoClipboard())
         }
 
-        const tabSelector = this.wrapperElement.querySelector("tab-button-container")
+        const tabSelector = this.wrapperElement.querySelector(".tab-button-container")
         
-        if(this.tabSelector){
+        if(tabSelector){
+            console.debug("Init tab",tabSelector)
             this.tabSelector = new TabController(tabSelector);
         }
         

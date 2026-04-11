@@ -344,9 +344,23 @@
     <div class="code-wrapper">
         <div>
             <h5>JS</h5>
+            <div class="tab-button-container">
+                <button class="btn-tab" role="tab" aria-selected="true" aria-controls="#codewrapper-init-js">JS</button>
+                <button class="btn-tab" role="tab" aria-controls="#codewrapper-init-esm">ESM</button>
+            </div>
             <button class="copy">COPY</button>
         </div>
-        <pre>
+        <pre id="codewrapper-init-esm">
+            <code>
+&lt;script type=\"module\"&gt;
+    import { autoinit } from "/js/asciiart.esm.js"; 
+    document.addEventListener("DOMContentLoaded",function(){
+        autoinit.codewrapper()
+    })
+&lt;/script&gt;
+            </code>
+        </pre>
+        <pre id="codewrapper-init-js">
             <code>
 &lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
 &lt;script&gt;
@@ -357,35 +371,17 @@
             </code>
         </pre>
     </div>
-
-    <p>In case of using Modules</p>
-    <div class="code-wrapper">
-        <div>
-            <h5>JS</h5>
-            <button class="copy">COPY</button>
-        </div>
-        <pre>
-            <code>
-&lt;script type=\"module\"&gt;
-    import { autoinit } from "/js/asciiart.esm.js"; 
-    document.addEventListener("DOMContentLoaded",function(){
-        autoinit.codewrapper()
-    })
-&lt;/script&gt;
-            </code>
-        </pre>
-    </div>
     <p>Otherwise you can use  the <code>CodeWrapper</code> class:</p>
     <p><div class="code-wrapper">
         <div>
             <h5>JS</h5>
             <div class="tab-button-container">
-                <button class="btn-tab" role="tab" aria-selected="true" aria-controls="#codewrapper-js">JS</button>
-                <button class="btn-tab" role="tab" aria-controls="#codewrapper-esm">ESM</button>
+                <button class="btn-tab" role="tab" aria-selected="true" aria-controls="#codewrapper-class-js">JS</button>
+                <button class="btn-tab" role="tab" aria-controls="#codewrapper-class-esm">ESM</button>
             </div>
             <button class="copy">COPY</button>
         </div>
-        <pre id="codewrapper-esm" class="tab-code">
+        <pre id="codewrapper-class-esm" class="tab-code">
             <code>
 &lt;script type=\"module\"&gt;
     import { CodeWrapper } from "/js/asciiart.esm.js"; 
@@ -395,7 +391,7 @@
 &lt;/script&gt;
             </code>
         </pre>
-        <pre id="codewrapper-js" class="tab-code">
+        <pre id="codewrapper-class-js" class="tab-code">
             <code>
 &lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
 &lt;script&gt;
@@ -407,25 +403,6 @@
         </pre>
     </div>
     </p>
-    <p>
-    <div class="code-wrapper">
-        <div>
-            <h5>JS</h5>
-            <button class="copy">COPY</button>
-        </div>
-        <pre>
-            <code>
-&lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
-&lt;script&gt;
-    document.addEventListener("DOMContentLoaded",function(){
-        new AsciiartTheme.CodeWrapper("#mycontainer")
-    })
-&lt;/script&gt;
-            </code>
-        </pre>
-    </div>
-    </p>
-
 </section>
 
 {% endblock %}
