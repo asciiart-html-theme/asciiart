@@ -1,9 +1,5 @@
-<section id="treemenu">
-    <h1>Treemenu</h1>
-    <article>
-        <h2>Preview</h2>
-        <div>
-            <ul class="treemenu">
+{% set treemenu %}
+<ul class="treemenu">
                 <li><a href="#">Typography</a></li>
                 <li><a href="#">Tables</a></li>
                 <li data-visible="true">
@@ -23,7 +19,60 @@
                 </li>
                 <li><a href="#">Treemenu</a></li>
             </ul>
+{% endset %}
+
+{% set autoinitJS %}
+<script type="application/javascript" src="/js/asciiart.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        AsciiartTheme.autoinit.treemenu()
+    })
+</script>
+{% endset %}
+
+{% set autoinitESM %}
+<script type="module">
+    import { autoinit } from "/js/asciiart.esm.js"; 
+    document.addEventListener("DOMContentLoaded",function(){
+        autoinit.treemenu()
+    })
+</script>
+{% endset %}
+
+<section id="treemenu">
+    <h1>Treemenu</h1>
+    <article>
+        <h2>Preview</h2>
+        <div>
+            {{treemenu|safe}}
         </div>
-        <p> Tree menu is an ideal way to represent navigation whilst retaining a nice, retro look. In order to work you need to initialize html</p>
+        
+    </article>
+    <article>
+        <h2>Usage</h2>
+        <p> Tree menu is an ideal way to represent navigation whilst retaining a nice, retro look. In order to work you need to initialize html:
+            <div class="code-wrapper">
+                <div>
+                    <h5>HTML Code</h5>
+                    <button class="copy">Copy</button>
+                </div>
+                <pre><code>{{treemenu|escape|trim}}</code></pre>
+            </div>    
+        </p>
+        <p>
+            Beyond html it also needs to be initialized via Javbascript:
+             <div class="code-wrapper">
+                <div>
+                    <h5>JS Code</h5>
+                    <div class="tab-button-container">
+                        <button class="btn-tab" role="tab" aria-selected="true" aria-controls="#treemenu-js">JS</button>
+                        <button class="btn-tab" role="tab" aria-controls="#treemenu-esm">ESM</button>
+                    </div>
+                    <button class="copy">Copy</button>
+                </div>
+                <pre id="treemenu-js"><code>{{autoinitJS|escape|trim}}</code></pre>
+                <pre id="treemenu-esm"><code>{{autoinitESM|escape|trim}}</code></pre>
+            </div>    
+        </p>
     </article>
 </section>

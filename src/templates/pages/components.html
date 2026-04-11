@@ -6,8 +6,8 @@
 {% block scripts %}
     <script>
         document.addEventListener("DOMContentLoaded",function(){
-            console.log("Autoinit")
             AsciiartTheme.autoinit.codewrapper()
+            AsciiartTheme.autoinit.treemenu()
         })
     </script>
 {% endblock %}
@@ -29,6 +29,7 @@
         <ul>
             <li><a href="#codewrapper-basic">Basic usage</a></li>
             <li><a href="#codewrapper-tabs">Tabs</a></li>
+            <li><a href="#codewrapper-links">Links</a></li>
         </ul>
     </li>
     <li><a href="#treemenu">Treemenu</a></li>

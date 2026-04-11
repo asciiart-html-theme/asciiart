@@ -1,6 +1,6 @@
 import {getDomElement} from "../common";
 
-class Treemenu {
+export class Treemenu {
   constructor(selector) {
     this.root = getDomElement(selector);
     if (!this.root) return;
@@ -22,5 +22,7 @@ class Treemenu {
   }
 }
 
-export default Treemenu
+export function autoinit(){
+  document.querySelectorAll(".treemenu").forEach((element)=>new Treemenu(element))
+}
 
