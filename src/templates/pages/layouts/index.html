@@ -3,6 +3,14 @@
 
 {% block title %}AsciiArt Theme - Layout Documentation{% endblock %}
 
+{% block scripts %}
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            AsciiartTheme.autoinit.codewrapper()
+            AsciiartTheme.autoinit.treemenu()                
+        })
+    </script>
+{% endblock %}
 
 {% block sidebar %}
 <ul class="treemenu">
