@@ -27,7 +27,6 @@
             background: transparent;
             border: none;
             margin: 0;
-            text-transform: capitalize;
 
             /* Ensure typography matches */
             font-family: inherit;
@@ -48,7 +47,26 @@
         }
 
         .tab-button-container {
-            flex-shrink:10;
+           display: flex;
+           flex-shrink: 10;
+            gap: 5px; // Space between JS and ESM buttons
+            align-items: center;
+            
+            button {
+                background: transparent;
+                border: none;
+                color: inherit;
+                font-family: inherit;
+                font-size: 0.85rem; // Slightly smaller to fit better
+                cursor: pointer;
+                padding: 0 4px;
+                transition: all 0.2s;
+
+                // Ensure the brackets don't make the button jump
+                display: inline-flex;
+                justify-content: center;
+                min-width: 40px; 
+            }
         }
 
         h5 {

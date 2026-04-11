@@ -25,7 +25,12 @@
         </ul>
     </li>
     <li><a href="#alerts">Alerts</a></li>
-    <li><a href="#codewrapper">Codewrapper</a></li>
+    <li><button aria-expanded="false">Codewrapper</button>
+        <ul>
+            <li><a href="#codewrapper-basic">Basic usage</a></li>
+            <li><a href="#codewrapper-tabs">Tabs</a></li>
+        </ul>
+    </li>
     <li><a href="#treemenu">Treemenu</a></li>
 </ul>
 {% endblock %}
@@ -318,6 +323,8 @@
 
 <section id="codewrapper">
     <h1>CodeWrapper</h1>
+    <article id="codewrapper-basic">
+    <h2>Basic usage</h2>
     <p>If you want to place a piece of code into your documentation use:</p>
     <div class="code-wrapper">
         <div>
@@ -326,7 +333,7 @@
         </div>
         <pre>
             <code>
-                &lt;div class="code-wrapper"&gt;
+&lt;div class="code-wrapper"&gt;
     &lt;div&gt;
         &lt;h5&gt;HTML&lt;/h5&gt;
         &lt;button class="copy"&gt;COPY&lt;/button&gt;
@@ -340,7 +347,7 @@
             </code>
         </pre>
     </div>
-    <p>Once initialized then you also need to initialize the copy buttons:</p>
+    <p>The component also need to initialize the copy buttons, both js and esm supported:
     <div class="code-wrapper">
         <div>
             <h5>JS</h5>
@@ -371,8 +378,9 @@
             </code>
         </pre>
     </div>
-    <p>Otherwise you can use  the <code>CodeWrapper</code> class:</p>
-    <p><div class="code-wrapper">
+</p>
+    <p>Otherwise you can use the <code>CodeWrapper</code> class, ideal for a single element, both js and esm supported:
+    <div class="code-wrapper">
         <div>
             <h5>JS</h5>
             <div class="tab-button-container">
@@ -403,6 +411,35 @@
         </pre>
     </div>
     </p>
+</article>
+<article id="codewrapper-tabs">
+    <h2>Tabs</h2>
+    <p>
+        In case thay you nees to sjopw variations (eg. on how could a package be installed) codewrapper supports tabs as well
+           <div class="code-wrapper">
+        <div>
+            <h5>HTML</h5>
+            <button class="copy">COPY</button>
+        </div>
+        <pre>
+            <code>
+&lt;div class="code-wrapper"&gt;
+    &lt;div&gt;
+        &lt;h5&gt;Installation Instructions&lt;/h5&gt;
+        
+        &lt;button class="copy"&gt;COPY&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;pre&gt;
+        &lt;code&gt;
+            Piece of coide here            
+        &lt;/code&gt;
+    &lt;/pre&gt;
+&lt;/div&gt;
+            </code>
+        </pre>
+    </div>
+    </p>
+</article>
 </section>
 
 {% endblock %}

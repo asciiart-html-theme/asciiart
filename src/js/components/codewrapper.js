@@ -17,11 +17,14 @@ export class CodeWrapper {
             console.debug("Init tab",tabSelector)
             this.tabSelector = new TabController(tabSelector);
         }
-        
     }
 
     copyCodeIntoClipboard(){
-        const codeElement = this.wrapperElement.querySelector("code")
+        let codeElement = this.wrapperElement.querySelector("code")
+        if(this.tabSelector){
+            codeElement=this.wrapperElement.querySelector("pre:not([hidden])").querySelector("code")
+        }
+
         const code = codeElement.innerText.trim()
         navigator.clipboard.writeText(code)
             .then(() => {
