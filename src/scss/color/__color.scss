@@ -36,7 +36,7 @@
 }
 
 .color-dos {
-    --color-bg: #0000AA;
+    --color-bg: var(--color-dos);
     @include color_def();
 }
 

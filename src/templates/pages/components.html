@@ -7,8 +7,32 @@
     <script>
         document.addEventListener("DOMContentLoaded",function(){
             AsciiartTheme.autoinit.codewrapper()
-            AsciiartTheme.autoinit.treemenu()
+            AsciiartTheme.autoinit.treemenu()                
         })
+
+        function changeColor(button){
+            const value=button.value
+            console.log("Buttion CLicked",value)
+
+            const classes = [
+                "color-amber",
+                "color-green",
+                "color-dos"
+            ]
+                
+            classes.forEach((className)=>document.querySelector("body").classList.remove(className))
+
+            const classMap = {
+                "blue":"color-dos",
+                "amber":"color-amber",
+                "green":"color-green"
+            }
+            console.log(classMap[value])
+            if(classMap[value]){
+                document.querySelector("body").classList.add(classMap[value])
+            }
+        }
+
     </script>
 {% endblock %}
 
@@ -16,6 +40,7 @@
 <ul class="treemenu">
     <li><a href="#typography">Typography</a></li>
     <li><a href="#tables">Tables</a></li>
+    <li><a href="#colors">Colors</a></li>
     <li data-visible="true">
         <button aria-expanded="false">Navbar</button>
         <ul>
@@ -54,7 +79,7 @@
         </div>
     </article>
     <article>
-        <h2>Pargagraphs</h2>
+        <h2>Paragraphs</h2>
         <p>Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.</p>
     </article>
     <article>
@@ -112,6 +137,56 @@
             </tr>
         </tfoot>
     </table>
+</section>
+
+<section id="colors">
+    <h1>Colors</h1>
+    <p>Theme comes comes in color combinations consisting of 2 colors. Background color and text color.<br>
+        For each color there are classes started with <code>color-*</code> indicating which color is selected:
+        <table>
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>CSS Class</th>
+                    <th>Background Color</th>
+                    <th>Frontend Color</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        White
+                    </td>
+                    <td>X (no css class defined)</td>
+                    <td>#000</td>
+                    <td>#FFF</td>
+                    <td><button onclick="changeColor(this)" value="white">Change</button></td>
+                </tr>
+                <tr>
+                    <td>Green</td>
+                    <td><code>.color-green</code></td>
+                    <td>#000</td>
+                    <td>#66FF66</td>
+                    <td><button onclick="changeColor(this)" value="green">Change</button></td>
+                </tr>
+                <tr>
+                    <td>Amber</td>
+                    <td><code>.color-amber</code></td>
+                    <td>#000</td>
+                    <td>#FFB000</td>
+                    <td><button onclick="changeColor(this)" value="amber">Change</button></td>
+                </tr>
+                <tr>
+                    <td>Blue (DOS-Line, windows BSOD-like)</td>
+                    <td><code>.color-dos</code></td>
+                    <td>#0000AA</td>
+                    <td>#FFF</td>
+                    <td><button onclick="changeColor(this)" value="blue">Change</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
 </section>
 
 {% include "partials/content/components/navbar.html" %}
