@@ -50,14 +50,14 @@
     <h2>Javascript</h2>
     <p>Furthermore you need to include the theme's javascript file and initialize the sidebar.<br>To keep the theme lightweight and modular, components do not auto-initialize. You must instantiate the Sidebar manually after the DOM has loaded.</p>
     <div class="code-wrapper">
-        <div><h5>Javascript</h5><button class="copy">Copy</button></div>
-        <pre><code>{{ js | escape }}</code></pre>
-    </div>
-    <p>
-        Alternatively, you can use an ES6 module to import and initialize the Sidebar component:
-    </p>
-    <div class="code-wrapper">
-        <div><h5>ES6 Module</h5><button class="copy">Copy</button></div>
-        <pre><code>{{ mjs | escape }}</code></pre>
+        <div><h5>Javascript</h5>
+             <div class="tab-button-container">
+                <button class="btn-tab" role="tab" aria-selected="true" aria-controls="#base-sidebar-js">JS</button>
+                <button class="btn-tab" role="tab" aria-controls="#base-sidebar-esm">ESM</button>
+            </div>
+            <button class="copy">Copy</button>
+        </div>
+        <pre id="base-sidebar-js"><code>{{ js | escape }}</code></pre>
+        <pre id="base-sidebar-esm"><code>{{ mjs | escape }}</code></pre>
     </div>
 </section>
