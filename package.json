@@ -14,12 +14,13 @@
   "files": [
     "dist/js",
     "dist/css",
-    "dist/scss",
+    "src/js",
+    "src/scss",
     "LICENSE"
   ],
   "scripts": {
     "build": "gulp",
-    "release": "gulp release_npm",
+    "release": "gulp build_js_css",
     "start": "gulp watch"
   },
   "author": "Dimitrios Desyllas <pcmagas@disroot.org>",

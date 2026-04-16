@@ -33,6 +33,10 @@ export NPM_TOKEN=your_gitlab_pat
 npm install @pc-magas/asciiart-html-theme
 ```
 
+# Release package
+
+
+
 ## Notes
 
 - Make sure your `.npmrc` file is **not committed** to version control (add it to `.gitignore`)

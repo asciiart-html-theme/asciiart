@@ -55,7 +55,13 @@ const bs = browserSync.create();
 
 export const copySass = (done) => {
   mkdirSync("dist/scss", { recursive: true });
-  copyFileSync("src/scss/style.scss", "dist/scss/style.scss");
+
+  const files = readdirSync("src/scss");
+
+  for (const file of files) {
+    copyFileSync(`src/scss/${file}`, `dist/scss/${file}`);
+  }
+
   done();
 };
 
@@ -132,9 +138,9 @@ export const buildTemplates = () => {
 };
 
 // --- Full Build ---
-export const build = gulp.series(jsBundle,compileSass,buildTemplates,gulp.parallel(copyJS, copyCSS));
 
-export const release_npm = gulp.series(jsBundle,compileSass,copySass)
+export const build_js_css = gulp.series(jsBundle,compileSass)
+export const build = gulp.series(build_js_css,buildTemplates,gulp.parallel(copyJS, copyCSS));
 
 export default build;
 
