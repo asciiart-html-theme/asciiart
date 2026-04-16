@@ -1,5 +1,6 @@
 node_modules/
 demo/**/*
+demo/*.html
 dist/js
 dist/css
 .env
