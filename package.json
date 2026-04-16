@@ -11,6 +11,12 @@
       "require": "./dist/js/asciiart.min.js"
     }
   },
+  "files": [
+    "dist/js",
+    "dist/css",
+    "dist/scss",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "gulp",
     "release": "gulp release_npm",
