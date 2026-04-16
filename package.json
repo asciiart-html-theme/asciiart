@@ -1,6 +1,6 @@
 {
   "name": "@pc-magas/asciiart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A fully responsive, customizable HTML/CSS theme inspired by the charm of 7-bit ASCII art.",
   "type": "module",
   "main": "dist/js/asciiart.min.js",

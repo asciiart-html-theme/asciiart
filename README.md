@@ -35,6 +35,31 @@ npm install @pc-magas/asciiart-html-theme
 
 # Release package
 
+## Checkout master
+
+```
+git checkout master
+```
+
+## Bump version:
+
+```
+# PATCH (1.0.0 → 1.0.1)
+npm version patch
+
+# Minor (1.0.0 → 1.1.0)
+npm version minor
+
+# Major (1.0.0 → 2.0.0)
+npm version major
+```
+
+# Commit package.json and push
+
+```
+git add package.json
+git push origin master
+```
 
 
 ## Notes
