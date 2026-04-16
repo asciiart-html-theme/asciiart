@@ -1,5 +1,5 @@
 {
-  "name": "asciiart",
+  "name": "@pc-magas/asciiart",
   "version": "1.0.0",
   "description": "A fully responsive, customizable HTML/CSS theme inspired by the charm of 7-bit ASCII art.",
   "type": "module",
@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "gulp",
+    "release": "gulp release_npm",
     "start": "gulp watch"
   },
   "author": "Dimitrios Desyllas <pcmagas@disroot.org>",
@@ -29,5 +30,8 @@
     "gulp-sass": "^6.0.1",
     "nunjucks": "^3.2.4",
     "sass": "^1.76.0"
+  },
+  "publishConfig": {
+    "registry": "https://gitlab.com/api/v4/projects/80429178/packages/npm/"
   }
 }

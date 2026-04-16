@@ -1,4 +1,4 @@
-import {Treemenu,Sidebar,CodeWrapper} from 'asciiart';
+import {Treemenu,Sidebar,CodeWrapper} from '@pc-magas/asciiart';
 
 document.addEventListener("DOMContentLoaded", () => {
     new Treemenu(".treemenu");

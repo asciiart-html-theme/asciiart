@@ -1,0 +1,19 @@
+stages:
+  - publish
+
+publish_npm:
+  stage: publish
+  image: node:20
+  script:
+    - npm ci
+
+    # create auth config dynamically
+    - echo "@pc-magas:registry=https://gitlab.com/api/v4/projects/80429178/packages/npm/" > .npmrc
+    - echo "//gitlab.com/api/v4/projects/80429178/packages/npm/:_authToken=${NPM_TOKEN}" >> .npmrc
+
+    # ensure version is unique
+    - npm version patch --no-git-tag-version
+
+    - npm publish
+  only:
+    - tags

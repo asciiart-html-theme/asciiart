@@ -53,6 +53,11 @@ const demofiles = {
 const sass = gulpSass(dartSass);
 const bs = browserSync.create();
 
+export const copySass = (done) => {
+  mkdirSync("dist/scss", { recursive: true });
+  copyFileSync("src/scss/style.scss", "dist/scss/style.scss");
+  done();
+};
 
 // --- JS Bundling ---
 export const jsBundle = async () => {
@@ -128,6 +133,9 @@ export const buildTemplates = () => {
 
 // --- Full Build ---
 export const build = gulp.series(jsBundle,compileSass,buildTemplates,gulp.parallel(copyJS, copyCSS));
+
+export const release_npm = gulp.series(jsBundle,compileSass,copySass)
+
 export default build;
 
 export const serve = (done) => {
