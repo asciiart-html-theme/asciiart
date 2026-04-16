@@ -3,7 +3,7 @@ stages:
 
 publish_npm:
   stage: publish
-  image: node:20
+  image: node
   script:
     - npm ci
 
@@ -11,7 +11,7 @@ publish_npm:
     - echo "@pc-magas:registry=https://gitlab.com/api/v4/projects/80429178/packages/npm/" > .npmrc
     - echo "//gitlab.com/api/v4/projects/80429178/packages/npm/:_authToken=${NPM_TOKEN}" >> .npmrc
 
-    - npm release
+    - npm run release
 
     # ensure version is unique
     - npm version patch --no-git-tag-version
