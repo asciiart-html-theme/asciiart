@@ -1,7 +1,7 @@
 main {
   width:80%;
   margin: auto;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1600px) {
     & {
       width: 98vw;
       padding-left: 3px;
@@ -17,6 +17,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 40%;
+  max-width: 40%;
 
   .banner {
     font-size: 0.6rem;
@@ -147,6 +148,7 @@ body.sidebar-layout {
     height: 100%;
     overflow-y: scroll;
     flex-grow: 4;
+    min-width: 80vw;
     @media screen and (max-width: 1600px) {
       & {
         width: 100%;
