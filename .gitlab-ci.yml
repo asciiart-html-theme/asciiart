@@ -25,6 +25,8 @@ publish_npm:
     - npm run release
     - npm publish
   rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+      when: never
     - changes:
         - package.json
         - package-lock.json
