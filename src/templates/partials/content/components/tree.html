@@ -21,6 +21,26 @@
             </ul>
 {% endset %}
 
+{% set tree %}
+<ul class="tree">
+                <li>Item</li>
+                <li>Item</li>
+                <li data-visible="true">
+                    <span>Item with nested Items</span>
+                    <ul>
+                        <li><span>Nested Item 1</span></li>
+                        <li><span>Nested Item with nested Items</span>
+                             <ul>
+                                <li>Nested Item 1</li>
+                                <li>Nested Item 2</li>
+                            </ul>
+                        </li>
+                        <li>Nested Item 3</li>
+                    </ul>
+                </li>
+            </ul>
+{% endset %}
+
 {% set autoinitJS %}
 <script type="application/javascript" src="/js/asciiart.min.js"></script>
 <script>
@@ -38,6 +58,26 @@
     })
 </script>
 {% endset %}
+
+<section id="tree">
+    <h1>Simple Tree</h1>
+     <article>
+        <h2>Preview</h2>
+            {{tree|safe}}
+    </article>
+    <article>
+        <h2>Usage</h2>
+        <p>In case you want to simply display a list in a form of tree use <code>tree</code> class instead. Javascript ignores this class:
+         <div class="code-wrapper">
+                <div>
+                    <h5>HTML Code</h5>
+                    <button class="copy">Copy</button>
+                </div>
+                <pre><code>{{tree|escape|trim}}</code></pre>
+            </div>    
+        </p>
+    </article>
+</section>
 
 <section id="treemenu">
     <h1>Treemenu</h1>
@@ -60,7 +100,7 @@
             </div>    
         </p>
         <p>
-            Beyond html it also needs to be initialized via Javbascript:
+            Beyond html it also needs to be initialized via Javascript:
              <div class="code-wrapper">
                 <div>
                     <h5>JS Code</h5>
