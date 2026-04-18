@@ -20,8 +20,9 @@ Save into `NPM_TOKEN` env variable.
 
 Create the following `.npmrc` replace the `<your_token>` with gitlab pat.
 ```
-@pc-magas/asciiart:registry=https://gitlab.com/api/v4/projects/80429178/packages/npm/
+@pc-magas:registry=https://gitlab.com/api/v4/projects/80429178/packages/npm/
 //gitlab.com/api/v4/projects/80429178/packages/npm/:_authToken=${NPM_TOKEN}
+always-auth=true
 ```
 
 ## Install package
