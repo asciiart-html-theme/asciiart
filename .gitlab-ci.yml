@@ -24,3 +24,9 @@ publish_npm:
   script:
     - npm run release
     - npm publish
+  rules:
+    - changes:
+        - package.json
+        - package-lock.json
+        - src/**/*
+        - .gitlab-ci.yml
