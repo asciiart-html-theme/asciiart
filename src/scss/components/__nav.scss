@@ -1,6 +1,19 @@
 @use '../color/_color';
 
-$linkPadding:15px;
+$navPadding:15px;
+$smallPadding:3px;
+
+:root {
+  --nav-height: 54px;
+}
+
+.bellow-nav {
+  top: calc( var(--nav-height) + 3px);
+
+  &.fullheight {
+    
+  }
+}
 
 .main-nav {
   display: flex;
@@ -10,7 +23,8 @@ $linkPadding:15px;
   flex-wrap: nowrap;
 
   a {
-    padding: $linkPadding;
+    padding-top: $navPadding;
+
     text-align: center;
     flex-grow: 1;
     
@@ -42,12 +56,10 @@ $linkPadding:15px;
   border: 1px dashed var(--color-border);
   background-color: var(--color-bg);
   align-items: stretch;
+  height: var(--nav-height);
 
   .main-nav {
-    border: none !important;
-    outline: none !important;
     flex-grow: 3;
-    height: 100%;
   }
 
   .lead {
@@ -58,8 +70,8 @@ $linkPadding:15px;
     width: 2rem;
 
     * {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: $navPadding;
+      padding-bottom: $navPadding;
       margin:auto;
       flex-grow: 1;
       text-align: center;
@@ -78,8 +90,8 @@ $linkPadding:15px;
 @media screen and (max-width: 600px) {
   .main-nav {
     overflow-x: scroll;
-    *{
-      padding: 3px;
+    * {
+      padding: $smallPadding;
     }
   }
 }

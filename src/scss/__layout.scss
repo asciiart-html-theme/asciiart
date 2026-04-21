@@ -1,7 +1,7 @@
 @use './color/_color';
 
 $breakpoint-md: 1700px;
-$breakpoint-sm: 600px;
+$breakpoint-sm: 700px;
 
 main {
   width:80%;
@@ -18,7 +18,7 @@ main {
 @mixin sidebar_common(){
   float:left;
   padding: 1px;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -30,8 +30,8 @@ main {
 
   aside {
     flex-grow:3;
-    height: 100vh;
     overflow-y: scroll;
+    align-self: stretch;
   }
   
   footer {
@@ -60,7 +60,8 @@ main {
   background-color: var(--color-bg);
   padding: 1px;
   overflow-y: scroll;
-
+  bottom:0;
+  
   .button-close {
     display: block;
   }
@@ -74,9 +75,7 @@ main {
 @mixin sidebar_offcanvas_sm(){
   border: none;
   overflow-y: scroll;
-  width: 100% !important;     // Force width
-  max-width: 100% !important;
-
+  min-width: 100%;
   .banner {
     font-size: 1rem;
   }
@@ -105,7 +104,6 @@ body.sidebar-layout {
     @media screen and (max-width: $breakpoint-md) {
       @include sidebar_offcanvas();
       border-right: 2px dashed var(--color-fe);
-      top: 60px !important;
 
       &[data-visible="false"] {
         display: none !important;
