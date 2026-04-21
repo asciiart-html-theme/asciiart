@@ -1,3 +1,8 @@
+@use './color/_color';
+
+$breakpoint-md: 1700px;
+$breakpoint-sm: 600px;
+
 main {
   width:80%;
   margin: auto;
@@ -67,9 +72,10 @@ main {
 }
 
 @mixin sidebar_offcanvas_sm(){
-  width: 100%;
   border: none;
   overflow-y: scroll;
+  width: 100% !important;     // Force width
+  max-width: 100% !important;
 
   .banner {
     font-size: 1rem;
@@ -89,8 +95,6 @@ body.sidebar-layout {
   margin-top: 3px;
   height: 100vh;
 
-  
-  
   .aside-wrapper-fullheight {
     @include sidebar_common();
 
@@ -98,7 +102,7 @@ body.sidebar-layout {
       display: none;
     }
 
-    @media screen and (max-width: 1700px) {
+    @media screen and (max-width: $breakpoint-md) {
       @include sidebar_offcanvas();
       border-right: 2px dashed var(--color-fe);
       top: 60px !important;
@@ -112,7 +116,7 @@ body.sidebar-layout {
       }
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: $breakpoint-sm) {
       @include sidebar_offcanvas_sm();
     }
   }
@@ -121,7 +125,7 @@ body.sidebar-layout {
     @include sidebar_common();
     
 
-    @media screen and (max-width: 1600px) {
+    @media screen and (max-width: $breakpoint-md) {
       @include sidebar_offcanvas();
       border: 2px dashed var(--color-fe);
       top:0;
@@ -135,7 +139,7 @@ body.sidebar-layout {
       }
     }
     
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: $breakpoint-sm) {
       @include sidebar_offcanvas_sm();
     }
   }
@@ -149,7 +153,7 @@ body.sidebar-layout {
     overflow-y: scroll;
     flex-grow: 4;
     min-width: 80vw;
-    @media screen and (max-width: 1600px) {
+    @media screen and (max-width: $breakpoint-md) {
       & {
         width: 100%;
       }
@@ -166,7 +170,7 @@ body.sidebar-layout {
   top:0;
   left:0;
   
-  @media screen and (max-width:1600px) {
+  @media screen and (max-width:$breakpoint-md) {
     & {
       display:flex;
       align-items: center;
@@ -177,7 +181,7 @@ body.sidebar-layout {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $breakpoint-sm) {
   .sidebar-layout {
     .aside-wrapper {
      width: 100%;
@@ -192,7 +196,7 @@ body.sidebar-layout {
 @media print {
   .sidebar-layout {
     height: 100%;
-    color: #000;
+    color: var(--color-bg);
 
     .main-wrapper {
       width: 100%;

@@ -20,8 +20,8 @@
 }
 
 :root {
-    --color-bg: var(--color-white);
-    --color-fe: var(--color-black);
+    --color-bg: var(--color-black);
+    --color-fe: var(--color-white);
     @include color_def()
 }
 
