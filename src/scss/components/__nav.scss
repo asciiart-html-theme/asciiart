@@ -9,10 +9,6 @@ $smallPadding:3px;
 
 .bellow-nav {
   top: calc( var(--nav-height) + 3px);
-
-  &.fullheight {
-    
-  }
 }
 
 .main-nav {
@@ -57,6 +53,7 @@ $smallPadding:3px;
   background-color: var(--color-bg);
   align-items: stretch;
   height: var(--nav-height);
+  z-index:999999;
 
   .main-nav {
     flex-grow: 3;
