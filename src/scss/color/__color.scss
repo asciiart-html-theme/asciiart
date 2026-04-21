@@ -40,6 +40,8 @@
     @include color_def();
 }
 
+
+
 @media print {
     :root {
         --color-bg: var(--color-white);
