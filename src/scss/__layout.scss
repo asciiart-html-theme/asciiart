@@ -1,6 +1,5 @@
 @use './color/_color';
-@use './__var';
-
+@use './__var' as var;
 
 main {
   width:80%;

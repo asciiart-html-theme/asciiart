@@ -1,5 +1,5 @@
 @use '../color/_color';
-@use '../_var';
+@use './__var' as var;
 
 $navPadding:15px;
 $smallPadding:3px;
