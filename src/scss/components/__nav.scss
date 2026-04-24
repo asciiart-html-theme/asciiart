@@ -30,8 +30,11 @@ $smallPaddingLink:0;
     flex-grow: 1;
 
     @media screen and (max-width: var.$breakpoint-xxs) {
-      font-size: 0.75rem;
-      white-space: nowrap;
+        font-size: 0.75rem;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 8px 6px;
     }
 
     &:hover {
