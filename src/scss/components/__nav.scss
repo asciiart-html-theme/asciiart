@@ -1,7 +1,11 @@
 @use '../color/_color';
+@use '../_var';
 
 $navPadding:15px;
 $smallPadding:3px;
+
+$smallPaddingLink:0;
+
 
 :root {
   --nav-height: 54px;
@@ -17,15 +21,17 @@ $smallPadding:3px;
   border: 1px dashed var(--color-border);
   background-color: var(--color-bg);
   flex-wrap: nowrap;
-
+  align-items: stretch;
   a {
     padding-top: $navPadding;
+    padding-bottom: $navPadding;
 
     text-align: center;
     flex-grow: 1;
-    
-    @media screen and (max-width: 640px) {
-      font-size: 0.9rem;
+
+    @media screen and (max-width: var.$breakpoint-xxs) {
+      font-size: 0.75rem;
+      white-space: nowrap;
     }
 
     &:hover {
@@ -39,8 +45,9 @@ $smallPadding:3px;
     }
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: var.$breakpoint-xs) {
     justify-content: space-evenly;
+    padding: 0;
   }
 }
 
@@ -84,7 +91,7 @@ $smallPadding:3px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: var.$breakpoint-xs) {
   .main-nav {
     overflow-x: scroll;
     * {
