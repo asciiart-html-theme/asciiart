@@ -92,12 +92,12 @@
 <article id="codewrapper-tabs">
     <h2>Tabs</h2>
     <p>
-        In case thay you nees to sjopw variations (eg. on how could a package be installed) codewrapper supports tabs as well
+        In case thay you need to show variations (eg. on how could a package be installed) codewrapper supports tabs as well:
         <div class="code-wrapper">
-        <div>
-            <h5>HTML</h5>
-            <button class="copy">COPY</button>
-        </div>
+            <div>
+                <h5>HTML</h5>
+                <button class="copy">COPY</button>
+            </div>
         <pre>
             <code>
 &lt;div class="code-wrapper"&gt;
@@ -125,9 +125,37 @@
     </div>
 </p>
 <p>
-    As you notice you need to place a <code>div</code> with class <code>tab-button-container</code>. Then in it we place buttons that represent each tab ` aria-controls` defines the controller element whilst `aria-selected` defined whether tab is selected.<br>
-    The content of each tab is encloded on it own <code> &lt;pre id="windows"&gt;&lt;code&gt; ...  &lt;/code&gt; &lt;/pre&gt;</code> tab.<br>
-    The nessesary <code>autoinit.codewrapper()</code> or `CodeWrapper` takes care of the initialization of each tab.
+    Tabs can lead the title as well:
+    <div class="code-wrapper">
+        <div>
+            <h5>HTML</h5>
+            <button class="copy">COPY</button>
+        </div>
+        <pre>
+            <code>
+&lt;div class="code-wrapper"&gt;
+    &lt;div&gt;
+        &lt;div class="tab-button-container"&gt;
+                &lt;button class="btn-tab" role="tab" aria-selected="true" aria-controls="#windows">Windows&lt;/button&gt;
+                &lt;button class="btn-tab" role="tab" aria-controls="#linux">Linux&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;h5&gt;Installation Instructions&lt;/h5&gt;
+        &lt;button class="copy"&gt;COPY&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;pre id="windows"&gt;
+        &lt;code&gt;
+            windows installation            
+        &lt;/code&gt;
+    &lt;/pre&gt;
+    &lt;pre id="linux"&gt;
+        &lt;code&gt;
+            linux installation            
+        &lt;/code&gt;
+    &lt;/pre&gt;
+&lt;/div&gt;
+            </code>
+        </pre>
+    </div>
 </p>
 </article>
 <article id="#codewrapper-links">
