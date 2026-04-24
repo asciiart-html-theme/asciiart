@@ -1,12 +1,11 @@
 @use './color/_color';
+@use './__var';
 
-$breakpoint-md: 1700px;
-$breakpoint-sm: 700px;
 
 main {
   width:80%;
   margin: auto;
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: var.$breakpoint-md) {
     & {
       width: 98vw;
       padding-left: 3px;
@@ -101,7 +100,7 @@ body.sidebar-layout {
       display: none;
     }
 
-    @media screen and (max-width: $breakpoint-md) {
+    @media screen and (max-width: var.$breakpoint-md) {
       @include sidebar_offcanvas();
       border-right: 2px dashed var(--color-fe);
 
@@ -114,7 +113,7 @@ body.sidebar-layout {
       }
     }
 
-    @media screen and (max-width: $breakpoint-sm) {
+    @media screen and (max-width: var.$breakpoint-sm) {
       @include sidebar_offcanvas_sm();
     }
   }
@@ -123,7 +122,7 @@ body.sidebar-layout {
     @include sidebar_common();
     
 
-    @media screen and (max-width: $breakpoint-md) {
+    @media screen and (max-width: var.$breakpoint-md) {
       @include sidebar_offcanvas();
       border: 2px dashed var(--color-fe);
       top:0;
@@ -137,7 +136,7 @@ body.sidebar-layout {
       }
     }
     
-    @media screen and (max-width: $breakpoint-sm) {
+    @media screen and (max-width: var.$breakpoint-sm) {
       @include sidebar_offcanvas_sm();
     }
   }
@@ -151,7 +150,7 @@ body.sidebar-layout {
     overflow-y: scroll;
     flex-grow: 4;
     min-width: 80vw;
-    @media screen and (max-width: $breakpoint-md) {
+    @media screen and (max-width: var.$breakpoint-md) {
       & {
         width: 100%;
       }
@@ -168,7 +167,7 @@ body.sidebar-layout {
   top:0;
   left:0;
   
-  @media screen and (max-width:$breakpoint-md) {
+  @media screen and (max-width:var.$breakpoint-md) {
     & {
       display:flex;
       align-items: center;
@@ -179,7 +178,7 @@ body.sidebar-layout {
   }
 }
 
-@media screen and (max-width: $breakpoint-sm) {
+@media screen and (max-width: var.$breakpoint-sm) {
   .sidebar-layout {
     .aside-wrapper {
      width: 100%;
