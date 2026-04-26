@@ -65,7 +65,8 @@ iframe {
   border: 1px dashed var(--color-border);
 }
 
-code {
+var, code {
   background-color: var(--color-fe);
   color: var(--color-bg);
+  padding: 3px;
 }

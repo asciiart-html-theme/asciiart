@@ -4,12 +4,22 @@ $leftMargin:2rem;
 $topMargin:3px;
 
 .manpage {
+    pre {
+        code {
+            background-color: var(--color-bg);
+            color: var(--color-fe);
+            var {
+                background-color: var(--color-bg);
+                color: var(--color-fe);
+            }
+        }
+    }
 
     h1,h2 {
         margin-bottom: 0;
     }
 
-    p,dl,.margin {
+    p,dl{
         margin: $topMargin;
         margin-left: $leftMargin;
     }
@@ -18,17 +28,14 @@ $topMargin:3px;
         margin-left: $leftMargin;
         font-weight: bold;
         font-style: italic;
-
-        code {
-            background-color: var(--color-bg);
-            color: var(--color-fe);    
-        }
-
         var {
-            background-color: var(--color-fe);
-            color: var(--color-bg);
             padding: 3px;    
         }        
+    }
 
+    .indented {
+        margin: 1rem 0 1rem ($leftMargin * 2); // Double indent for commands
+        width: 100%;
+        clear: both;
     }
 }
