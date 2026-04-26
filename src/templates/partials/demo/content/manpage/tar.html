@@ -68,7 +68,7 @@
   </p>
   </section>
   
-  <section>
+  <section class="indented">
   <h3>Option styles</h3>
 
   <p>
@@ -111,8 +111,10 @@
     The example command above written in short-option style could look like:
   </p>
 
-  <pre class="indented"><code>tar -cvf etc.tar /etc
-tar -c -v -f etc.tar /etc</code></pre>
+  <pre class="indented">
+    <code>tar -cvf etc.tar /etc</code>
+    <code>tar -c -v -f etc.tar /etc</code>
+  </pre>
 
   <p>
     In GNU (long-option) style, each option begins with two dashes and has a
@@ -127,58 +129,358 @@ tar -c -v -f etc.tar /etc</code></pre>
     Here are several ways of writing the example command in this style:
   </p>
 
-  <pre class="indented"><code>tar --create --file etc.tar --verbose /etc
-tar --cre --file=etc.tar --verb /etc</code></pre>
+  <pre class="indented">
+    <code>tar --create --file etc.tar --verbose /etc</code>
+    <code>tar --cre --file=etc.tar --verb /etc</code>
+  </pre>
 
   <p>
     The options in all three styles can be intermixed, although doing so with
     traditional options is not encouraged.
   </p>
 </section>
-       
+  <section class="indented">
+    <h3>Operation mode</h3>
+    <p>
+  The options listed in the table below tell GNU tar what operation it is to perform.
+  Exactly one of them must be given. Meaning of non-optional arguments depends on
+  the operation mode requested.
+</p>
+
+<dl>
+  <dt>
+    <code>-A</code>, <code>--catenate</code>, <code>--concatenate</code>
+  </dt>
+  <dd>
+    Append archives to the end of another archive. The arguments are treated as
+    names of archives to append. All archives must be of the same format as the
+    target archive, otherwise the result may be unusable with non-GNU tar.
+    When multiple archives are given, members from all but the first are only
+    accessible when using <code>-i</code> (<code>--ignore-zeros</code>).
+    <br><br>
+    Compressed archives cannot be concatenated.
+  </dd>
+
+  <dt>
+    <code>-c</code>, <code>--create</code>
+  </dt>
+  <dd>
+    Create a new archive. Arguments specify the files to include. Directories
+    are archived recursively unless <code>--no-recursion</code> is used.
+  </dd>
+
+  <dt>
+    <code>-d</code>, <code>--diff</code>, <code>--compare</code>
+  </dt>
+  <dd>
+    Find differences between the archive and the file system. Arguments are
+    optional and specify archive members to compare. If omitted, the current
+    directory is used.
+  </dd>
+
+  <dt>
+    <code>--delete</code>
+  </dt>
+  <dd>
+    Delete members from the archive. Arguments specify the names of members
+    to remove. At least one argument is required.
+    <br><br>
+    This option does not work on compressed archives. No short option exists.
+  </dd>
+
+  <dt>
+    <code>-r</code>, <code>--append</code>
+  </dt>
+  <dd>
+    Append files to the end of an archive. Arguments behave the same as for
+    <code>-c</code> (<code>--create</code>).
+  </dd>
+
+  <dt>
+    <code>-t</code>, <code>--list</code>
+  </dt>
+  <dd>
+    List archive contents. Arguments are optional and specify which members
+    to list.
+  </dd>
+
+  <dt>
+    <code>--test-label</code>
+  </dt>
+  <dd>
+    Test the archive volume label and exit. Without arguments, prints the label
+    (if any) and exits with status 0. With arguments, compares the label against
+    each one and exits with 0 if a match is found, otherwise 1. No output is
+    shown unless used with <code>-v</code> (<code>--verbose</code>).
+    <br><br>
+    No short option exists.
+  </dd>
+
+  <dt>
+    <code>-u</code>, <code>--update</code>
+  </dt>
+  <dd>
+    Append files that are newer than their archived versions. Arguments are the
+    same as for <code>-c</code> and <code>-r</code>. Newer files do not replace
+    old ones; they are appended, so multiple versions of the same file may exist.
+  </dd>
+
+  <dt>
+    <code>-x</code>, <code>--extract</code>, <code>--get</code>
+  </dt>
+  <dd>
+    Extract files from an archive. Arguments are optional and specify which
+    members to extract.
+  </dd>
+
+  <dt>
+    <code>--show-defaults</code>
+  </dt>
+  <dd>
+    Show built-in defaults for various tar options and exit. No arguments allowed.
+  </dd>
+  <dt>
+    <code>-?</code>, <code>--help</code>
+  </dt>
+  <dd>
+    Display a short help summary and exit. No arguments allowed.
+  </dd>
+
+  <dt>
+    <code>--usage</code>
+  </dt>
+  <dd>
+    Display a list of available options and exit. No arguments allowed.
+  </dd>
+
+  <dt>
+    <code>--version</code>
+  </dt>
+  <dd>
+    Print version and copyright information and exit.
+  </dd>
+</dl>
+
+  </section>     
+
+  <section>
+    <h3>Overwrite control</h3>
+
+<p>
+  These options control tar actions when extracting a file over an existing
+  copy on disk.
+</p>
+
+<dl>
+  <dt>
+    <code>-k</code>, <code>--keep-old-files</code>
+  </dt>
+  <dd>
+    Do not replace existing files when extracting.
+  </dd>
+
+  <dt>
+    <code>--keep-newer-files</code>
+  </dt>
+  <dd>
+    Do not replace existing files that are newer than their archive copies.
+  </dd>
+
+  <dt>
+    <code>--keep-directory-symlink</code>
+  </dt>
+  <dd>
+    Do not replace existing symbolic links to directories when extracting.
+  </dd>
+
+  <dt>
+    <code>--no-overwrite-dir</code>
+  </dt>
+  <dd>
+    Preserve metadata of existing directories.
+  </dd>
+
+  <dt>
+    <code>--one-top-level</code>[=<var>DIR</var>]
+  </dt>
+  <dd>
+    Extract all files into <var>DIR</var>, or, if no argument is given, into a
+    subdirectory named after the archive (without standard compression suffixes
+    recognized by <code>--auto-compress</code>).
+  </dd>
+
+  <dt>
+    <code>--overwrite</code>
+  </dt>
+  <dd>
+    Overwrite existing files when extracting.
+  </dd>
+
+  <dt>
+    <code>--overwrite-dir</code>
+  </dt>
+  <dd>
+    Overwrite metadata of existing directories when extracting (default).
+  </dd>
+
+  <dt>
+    <code>--recursive-unlink</code>
+  </dt>
+  <dd>
+    Recursively remove all files in a directory before extracting it.
+  </dd>
+
+  <dt>
+    <code>--remove-files</code>
+  </dt>
+  <dd>
+    Remove files from disk after adding them to the archive.
+  </dd>
+
+  <dt>
+    <code>--skip-old-files</code>
+  </dt>
+  <dd>
+    Do not replace existing files when extracting; silently skip them.
+  </dd>
+
+  <dt>
+    <code>-U</code>, <code>--unlink-first</code>
+  </dt>
+  <dd>
+    Remove each file before extracting over it.
+  </dd>
+
+  <dt>
+    <code>-W</code>, <code>--verify</code>
+  </dt>
+  <dd>
+    Verify the archive after writing it.
+  </dd>
+</dl>
+  </section>
 
   </section>
 
-  <section class="options">
-  <h2>OPTIONS</h2>
-  <dl>
-    <dt>
-      <code>-c</code>, <code>--create</code>
-    </dt>
-    <dd>Create a new archive.</dd>
+  <section>
+    <h2>OPTIONS</h2>
+    <section class="indented">
+      <h3>Operation modifiers</h3>
 
-    <dt>
-      <code>-x</code>, <code>--extract</code>
-    </dt>
-    <dd>Extract files from an archive.</dd>
+<dl>
+  <dt>
+    <code>--check-device</code>
+  </dt>
+  <dd>
+    Check device numbers when creating incremental archives (default).
+  </dd>
 
-    <dt>
-      <code>-t</code>, <code>--list</code>
-    </dt>
-    <dd>List the contents of an archive.</dd>
+  <dt>
+    <code>-g</code>, <code>--listed-incremental</code>=<var>FILE</var>
+  </dt>
+  <dd>
+    Handle new GNU-format incremental backups. <var>FILE</var> is a snapshot
+    file used to store metadata about changed files since the last dump.
+    <br><br>
+    If <var>FILE</var> does not exist, it is created and all files are archived
+    (level 0 dump). For incremental level N, use a copy of the snapshot file
+    from level N−1.
+    <br><br>
+    When listing or extracting, the contents of <var>FILE</var> are not used;
+    it is only required syntactically. Common practice is to use
+    <code>/dev/null</code>.
+  </dd>
 
-    <dt>
-      <code>-f</code> <var>ARCHIVE</var>,
-      <code>--file</code>=<var>ARCHIVE</var>
-    </dt>
-    <dd>Use archive file <var>ARCHIVE</var>.</dd>
+  <dt>
+    <code>--hole-detection</code>=<var>METHOD</var>
+  </dt>
+  <dd>
+    Detect holes in sparse files using <var>METHOD</var>. Implies
+    <code>--sparse</code>. Valid values are <code>seek</code> (default) and
+    <code>raw</code>, with automatic fallback.
+  </dd>
 
-    <dt>
-      <code>-C</code> <var>DIR</var>,
-      <code>--directory</code>=<var>DIR</var>
-    </dt>
-    <dd>Change to directory <var>DIR</var> before performing operations.</dd>
+  <dt>
+    <code>-G</code>, <code>--incremental</code>
+  </dt>
+  <dd>
+    Handle old GNU-format incremental backups.
+  </dd>
 
-    <dt>
-      <code>-v</code>, <code>--verbose</code>
-    </dt>
-    <dd>Verbosely list files processed.</dd>
+  <dt>
+    <code>--ignore-failed-read</code>
+  </dt>
+  <dd>
+    Do not exit with a nonzero status on unreadable files.
+  </dd>
 
-    <dt>
-      <code>-z</code>, <code>--gzip</code>
-    </dt>
-    <dd>Filter the archive through gzip compression.</dd>
-  </dl>
+  <dt>
+    <code>--level</code>=<var>NUMBER</var>
+  </dt>
+  <dd>
+    Set dump level for listed-incremental archives. Currently only
+    <code>--level=0</code> is meaningful; it truncates the snapshot file,
+    forcing a full (level 0) dump.
+  </dd>
+
+  <dt>
+    <code>-n</code>, <code>--seek</code>
+  </dt>
+  <dd>
+    Assume the archive is seekable. Normally detected automatically. This
+    option is useful when detection fails and applies only when reading
+    archives (e.g. with <code>--list</code> or <code>--extract</code>).
+  </dd>
+
+  <dt>
+    <code>--no-check-device</code>
+  </dt>
+  <dd>
+    Do not check device numbers when creating incremental archives.
+  </dd>
+
+  <dt>
+    <code>--no-seek</code>
+  </dt>
+  <dd>
+    Assume the archive is not seekable.
+  </dd>
+
+  <dt>
+    <code>--occurrence</code>[=<var>N</var>]
+  </dt>
+  <dd>
+    Process only the <var>N</var>th occurrence of each file in the archive.
+    Valid only with <code>--delete</code>, <code>--diff</code>,
+    <code>--extract</code>, or <code>--list</code>, and when a file list is
+    provided (via command line or <code>-T</code>). Default is 1.
+  </dd>
+
+  <dt>
+    <code>--restrict</code>
+  </dt>
+  <dd>
+    Disable the use of some potentially harmful options.
+  </dd>
+
+  <dt>
+    <code>--sparse-version</code>=<var>MAJOR</var>[.<var>MINOR</var>]
+  </dt>
+  <dd>
+    Set the sparse file format version (implies <code>--sparse</code>).
+    Valid values are <code>0.0</code>, <code>0.1</code>, and <code>1.0</code>.
+    See the GNU Tar manual, appendix “Sparse Formats” for details.
+  </dd>
+
+  <dt>
+    <code>-S</code>, <code>--sparse</code>
+  </dt>
+  <dd>
+    Handle sparse files efficiently. Detects files with unwritten (empty)
+    regions and avoids storing those regions in the archive, reducing size.
+  </dd>
+</dl>
+    </section>
   </section>
 
   <section>

@@ -24,6 +24,19 @@ $topMargin:3px;
         margin-left: $leftMargin;
     }
 
+    dl {
+        margin: 5px;
+        margin-left: $leftMargin;
+    }
+
+    dd {
+        margin-bottom: 0.5rem;
+    }
+
+    dt {
+        margin-bottom: 2px;
+    }
+
     .synopsis {
         margin-left: $leftMargin;
         font-weight: bold;
@@ -31,6 +44,16 @@ $topMargin:3px;
         var {
             padding: 3px;    
         }        
+    }
+
+    section {
+        h3 {
+            margin-top: 0.3rem;
+            margin-bottom: 0.4rem;
+        }
+        .indented {
+            margin-top: 0 !important; 
+        }
     }
 
     .indented {
