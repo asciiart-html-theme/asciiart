@@ -1,0 +1,34 @@
+@use './color/_color';
+
+$leftMargin:2rem;
+$topMargin:3px;
+
+.manpage {
+
+    h1,h2 {
+        margin-bottom: 0;
+    }
+
+    p,dl,.margin {
+        margin: $topMargin;
+        margin-left: $leftMargin;
+    }
+
+    .synopsis {
+        margin-left: $leftMargin;
+        font-weight: bold;
+        font-style: italic;
+
+        code {
+            background-color: var(--color-bg);
+            color: var(--color-fe);    
+        }
+
+        var {
+            background-color: var(--color-fe);
+            color: var(--color-bg);
+            padding: 3px;    
+        }        
+
+    }
+}

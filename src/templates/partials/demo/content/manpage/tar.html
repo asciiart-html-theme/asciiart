@@ -1,0 +1,42 @@
+<article class="manpage">
+  <h1>TAR(1)</h1>
+
+  <h2>NAME</h2>
+  <p><code>tar</code> - archive files</p>
+
+  <h2>SYNOPSIS</h2>
+  <pre class="synopsis">
+<code>tar</code> [OPTION...] [<var>FILE</var>...]
+  </pre>
+
+  <h2>DESCRIPTION</h2>
+  <p>
+    <code>tar</code> stores and extracts files from an archive.
+  </p>
+
+  <h2>OPTIONS</h2>
+  <dl>
+    <dt>
+      <code>-f</code> <var>ARCHIVE</var>,
+      <code>--file</code>=<var>ARCHIVE</var>
+    </dt>
+    <dd>Use archive file <var>ARCHIVE</var>.</dd>
+
+    <dt>
+      <code>-C</code> <var>DIR</var>,
+      <code>--directory</code>=<var>DIR</var>
+    </dt>
+    <dd>Change to directory <var>DIR</var>.</dd>
+
+    <dt>
+      <code>-v</code>, <code>--verbose</code>
+    </dt>
+    <dd>Verbose output.</dd>
+  </dl>
+
+  <h2>EXAMPLES</h2>
+  <pre class="margin">
+<code>tar -cf <var>archive.tar</var> <var>file1</var></code>
+<code>tar -xf <var>archive.tar</var></code>
+  </pre>
+</article>

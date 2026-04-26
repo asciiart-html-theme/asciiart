@@ -1,0 +1,17 @@
+{% extends 'base/plain/no-sidebar.html' %}
+
+{% block title %}AsciiArt Theme - Manpage content demo{% endblock %}
+
+{% block header %}
+  {% include 'partials/header.html' %}
+  <nav class="main-nav">
+    <a href="/layouts">&lt; Back to Content types</a>
+    <a href="">Grep Example</a>
+    <a href="#">tar_example</a>
+  </nav>
+{% endblock %}
+
+{% block content %}
+    {% include "partials/demo/content/manpage.html" %}
+{% endblock %}
+

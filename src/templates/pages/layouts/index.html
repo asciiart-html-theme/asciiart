@@ -23,6 +23,13 @@
             <li><a href="#base-sidebar">Sidebar upon content</a></li>
         </ul>
     </li>
+    <li>
+        <button aria-expanded="false">Content Types</button>
+        <ul>
+            <li><a href="#article">Article &amp; nomal text</a></li>
+            <li><a>Unix Manpage</a></li>
+        </ul>
+    </li>
 </ul>
 {% endblock %}
 
@@ -44,5 +51,39 @@
 {% include "partials/content/layouts/no-sidebar.html" %}
 {% include "partials/content/layouts/sidebar-full.html" %}
 {% include "partials/content/layouts/base-sidebar.html" %}
+
+{% set normalHtml %}
+<main>
+    <section>
+        <h1>Title</h1>
+        <p>Some content here...</p>
+    </section>
+
+    <article>
+        <h1>Title 2</h1>
+        <section>
+            <h2>Some Content</h2>
+            <p>Some content</p>
+        </section>
+        <section>
+            <h2>Some Content 2</h2>
+            <p>Some content</p>
+        </section>
+    </article>
+</main>
+{% endset %}
+
+<section id="article">
+    <h1>Article &amp; nomal text</h1>
+    <p>Upon <code>&lt;main&gt;&lt;/main&gt;</code> the page content resides upon. You can use <code>&lt;article&gt;&lt;/article&gt;</code> and <code>&lt;article&gt;&lt;/article&gt;</code> tags to wrap the content:
+    <div class="code-wrapper">
+        <div>
+            <h5>HTML Code</h5>
+            <button class="copy">Copy</button>
+        </div>
+        <pre><code>{{ normalHtml | escape | trim }}</code></pre>
+    </div>
+    </p>
+</section>
 
 {% endblock %}
