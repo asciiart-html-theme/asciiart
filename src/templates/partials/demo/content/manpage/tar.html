@@ -481,6 +481,317 @@
   </dd>
 </dl>
     </section>
+  <section class="indented">
+  <h3>Overwrite control</h3>
+
+  <dl>
+    <dt>
+      <code>-k</code>, <code>--keep-old-files</code>
+    </dt>
+    <dd>
+      Don't replace existing files when extracting.
+    </dd>
+
+    <dt>
+      <code>--keep-newer-files</code>
+    </dt>
+    <dd>
+      Don't replace existing files that are newer than their archive copies.
+    </dd>
+
+    <dt>
+      <code>--keep-directory-symlink</code>
+    </dt>
+    <dd>
+      Don't replace existing symlinks to directories when extracting.
+    </dd>
+
+    <dt>
+      <code>--no-overwrite-dir</code>
+    </dt>
+    <dd>
+      Preserve metadata of existing directories.
+    </dd>
+
+    <dt>
+      <code>--one-top-level</code>[=<var>DIR</var>]
+    </dt>
+    <dd>
+      Extract all files into <var>DIR</var>, or, if used without argument, into
+      a subdirectory named by the base name of the archive (minus standard
+      compression suffixes recognizable by
+      <code>--auto-compress</code>).
+    </dd>
+
+    <dt>
+      <code>--overwrite</code>
+    </dt>
+    <dd>
+      Overwrite existing files when extracting.
+    </dd>
+
+    <dt>
+      <code>--overwrite-dir</code>
+    </dt>
+    <dd>
+      Overwrite metadata of existing directories when extracting (default).
+    </dd>
+
+    <dt>
+      <code>--recursive-unlink</code>
+    </dt>
+    <dd>
+      Recursively remove all files in the directory prior to extracting it.
+    </dd>
+
+    <dt>
+      <code>--remove-files</code>
+    </dt>
+    <dd>
+      Remove files from disk after adding them to the archive.
+    </dd>
+
+    <dt>
+      <code>--skip-old-files</code>
+    </dt>
+    <dd>
+      Don't replace existing files when extracting, silently skip over them.
+    </dd>
+
+    <dt>
+      <code>-U</code>, <code>--unlink-first</code>
+    </dt>
+    <dd>
+      Remove each file prior to extracting over it.
+    </dd>
+
+    <dt>
+      <code>-W</code>, <code>--verify</code>
+    </dt>
+    <dd>
+      Verify the archive after writing it.
+    </dd>
+  </dl>
+</section>
+<section class="indented">
+  <h3>Output stream selection</h3>
+
+  <dl>
+    <dt>
+      <code>--ignore-command-error</code>
+    </dt>
+    <dd>
+      Ignore subprocess exit codes.
+    </dd>
+
+    <dt>
+      <code>--no-ignore-command-error</code>
+    </dt>
+    <dd>
+      Treat non-zero exit codes of children as error (default).
+    </dd>
+
+    <dt>
+      <code>-O</code>, <code>--to-stdout</code>
+    </dt>
+    <dd>
+      Extract files to standard output.
+    </dd>
+
+    <dt>
+      <code>--to-command</code>=<var>COMMAND</var>
+    </dt>
+    <dd>
+      <p>
+      Pipe extracted files to <var>COMMAND</var>. The argument is the pathname
+      of an external program, optionally with command line arguments. The
+      program will be invoked and the contents of the file being extracted
+      supplied to it on its standard input. Additional data will be supplied
+      via the following environment variables:
+      </p>
+      <dl>
+        <dt><code>TAR_FILETYPE</code></dt>
+        <dd>
+          Type of the file.
+          <dl class="desc-columns">
+            <dt><code>f</code></dt>
+            <dd>Regular file</dd>
+
+            <dt><code>d</code></dt>
+            <dd>Directory</dd>
+
+            <dt><code>l</code></dt>
+            <dd>Symbolic link</dd>
+
+            <dt><code>h</code></dt>
+            <dd>Hard link</dd>
+
+            <dt><code>b</code></dt>
+            <dd>Block device</dd>
+
+            <dt><code>c</code></dt>
+            <dd>Character device</dd>
+          </dl>
+          Currently only regular files are supported.
+        </dd>
+        <dt><code>TAR_MODE</code></dt>
+  <dd>File mode, an octal number.</dd>
+
+  <dt><code>TAR_FILENAME</code></dt>
+  <dd>The name of the file.</dd>
+
+  <dt><code>TAR_REALNAME</code></dt>
+  <dd>Name of the file as stored in the archive.</dd>
+
+  <dt><code>TAR_UNAME</code></dt>
+  <dd>Name of the file owner.</dd>
+
+  <dt><code>TAR_GNAME</code></dt>
+  <dd>Name of the file owner group.</dd>
+
+  <dt><code>TAR_ATIME</code></dt>
+  <dd>
+    Time of last access. It is a decimal number, representing seconds since the Epoch.
+    If the archive provides times with nanosecond precision, the nanoseconds are appended
+    to the timestamp after a decimal point.
+  </dd>
+
+  <dt><code>TAR_MTIME</code></dt>
+  <dd>Time of last modification.</dd>
+
+  <dt><code>TAR_CTIME</code></dt>
+  <dd>Time of last status change.</dd>
+
+  <dt><code>TAR_SIZE</code></dt>
+  <dd>Size of the file.</dd>
+
+  <dt><code>TAR_UID</code></dt>
+  <dd>UID of the file owner.</dd>
+
+  <dt><code>TAR_GID</code></dt>
+  <dd>GID of the file owner.</dd>
+
+  <dt>Additional tar variables</dt>
+  <dd>Additionally, the following variables contain information about tar operation mode and the archive being processed:</dd>
+
+  <dt><code>TAR_VERSION</code></dt>
+  <dd>GNU tar version number.</dd>
+
+  <dt><code>TAR_ARCHIVE</code></dt>
+  <dd>The name of the archive tar is processing.</dd>
+
+  <dt><code>TAR_BLOCKING_FACTOR</code></dt>
+  <dd>Current blocking factor, i.e. number of 512-byte blocks in a record.</dd>
+
+  <dt><code>TAR_VOLUME</code></dt>
+  <dd>Ordinal number of the volume tar is processing (set if reading a multi-volume archive).</dd>
+
+  <dt><code>TAR_FORMAT</code></dt>
+  <dd>
+    Format of the archive being processed. One of:
+    <code>gnu</code>, <code>oldgnu</code>, <code>posix</code>, <code>ustar</code>, <code>v7</code>.
+  </dd>
+
+  <dt><code>TAR_SUBCOMMAND</code></dt>
+  <dd>
+    A short option (with a leading dash) describing the operation tar is executing.
+  </dd>
+
+      </dl>
+    </dd>
+  </dl>
+</section>
+
+  <section class="indented">
+    <h3>Size suffixes</h3>
+    <table>
+  <thead>
+    <tr>
+      <th>Suffix</th>
+      <th>Units</th>
+      <th>Byte Equivalent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>b</td>
+      <td>Blocks</td>
+      <td>SIZE × 512</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>Kilobytes</td>
+      <td>SIZE × 1024</td>
+    </tr>
+    <tr>
+      <td>c</td>
+      <td>Bytes</td>
+      <td>SIZE</td>
+    </tr>
+    <tr>
+      <td>G</td>
+      <td>Gigabytes</td>
+      <td>SIZE × 1024³</td>
+    </tr>
+    <tr>
+      <td>K</td>
+      <td>Kilobytes</td>
+      <td>SIZE × 1024</td>
+    </tr>
+    <tr>
+      <td>k</td>
+      <td>Kilobytes</td>
+      <td>SIZE × 1024</td>
+    </tr>
+    <tr>
+      <td>M</td>
+      <td>Megabytes</td>
+      <td>SIZE × 1024²</td>
+    </tr>
+    <tr>
+      <td>P</td>
+      <td>Petabytes</td>
+      <td>SIZE × 1024⁵</td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td>Terabytes</td>
+      <td>SIZE × 1024⁴</td>
+    </tr>
+    <tr>
+      <td>w</td>
+      <td>Words</td>
+      <td>SIZE × 2</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </section>
+
+  </section>
+
+  <section>
+    <h2>RETURN VALUE</h2>
+    <p>
+       Tar exit code indicates whether it was able to successfully perform the
+       requested operation, and if not, what kind of error occurred.
+    </p>
+    <dl class="desc-columns">
+      <dt>0</dt>
+      <dl>Successful termination.</dl>
+      <dt>1</dt>
+      <dl>Some files differ.If tar was invoked with the <code>--compare</code>(<code>--diff</code>,<code>-d</code>) command line option, this means that some files in the archive differ from their disk counterparts. 
+        If <code>tar</code> was given one of the <code>--create</code>,<code>--append</code> or <code>--update</code> options, this exit code means that some files were changed while being archived and so the resulting archive does not contain the exact copy of the file set.
+      </dl>
+      <dt>2</dt>
+      <dl>Fatal error. This means that some fatal, unrecoverable error occurred.</dl>
+    </dl>
+    <p>If a subprocess that had been invoked by tar exited with a nonzero exit
+       code, tar itself exits with that code as well.  This  can  happen,  for
+       example,  if  a  compression option (e.g. -z) was used and the external
+       compressor program failed.   Another  example  is  rmt  failure  during
+       backup to a remote device.</p>
   </section>
 
   <section>

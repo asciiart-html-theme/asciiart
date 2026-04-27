@@ -19,23 +19,17 @@ $topMargin:3px;
         margin-bottom: 0;
     }
 
-    p,dl{
+    p,dl {
         margin: $topMargin;
         margin-left: $leftMargin;
     }
-
-    dl {
-        margin: 5px;
-        margin-left: $leftMargin;
-    }
-
+    
     dd {
-        margin-bottom: 0.5rem;
+        p,dl {
+            margin-left: 0;
+        }
     }
-
-    dt {
-        margin-bottom: 2px;
-    }
+    
 
     .synopsis {
         margin-left: $leftMargin;
@@ -51,8 +45,13 @@ $topMargin:3px;
             margin-top: 0.3rem;
             margin-bottom: 0.4rem;
         }
+
         .indented {
             margin-top: 0 !important; 
+        }
+
+        table {
+            margin-left: 0;
         }
     }
 
