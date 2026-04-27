@@ -1,0 +1,163 @@
+{% set cli_arguments %}
+   <dl>
+  <dt>
+    <code>-A</code>, <code>--catenate</code>, <code>--concatenate</code>
+  </dt>
+  <dd>
+    Append archives to the end of another archive. The arguments are treated as
+    names of archives to append. All archives must be of the same format as the
+    target archive, otherwise the result may be unusable with non-GNU tar.
+    When multiple archives are given, members from all but the first are only
+    accessible when using <code>-i</code> (<code>--ignore-zeros</code>).
+    <br><br>
+    Compressed archives cannot be concatenated.
+  </dd>
+
+  <dt>
+    <code>-c</code>, <code>--create</code>
+  </dt>
+  <dd>
+    Create a new archive. Arguments specify the files to include. Directories
+    are archived recursively unless <code>--no-recursion</code> is used.
+  </dd>
+
+  <dt>
+    <code>-d</code>, <code>--diff</code>, <code>--compare</code>
+  </dt>
+  <dd>
+    Find differences between the archive and the file system. Arguments are
+    optional and specify archive members to compare. If omitted, the current
+    directory is used.
+  </dd>
+
+  <dt>
+    <code>--delete</code>
+  </dt>
+  <dd>
+    Delete members from the archive. Arguments specify the names of members
+    to remove. At least one argument is required.
+    <br><br>
+    This option does not work on compressed archives. No short option exists.
+  </dd>
+
+  <dt>
+    <code>-r</code>, <code>--append</code>
+  </dt>
+  <dd>
+    Append files to the end of an archive. Arguments behave the same as for
+    <code>-c</code> (<code>--create</code>).
+  </dd>
+
+  <dt>
+    <code>-t</code>, <code>--list</code>
+  </dt>
+  <dd>
+    List archive contents. Arguments are optional and specify which members
+    to list.
+  </dd>
+
+  <dt>
+    <code>--test-label</code>
+  </dt>
+  <dd>
+    Test the archive volume label and exit. Without arguments, prints the label
+    (if any) and exits with status 0. With arguments, compares the label against
+    each one and exits with 0 if a match is found, otherwise 1. No output is
+    shown unless used with <code>-v</code> (<code>--verbose</code>).
+    <br><br>
+    No short option exists.
+  </dd>
+
+  <dt>
+    <code>-u</code>, <code>--update</code>
+  </dt>
+  <dd>
+    Append files that are newer than their archived versions. Arguments are the
+    same as for <code>-c</code> and <code>-r</code>. Newer files do not replace
+    old ones; they are appended, so multiple versions of the same file may exist.
+  </dd>
+
+  <dt>
+    <code>-x</code>, <code>--extract</code>, <code>--get</code>
+  </dt>
+  <dd>
+    Extract files from an archive. Arguments are optional and specify which
+    members to extract.
+  </dd>
+
+  <dt>
+{% endset %}
+
+{% set minimal_example %}
+    {% include "partials/demo/content/manpage/grep.html" %}
+{% endset %}
+
+{% set synopsis_demo %}
+<pre class="synopsis"><code>grep [<var>OPTIONS</var>] <var>PATTERN</var> [<var>FILE</var>...]</code></pre>
+{% endset %}
+
+{% set synopsis_mutiple %}
+<pre class="synopsis"><code>tar</code> <var>-c</var> [<var>-f</var> <var>ARCHIVE</var>] [<var>OPTIONS</var>] [<var>FILE...</var>]</pre>
+<pre class="synopsis"><code>tar</code> <var>-r</var> [<var>-f</var> <var>ARCHIVE</var>] [<var>OPTIONS</var>] [<var>FILE...</var>]</pre>
+<pre class="synopsis"><code>tar</code> <var>-t</var> [<var>-f</var> <var>ARCHIVE</var>] [<var>OPTIONS</var>] [<var>MEMBER...</var>]</pre>
+<pre class="synopsis"><code>tar</code> <var>-u</var> [<var>-f</var> <var>ARCHIVE</var>] [<var>OPTIONS</var>] [<var>FILE...</var>]</pre>
+<pre class="synopsis"><code>tar</code> <var>-x</var> [<var>-f</var> <var>ARCHIVE</var>] [<var>OPTIONS</var>] [<var>MEMBER...</var>]</pre>
+{% endset %}
+
+
+<section id="manpage">
+    <h1>Unix Manpage</h1>
+    <article>
+        <h2>Minimal example</h2>
+        <p>
+            Some examples of manpages are:
+            <ul>
+                <li>grep <a href="/content/demos/manpage/grep.html" class="button" target="_blank">Demo</a></li>
+                <li>tar <a href="/content/demos/manpage/tar.html" class="button" target="_blank">Demo</a></li>
+            </ul>
+        </p>
+        <p>
+            Using class <code>manpage</code> you can style an article in a style that aids the readability of html representation of unix manpages.
+            A minimal example is:
+        </p>
+        <div class="code-wrapper">
+            <div>
+                <h5>html</h5>
+                <button class="copy">Copy</button>
+            </div>
+            <pre><code>{{ minimal_example | escape | trim }}</code></pre>
+        </div>
+    </article>
+    <article>
+        <h2>Synopsis</h2>
+        <p>Using class <code>.synopsis</code> you can format the xcomman line usage. Each argument could be annotated using <code>&lt;var&gt;...&lt;/var&gt;</code> html tag:</p>
+        <div class="code-wrapper">
+            <div>
+                <h5>html</h5>
+                <button class="copy">Copy</button>
+            </div>
+            <pre><code>{{ synopsis_demo | escape | trim }}</code></pre>
+        </div>
+        <p>You can use <code>&lt;pre&gt;...&lt;/pre&gt;</code> with <code>.synopsis</code> class multiple times. Also can be used in conjuction with <code>&lt;code&gt;...&lt;/code&gt;</code> tags:</p>
+        <div class="code-wrapper">
+            <div>
+                <h5>html</h5>
+                <button class="copy">Copy</button>
+            </div>
+            <pre><code>{{ synopsis_mutiple | escape | trim }}</code></pre>
+        </div>
+
+    </article>
+    <article>
+        <h2>Command line argument description</h2>
+        <p>Upon manpage the comnmand line arguments use <code>&lt;dl&gt;&lt;/dl&gt;</code> html tags</p>
+        <div class="code-wrapper">
+            <div>
+                <h5>html</h5>
+                <button class="copy">Copy</button>
+            </div>
+            <pre><code>{{ cli_arguments | escape | trim }}</code></pre>
+        </div>
+    </article>
+
+</section>
