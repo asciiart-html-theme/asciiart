@@ -44,6 +44,8 @@
     <li><a href="#typography">Typography</a></li>
     <li><a href="#tables">Tables</a></li>
     <li><a href="#colors">Colors</a></li>
+    <li><a href="#dl">Description List</a></li>
+    <li><a href="#alerts">Alerts</a></li>
     <li data-visible="true">
         <button aria-expanded="false">Navbar</button>
         <ul>
@@ -53,7 +55,6 @@
             <li><a href="#navbar-highlight">Highlight Item</a></li>
         </ul>
     </li>
-    <li><a href="#alerts">Alerts</a></li>
     <li><button aria-expanded="false">Codewrapper</button>
         <ul>
             <li><a href="#codewrapper-basic">Basic usage</a></li>
@@ -61,8 +62,14 @@
             <li><a href="#codewrapper-links">Links</a></li>
         </ul>
     </li>
-    <li><a href="#tree">Simple tree</a></li>
-    <li><a href="#treemenu">Treemenu</a></li>
+    <li>
+        <button aria-expanded="false">Treeviews</button>
+        <ul>
+            <li><a href="#tree">Simple tree</a></li>
+            <li><a href="#treemenu">Treemenu</a></li>
+        </ul>
+    </li>
+ 
 </ul>
 {% endblock %}
 
@@ -143,6 +150,9 @@
         </tfoot>
     </table>
 </section>
+
+{% include "partials/content/components/descrpition-list.html" %}
+
 
 <section id="colors">
     <h1>Colors</h1>
