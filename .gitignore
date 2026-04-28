@@ -6,3 +6,4 @@ dist/css
 dist/scss
 .env
 .DS_Store
+.npmrc
