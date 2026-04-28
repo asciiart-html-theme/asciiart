@@ -39,6 +39,10 @@
     "sass": "^1.76.0"
   },
   "publishConfig": {
-    "registry": "https://gitlab.com/api/v4/projects/80429178/packages/npm/"
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pc_magas/asciiart.git"
   }
 }
