@@ -10,19 +10,18 @@
             // Initialize the Sidebar component
             new AsciiartTheme.Sidebar("#sidebar");
             new AsciiartTheme.Treemenu(".treemenu");
+            AsciiartTheme.autoinit.codewrapper()
         });
     </script>
 {% endblock %}
 
 {% block sidebar %}
 <ul class="treemenu">
-    <li><a href="#setup">Setup Theme</a></li>
     <li data-visible="true">
-        <button aria-expanded="false">Javascript</button>
+        <button aria-expanded="false">Setup And Usage</button>
         <ul>
-            <li><a href="#js_classic">Classic Usage</a></li>
-            <li><a href="#full">Browser Module Usage</a></li>
-            <li><a href="#base-sidebar">Use with webpack and similar tools</a></li>
+            <li><a href="#cdn">Using CDN</a></li>
+            <li><a href="#npm">Using NPM</a></li>
         </ul>
     </li>
     <li><a href="#css">CSS Usage</a></li>
@@ -39,79 +38,6 @@
 
 {% block content %}
 
-<section id="setup">
-    <h1>Setup</h1>
-
-</section>
-
-<section id="css">
-    <h1>Css Usage</h1>
-    <article>
-        In order for theme to use you need to load css:
-           <div class="code-wrapper">
-                <div>
-                    <h5>CSS</h5>
-                    <button class="copy">COPY</button>
-                </div>
-                <pre><code>
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-&lt;link rel="stylesheet" href="/js/asciiart.min.js"/&gt;
-                </code></pre>
-            </div>
-    </article>
-</section>
-
-
-<section id="javascript">
-    <h1>Javascript</h1>
-    <article>
-        <h2>About</h2>
-        <p>Javascript is crucial for initializing the components described upon <a href="/components.html">components</a> page. Here we showcase how can be used.</p>
-    </article>
-    <article id="js_classic">
-        <h2>Classic Usage</h2>
-        <p>Using <code>asciiart.min.js</code> you can use it as traditional Javascript module:
-            <div class="code-wrapper">
-                <div>
-                    <h5>Clasic Load</h5>
-                    <button class="copy">COPY</button>
-                </div>
-                <pre><code>
-&lt;script type="application/javascript" src="/js/asciiart.min.js"&gt;&lt;/script&gt;
-                </code></pre>
-            </div>
-        </p>
-        <p>
-            In example above replace the <code>/js/asciiart.min.js</code> with the path of downloaded javascript
-        </p>
-    </article>
-    <article id="js_module">
-        <h2>Browser Module Usage</h2>
-        <p>
-            Alternatively you can use the esm build <code>asciiart.esm.min.js</code> in order to embed code as browser module:
-                       <div class="code-wrapper">
-                <div>
-                    <h5>Browser Module Load</h5>
-                    <button class="copy">COPY</button>
-                </div>
-                <pre><code>
-&lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
-&lt;script type=\"module\"&gt;
-    import { Sidebar} from "/js/asciiart.esm.js"; 
-    document.addEventListener("DOMContentLoaded",function(){
-        new Sidebar("#sidebar")
-        //Initialize components here
-    })
-&lt;/script&gt;
-                </code></pre>
-            </div>
-        </p>
-        <p>
-            For extra info regarding the exports of <code>/js/asciiart.esm.js</code> javascript used look upon <a href="/components.html">components</a> page.
-        </p>
-    </article>
-    <article id="js_module">
-
-</section>
+{% include "partials/content/setup/usage.html" %}
 
 {% endblock %}
