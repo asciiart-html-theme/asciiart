@@ -1,0 +1,63 @@
+@use './color/_color';
+
+$leftMargin:2rem;
+$topMargin:3px;
+
+.manpage {
+    pre {
+        code {
+            background-color: var(--color-bg);
+            color: var(--color-fe);
+            var {
+                background-color: var(--color-bg);
+                color: var(--color-fe);
+            }
+        }
+    }
+
+    h1,h2 {
+        margin-bottom: 0;
+    }
+
+    p,dl {
+        margin: $topMargin;
+        margin-left: $leftMargin;
+    }
+    
+    dd {
+        p,dl {
+            margin-left: 0;
+        }
+    }
+    
+
+    .synopsis {
+        margin-left: $leftMargin;
+        font-weight: bold;
+        font-style: italic;
+        var {
+            padding: 3px;    
+        }        
+    }
+
+    section {
+        h3 {
+            margin-top: 0.3rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .indented {
+            margin-top: 0 !important; 
+        }
+
+        table {
+            margin-left: 0;
+        }
+    }
+
+    .indented {
+        margin: 1rem 0 1rem ($leftMargin * 2); // Double indent for commands
+        width: 100%;
+        clear: both;
+    }
+}

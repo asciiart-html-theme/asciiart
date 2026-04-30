@@ -1,0 +1,46 @@
+
+{% set dl %}
+<dl>
+    <dt>Apple</dt>
+    <dd>A red fruit rich in vitamins</dd>
+    <dt>Orange</dt>
+    <dd>Both a fruit and a color. As a fruit it is sually squeezed for its juice.</dd>
+    <dt>Banana</dt>
+    <dd>Yellow long fruit rich in potasium. It is sweet and most popular.</dd>
+</dl>
+{% endset %}
+
+{% set dl_columns %}
+<dl class="desc-columns">
+    <dt>Apple</dt>
+    <dd>A red fruit rich in vitamins</dd>
+    <dt>Orange</dt>
+    <dd>Both a fruit and a color. As a fruit it is sually squeezed for its juice.</dd>
+    <dt>Banana</dt>
+    <dd>Yellow long fruit rich in potasium. It is sweet and most popular.</dd>
+</dl>
+{% endset %}
+
+<section id="dl">
+    <h1>Description List</h1>
+    <article>
+        <h2>Basic</h2>
+        <div>
+            {{dl|safe}}
+        </div>
+    </article>
+    <article>
+        <h2>Inline</h2>
+        <div>
+            {{dl-columns|safe}}
+        </div>
+        <p>Using class <code>.desc-columns</code> you can placer both <code>&lt;dt&gt;...&lt;/dt&gt;</code> into a single line with te following <code>&lt;dd&gt;...&lt;/dd&gt;</code>:</p>
+        <div class="code-wrapper">
+            <div>
+                <h5>Html</h5>
+                <button class="copy">COPY</button>
+            </div>
+            <pre><code>{{ dl_columns | escape | trim }}</code></pre>
+        </div>
+    </article>
+</section>

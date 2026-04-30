@@ -65,7 +65,33 @@ iframe {
   border: 1px dashed var(--color-border);
 }
 
-code {
+var, code {
   background-color: var(--color-fe);
   color: var(--color-bg);
+  padding: 3px;
+}
+
+dl {
+  margin: 5px;
+
+  &.desc-columns {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: start;
+
+    dt {
+            grid-column: 1;
+    }
+    dd {
+      grid-column: 2;
+    }
+  }
+
+  dd {
+    margin-bottom: 0.5rem;
+  }
+
+  dt {
+    margin-bottom: 2px;
+  }
 }

@@ -40,10 +40,15 @@
     @include color_def();
 }
 
-
+.color-paper {
+    --color-bg: var(--color-white);
+    --color-fe: var(--color-black);
+    @include color_def();
+}
 
 @media print {
     :root {
+        --color-white: var(--color-white-print)
         --color-bg: var(--color-white);
         --color-fe: var(--color-black);
         @include color_def();
