@@ -1,4 +1,13 @@
-@use '__palette.scss';
+@use '../__var' as v;
+
+:root {
+  --color-black: #{v.$color-black};
+  --color-white: #{v.$color-white};
+  --color-white-print: #{v.$color-white-print};
+  --color-amber: #{v.$color-amber};
+  --color-green: #{v.$color-green};
+  --color-dos: #{v.$color-blue};
+}
 
 @mixin color_def {
   --color-text: var(--color-fe);
@@ -15,8 +24,8 @@
   --color-scrollbar-thumb: var(--color-fe);
   --color-scrollbar-track: var(--color-bg);
 
-  --color-button-bg: var(--color-bg)
-  --collor-button-fe: var(--color-fe)
+  --color-button-bg: var(--color-bg);
+  --collor-button-fe: var(--color-fe);
 }
 
 :root {
@@ -48,7 +57,7 @@
 
 @media print {
     :root {
-        --color-white: var(--color-white-print)
+        --color-white: var(--color-white-print);
         --color-bg: var(--color-white);
         --color-fe: var(--color-black);
         @include color_def();
