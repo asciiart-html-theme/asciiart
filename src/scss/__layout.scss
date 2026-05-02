@@ -4,6 +4,7 @@
 main {
   width:80%;
   margin: auto;
+  margin-bottom: 0.5rem;
   @media screen and (max-width: var.$breakpoint-md) {
     & {
       width: 98vw;
