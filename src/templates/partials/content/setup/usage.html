@@ -40,6 +40,7 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
 
 <section id="setup">
     <h1>Setup And Usage</h1>
+    <p>Theme ships both UJS and css using a CDN. Either classic or browser module supported:</p>
     <article  id="cdn">
         <h2>Using CDN</h2>
         <div class="code-wrapper">
@@ -57,6 +58,7 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
     </article>
     <article id="npm">
         <h2>Using Npm</h2>
+        <p>Theme is also shipped via NPM so you can import and use it into your own project as well:</p>
         <div class="code-wrapper">
             <div>
                 <h5>Console</h5>
@@ -64,7 +66,7 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
             <pre><code>npm install @pc_magas/asciiart</code></pre>
         </div>
         <h3>Javascript Usage</h3>
-        <h4>Via direct import</h4>
+        <p>After installing the package you can import the minified javascript directly into youer html:</p>
         <div class="code-wrapper">
             <div>
                 <h5>JS/HTML</h5>
@@ -77,8 +79,7 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
             <pre id="npm-use-classic"><code>{{ npm_usage_classic|escape|trim }}</code></pre>
             <pre id="npm-use-module"><code>{{ npm_usage_esm|escape|trim }}</code></pre>
         </div>
-        <h4>Using Bundler</h4>
-        <p>The theme's Javascript is also compartible with bundler usage and can be used directly</p>
+        <p>Or use a bundler instead:</p>
         <div class="code-wrapper">
             <div>
                 <h5>JS</h5>
@@ -89,7 +90,7 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
         <p>Css is loaded upon Html using a <code>&lt;link&gt;</code> tag:</p>
         <div class="code-wrapper">
             <div>
-                <h5>JS</h5>
+                <h5>HTML/CSS</h5>
                 <button class="btn-copy">COPY</button>
             </div>
             <pre><code>&lt;link rel="stylesheet" href="./node_modules/@pc_magas/asciiart/dist/asciiart.css"/ &gt;</code></pre>
