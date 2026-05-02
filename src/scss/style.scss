@@ -1,16 +1,16 @@
-@use 'color/_color';
+@forward 'color/_color';
 
-@use '__layout';
-@use '__base';
+@forward '__layout';
+@forward '__base';
 
-@use 'content/__article';
-@use 'content/_manpage';
+@forward 'content/__article';
+@forward 'content/_manpage';
 
-@use 'components/__misc';
-@use 'components/__table';
-@use 'components/_nav';
-@use 'components/__button';
-@use 'components/__treemenu';
-@use 'components/__alert';
-@use 'components/_codewrapper';
-@use 'components/__tabcontainer';
+@forward 'components/__misc';
+@forward 'components/__table';
+@forward 'components/_nav';
+@forward 'components/__button';
+@forward 'components/__treemenu';
+@forward 'components/__alert';
+@forward 'components/_codewrapper';
+@forward 'components/__tabcontainer';
