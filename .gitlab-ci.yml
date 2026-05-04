@@ -13,6 +13,7 @@ variables:
 
 stages:
   - publish
+  - deploy
 
 publish_npm:
   stage: publish
@@ -28,3 +29,20 @@ publish_npm:
         - package-lock.json
         - src/**/*
         - .gitlab-ci.yml
+
+pages:
+  stage: deploy
+  image: node:20
+
+  script:
+    - npm ci
+    - npx gulp build
+    - mkdir public
+    - cp -r demo/* public
+
+  artifacts:
+    paths:
+      - public
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
