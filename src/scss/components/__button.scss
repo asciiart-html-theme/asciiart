@@ -58,11 +58,11 @@ a {
 
     @media screen and (max-width: 1020px) {
         &[data-element-hidden="true"]::after {
-            content: "-" !important; // override when false
+            content: "+" !important; // override when false
         }
 
         &::after {
-            content: "+";
+            content: "-";
         }
     }
 }

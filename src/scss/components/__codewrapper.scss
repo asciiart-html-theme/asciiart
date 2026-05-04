@@ -15,6 +15,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
+        * {
+            width: auto !important;
+        }
 
         * {
             width: auto;
