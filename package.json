@@ -21,6 +21,7 @@
   "scripts": {
     "build": "gulp",
     "release": "gulp build_js_css",
+    "webpage": "gulp build",
     "start": "gulp watch"
   },
   "author": "Dimitrios Desyllas <pcmagas@disroot.org>",

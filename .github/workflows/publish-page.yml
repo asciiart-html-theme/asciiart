@@ -1,0 +1,62 @@
+name: Release Webpage
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - package.json
+      - package-lock.json
+      - src/**
+      - .github/workflows/**
+
+jobs:
+  publish:
+    # if: github.ref != 'refs/heads/dev'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            .npm
+          key: ${{ runner.os }}-npm-${{ github.ref_name }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-${{ github.ref_name }}-
+            ${{ runner.os }}-npm-
+
+      - name: Install dependencies
+        run: npm ci --cache .npm --prefer-offline
+
+      - name: Run release
+        run: npm run webpage
+
+      - name: setup git and clone website repo
+        env:
+          GH_PAT: ${{ steps.token.outputs.token }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git clone https://github.com/asciiart-html-theme/asciiart-html-theme.github.io.git
+          cd asciiart-html-theme.github.io
+      
+      - name: copy built website
+        run: |
+         cp ../demo/* ./
+         git add .
+         git commit -am "Release website"
+         git push origin master
