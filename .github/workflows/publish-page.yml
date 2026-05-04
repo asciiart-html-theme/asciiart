@@ -55,7 +55,8 @@ jobs:
       
       - name: copy built website
         run: |
-         cp ../demo/* ./asciiart-html-theme.github.io/
+         ls -l
+         cp ./demo/* ./asciiart-html-theme.github.io/
          cd ./asciiart-html-theme.github.io
          git add .
          git commit -am "Release website"
