@@ -3,7 +3,7 @@ name: Release Webpage
 on:
   push:
     branches:
-      - "**"
+      - "master"
     paths:
       - package.json
       - package-lock.json
