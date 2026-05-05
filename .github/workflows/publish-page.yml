@@ -42,8 +42,17 @@ jobs:
       - name: Install dependencies
         run: npm ci --cache .npm --prefer-offline
 
-      - name: Run release
+      - name: Build website
         run: npm run webpage
+
+      - name: Generate GitHub App token
+        id: token
+        uses: qoomon/actions--access-token@v3
+        with:
+          repository: pc-magas/homebrew-mkdotenv
+          permissions: |
+            contents: write
+            pull_requests: write
 
       - name: setup git and clone website repo
         env:
@@ -54,7 +63,8 @@ jobs:
           git clone https://x-access-token:${GH_PAT}@github.com/asciiart-html-theme/asciiart-html-theme.github.io.git
       
       - name: copy built website
-    
+        env:
+          GH_PAT: ${{ steps.token.outputs.token }}
         run: |
          ls -l
          cp -r ./demo/* ./asciiart-html-theme.github.io/
