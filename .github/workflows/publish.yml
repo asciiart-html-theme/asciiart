@@ -7,8 +7,9 @@ on:
     paths:
       - package.json
       - package-lock.json
-      - src/**
-      - .github/workflows/**
+      - src/js/**
+      - src/scss/**
+      - .github/workflows/publish.yml
 
 jobs:
   publish:
