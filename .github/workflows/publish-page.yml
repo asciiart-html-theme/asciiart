@@ -51,7 +51,7 @@ jobs:
         id: token
         uses: qoomon/actions--access-token@v3
         with:
-          repository: asciiart-html-theme/asciiart
+          repository: asciiart-html-theme/asciiart-html-theme.github.io
           permissions: |
             contents: write
             pull_requests: write
