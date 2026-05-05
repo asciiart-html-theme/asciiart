@@ -49,7 +49,7 @@ jobs:
         id: token
         uses: qoomon/actions--access-token@v3
         with:
-          repository: pc-magas/homebrew-mkdotenv
+          repository: asciiart-html-theme/asciiart
           permissions: |
             contents: write
             pull_requests: write
