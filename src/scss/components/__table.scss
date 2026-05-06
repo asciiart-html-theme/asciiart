@@ -1,8 +1,12 @@
 @use '../color/_color';
+@use '../_var' as var;
 
 table {
     border-collapse: collapse;
-    width: max-content;
+
+    @media screen and (min-width: var.$breakpoint-md) {
+        width: max-content;
+    }
 }
 
 thead {
