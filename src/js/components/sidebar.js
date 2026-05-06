@@ -1,9 +1,15 @@
 import {getDomElement} from "../common";
 
 class Sidebar {
-  constructor(sidebarSelector, breakpoint = 1700) {
-    this.sidebar = getDomElement(sidebarSelector);
-    this.breakpoint = breakpoint;
+  constructor(sidebarSelector) {
+    this.sidebar = getDomElement(sidebarSelector);  
+    this.breakpoint = window.getComputedStyle(document.body).getPropertyValue('--md-width');
+    if(!this.breakpoint){
+      this.breakpoint = 1700
+    }
+    
+    this.breakpoint = parseInt(this.breakpoint)
+
     this.init();
   }
 
@@ -11,9 +17,8 @@ class Sidebar {
     // Watch for window resizing to auto-reset the state
     window.addEventListener('resize', () => this.handleResize());
 
-
     const id = this.sidebar.id
-
+    
     if(id){
         document.querySelectorAll(`button[data-control-element="#`+id+`"`)
         .forEach((button)=>{
@@ -24,6 +29,8 @@ class Sidebar {
             button.addEventListener("click",()=>this.toggle(button));
         })
     }
+
+    this.updateButtons()
   }
 
   toggle(button){
