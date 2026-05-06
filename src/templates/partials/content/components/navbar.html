@@ -1,3 +1,27 @@
+{% set basic_navbar %}
+<div class="nav-wrapper">
+    <nav class="main-nav">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+    </nav>
+</div>
+{% endset %}
+
+
+{% set sticky_navbar %}
+<div class="nav-wrapper sticky-top">
+    <nav class="main-nav">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+    </nav>
+</div>
+{% endset %}
+
+
+
+
 <section id="navbar">
     <h1>Navbar</h1>
     <article id="navbar-basic">
@@ -16,14 +40,8 @@
                 <h5>HTML</h5>
                 <button class="copy">COPY</button>
             </div>
-            <code>
-                &lt;div class="nav-wrapper"&gt;
-                    &lt;nav class="main-nav"&gt;
-                        &lt;a href="#"&gt;Item 1&lt;/a&gt;
-                        &lt;a href="#"&gt;Item 2&lt;/a&gt;
-                        &lt;a href="#"&gt;Item 3&lt;/a&gt;
-                    &lt;/nav&gt;
-                &lt;/div&gt;
+            <code>{{ basic_navbar | escape | trim }}
+                
             </code>
         </pre>
     </article>
@@ -35,17 +53,7 @@
                 <h5>HTML</h5>
                 <button class="copy">COPY</button>
             </div>
-            <pre>
-                <code>
-                    &lt;div class="nav-wrapper sticky-top"&gt;
-                        &lt;nav class="main-nav"&gt;
-                            &lt;a href="#"&gt;Item 1&lt;/a&gt;
-                            &lt;a href="#"&gt;Item 2&lt;/a&gt;
-                            &lt;a href="#"&gt;Item 3&lt;/a&gt;
-                        &lt;/nav&gt;
-                    &lt;/div&gt;
-                </code>
-            </pre>
+            <pre><code>{{ sticky_navbar | escape | trim }}</code></pre>
         </div>
     </article>
     <article id="navbar-controls">
