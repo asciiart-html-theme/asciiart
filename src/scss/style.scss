@@ -6,6 +6,7 @@
 @forward 'content/__article';
 @forward 'content/_manpage';
 
+@forward 'components/__visibility';
 @forward 'components/__misc';
 @forward 'components/__table';
 @forward 'components/_nav';
