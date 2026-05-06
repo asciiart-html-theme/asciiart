@@ -5,11 +5,19 @@ main {
   width:80%;
   margin: auto;
   margin-bottom: 0.5rem;
-  @media screen and (max-width: var.$breakpoint-md) {
+  @media screen and (max-width: var.$breakpoint-sm) {
     & {
       width: 98vw;
       padding-left: 3px;
       padding-right: 3px;
+    }
+  }
+
+   @media screen and (max-width: var.$breakpoint-xs) {
+    & {
+      width: 85vw;  
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
