@@ -84,7 +84,6 @@
     }
 
     code {
-        margin-left: 20px;
         font-size: 1.1rem;
         background-color: var(--color-bg) !important;
         color: var(--color-fe) !important;
@@ -92,9 +91,8 @@
 
     pre {
         width: 100%;
-        padding: 3px;
         max-height: 1000px;
         overflow-y: scroll;
-        margin: 0;
+        margin: 1px;
     }
 }

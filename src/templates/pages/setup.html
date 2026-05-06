@@ -2,6 +2,15 @@
 {% extends 'base/base-sidebar-full.html' %}
 
 {% block title %}AsciiArt Theme - Setup{% endblock %}
+{% block scripts %}
+
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+      AsciiartTheme.autoinit.codewrapper();
+    });   
+</script>
+
+{% endblock %}
 
 {% block sidebar %}
 <ul class="treemenu">
