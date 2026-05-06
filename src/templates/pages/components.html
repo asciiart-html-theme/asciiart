@@ -75,85 +75,12 @@
 
 
 {% block content %}
-<section id="typography">
-<h1>Typograhpy</h1>
-    <article>
-        <h2>Headers</h2>
-        <div class="code-wrapper">
-            <pre>
-                <h1>h1. Header 1</h1>
-                <h2>h2. Header 2</h2>
-                <h3>h3. Header 3</h3>
-                <h4>h4. Header 4</h4>
-                <h5>h5. Header 5</h5>
-                <h6>h6. Header 6</h6>
-            </pre>
-        </div>
-    </article>
-    <article>
-        <h2>Paragraphs</h2>
-        <p>Conubia donec, velit dictumst interdum. Per quisque adipiscing, habitasse litora sed id. Varius porttitor aliquet, placerat erat, quam vulputate viverra eros nec gravida. Magna interdum nostra euismod, arcu enim consectetur primis duis. Habitant eu mi porta, curabitur sit sollicitudin, convallis dui metus leo nibh erat aenean sed. Egestas massa nulla turpis, imperdiet vivamus curabitur, dictum lacinia vulputate dictumst nullam luctus placerat molestie.</p>
-    </article>
-    <article>
-        <h2>Links</h2>
-        <p>This is a normal <a href="#">link</a></p>
-        <p> 
-            This is a link styled as button <a href="#" class="button">link</a><br>
-            Use class <code>button</code> to style it:
-            <div class="code-wrapper">
-                <pre><code>&lt;a href="#" class="button"&gt;link&lt;/a&gt;</code></pre>
-            </div>
-        </p>
-    </article>
-</section>
 
-<section id="tables">
-    <h1>Tables</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-                <th>Column 3</th>
-                <th>Column 4</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>Row 1 Data 1</td>
-                <td>Row 1 Data 2</td>
-                <td>Row 1 Data 3</td>
-                <td>Row 1 Data 4</td>
-            </tr>
-            <tr>
-                <td>Row 2 Data 1</td>
-                <td>Row 2 Data 2</td>
-                <td>Row 2 Data 3</td>
-                <td>Row 2 Data 4</td>
-            </tr>
-            <tr>
-                <td>Row 3 Data 1</td>
-                <td>Row 3 Data 2</td>
-                <td>Row 3 Data 3</td>
-                <td>Row 3 Data 4</td>
-            </tr>
-        </tbody>
-
-        <tfoot>
-            <tr>
-            <td>Footer 1</td>
-            <td>Footer 2</td>
-            <td>Footer 3</td>
-            <td>Footer 4</td>
-            </tr>
-        </tfoot>
-    </table>
-</section>
-
+{% include "partials/content/components/typography.html" %}
+{% include "partials/content/components/tables.html" %}
 {% include "partials/content/components/descrpition-list.html" %}
 
-
+{# Keeping it as is in order to  #}
 <section id="colors">
     <h1>Colors</h1>
     <p>Theme comes comes in color combinations consisting of 2 colors. Background color and text color.<br>
