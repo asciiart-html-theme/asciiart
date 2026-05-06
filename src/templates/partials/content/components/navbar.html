@@ -19,7 +19,28 @@
 </div>
 {% endset %}
 
+{% set leading_elements %}
+<div class="nav-wrapper sticky-top">
+    <div class="lead">
+        <button>*</button>
+    </div>
+    <nav class="main-nav">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+    </nav>
+</div>
+{% endset %}
 
+{% set highlight %}
+<div class="nav-wrapper sticky-top">
+    <nav class="main-nav">
+        <a class="active" href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+    </nav>
+</div>
+{% endset %}
 
 
 <section id="navbar">
@@ -72,18 +93,7 @@
                 <h5>HTML</h5>
                 <button class="copy">COPY</button>
             </div>
-            <pre><code>
-&lt;div class="nav-wrapper sticky-top"&gt;
-    &lt;div class="lead"&gt;
-        &lt;button&gt;*&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;nav class="main-nav"&gt;
-        &lt;a href="#"&gt;Item 1&lt;/a&gt;
-        &lt;a href="#"&gt;Item 2&lt;/a&gt;
-        &lt;a href="#"&gt;Item 3&lt;/a&gt;
-    &lt;/nav&gt;
-&lt;/div&gt;
-            </code></pre>
+            <pre><code> {{leading_elements | escape | trim }}</code></pre>
         </div>
     </article>
     <article id="navbar-highlight">
@@ -101,15 +111,7 @@
                 <h5>HTML</h5>
                 <button class="copy">COPY</button>
             </div>
-            <pre><code>
-&lt;div class="nav-wrapper sticky-top"&gt;
-    &lt;nav class="main-nav"&gt;
-        &lt;a class="active" href="#"&gt;Item 1&lt;/a&gt;
-        &lt;a href="#"&gt;Item 2&lt;/a&gt;
-        &lt;a href="#"&gt;Item 3&lt;/a&gt;
-    &lt;/nav&gt;
-&lt;/div&gt;
-            </code></pre>
+            <pre><code>{{highlight|escape|trim}} </code></pre>
         </div>
         </p>
     </article>
