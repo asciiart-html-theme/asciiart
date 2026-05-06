@@ -29,7 +29,7 @@ $smallPaddingLink:0;
     text-align: center;
     flex-grow: 1;
 
-    @media screen and (max-width: var.$breakpoint-xxs) {
+    @media screen and (max-width: var.$breakpoint-xs) {
         font-size: 0.75rem;
         display: grid;
         place-items: center;

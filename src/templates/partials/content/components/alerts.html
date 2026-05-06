@@ -1,127 +1,93 @@
+{% set alert_info %}
+<div class="alert alert-info">
+    <i class="icon"></i>
+    Dear sir I am informing you about something....
+</div>
+{% endset %}
+
+{% set alert_notice %}
+<div class="alert alert-notice">
+    <i class="icon"></i>
+    You must pay attention on what you are doing....
+</div>
+{% endset %}
+
+{% set alert_stop %}
+<div class="alert alert-stop">
+    <i class="icon"></i>
+    Stop doing do this....
+</div>
+{% endset %}
+
+{% set alert_warning %}
+<div class="alert alert-warning">
+    Oh snap this is serious!!
+</div>
+{% endset %}
+
+{% set alert_danger %}
+<div class="alert alert-danger">
+    Oh snap this is serious!!
+</div>
+{% endset %}
+
+{% set alert_danger2 %}
+<div class="alert alert-danger2">
+    Oh snap this is serious!!
+</div>
+{% endset %}
+
 <section id="alerts">
     <h1>Alerts</h1>
+
     <article>
-    <h2>Alert Info</h2>
-    <p>Use this to notify user about an inportant information</p>
-    <div class="alert alert-info">
-        <i class="icon"></i>
-        Dear sir I am informing you about something....
-    </div><br>
-    <div class="code-wrapper">
-        <div>
-            <h5>HTML</h5>
-            <button class="copy">COPY</button>
+        <h2>Alert Info</h2>
+        <p>Use this to notify user about an important information</p>
+        {{ alert_info|safe }}
+        <div class="code-wrapper">
+            <pre><code>{{ alert_info|escape|trim }}</code></pre>
         </div>
-        <pre>
-            <code>
-                &lt;div class="alert alert-info"&gt;
-                    &lt;i class="icon"&gt;&lt;/i&gt;
-                    Dear sir I am informing you about something....
-                &lt;/div&gt;
-            </code>
-        </pre>
-    </div>
     </article>
+
     <article>
         <h2>Alert Notice</h2>
-        <p>Notify user about something that should be seriouly concerned or strongly to pay notice upon.</p>
-        <div class="alert alert-notice">
-            <i class="icon"></i>
-            You must pay attention on what you are doing....
-        </div><br>
+        <p>Notify user about something serious.</p>
+        {{ alert_notice|safe }}
         <div class="code-wrapper">
-            <div>
-               <h5>HTML</h5>
-               <button class="copy">COPY</button>
-           </div>
-           <pre>
-               <code>
-                   &lt;div class="alert alert-notice"&gt;
-                       &lt;i class="icon"&gt;&lt;/i&gt;
-                       You must pay attention on what you are doing....
-                   &lt;/div&gt;
-               </code>
-           </pre>
+            <pre><code>{{ alert_notice|escape|trim }}</code></pre>
         </div>
     </article>
+
     <article>
         <h2>Alert Stop</h2>
         <p>Notify user about a prohibiting action.</p>
-        <div class="alert alert-stop">
-            <i class="icon"></i>
-            Stop doing do this....
-        </div><br>
+        {{ alert_stop|safe }}
         <div class="code-wrapper">
-            <div>
-               <h5>HTML</h5>
-               <button class="copy">COPY</button>
-            </div>
-            <pre>
-                <code>
-                    &lt;div class="alert alert-stop"&gt;
-                        &lt;i class="icon"&gt;&lt;/i&gt;
-                        Stop doing do this....
-                    &lt;/div&gt;
-                </code>
-            </pre>
+            <pre><code>{{ alert_stop|escape|trim }}</code></pre>
         </div>
     </article>
+
     <article>
-        <h2>Alert warning</h2>
-        <p>Another way to ensure user to pay attention about something.</p>
-        <div class="alert alert-warning">
-            Oh snap this is serious!!
-        </div><br>
+        <h2>Alert Warning</h2>
+        <p>Ensure user pays attention.</p>
+        {{ alert_warning|safe }}
         <div class="code-wrapper">
-            <div>
-               <h5>HTML</h5>
-               <button class="copy">COPY</button>
-            </div>
-            <pre>
-                <code>
-                    &lt;div class="alert alert-warning"&gt;
-                        Oh snap this is serious!!
-                    &lt;/div&gt;
-                </code>
-            </pre>
+            <pre><code>{{ alert_warning|escape|trim }}</code></pre>
         </div>
     </article>
+
     <article>
         <h2>Alert Danger</h2>
-        <p>Notify user about a dangerous situation</p>
         <h3>Blinking text</h3>
-        <div class="alert alert-danger">
-            Oh snap this is serious!!
-        </div><br>
+        {{ alert_danger|safe }}
         <div class="code-wrapper">
-            <div>
-               <h5>HTML</h5>
-               <button class="copy">COPY</button>
-            </div>
-            <pre>
-                <code>
-                    &lt;div class="alert alert-danger"&gt;
-                        Oh snap this is serious!!
-                    &lt;/div&gt;
-                </code>
-            </pre>
+            <pre><code>{{ alert_danger|escape|trim }}</code></pre>
         </div>
+
         <h3>Blinking Background</h3>
-         <div class="alert alert-danger2">
-            Oh snap this is serious!!
-        </div><br>
+        {{ alert_danger2|safe }}
         <div class="code-wrapper">
-            <div>
-               <h5>HTML</h5>
-               <button class="copy">COPY</button>
-            </div>
-            <pre>
-                <code>
-                    &lt;div class="alert alert-danger2"&gt;
-                        Oh snap this is serious!!
-                    &lt;/div&gt;
-                </code>
-            </pre>
+            <pre><code>{{ alert_danger2|escape|trim }}</code></pre>
         </div>
     </article>
 </section>
