@@ -3,18 +3,6 @@
 
 {% block title %}AsciiArt Theme - Setup{% endblock %}
 
-{% block scripts %}
-    <script type="application/javascript" src="/js/asciiart.min.js"></script>
-    <script type="application/javascript">
-        document.addEventListener("DOMContentLoaded", () => {
-            // Initialize the Sidebar component
-            new AsciiartTheme.Sidebar("#sidebar");
-            new AsciiartTheme.Treemenu(".treemenu");
-            AsciiartTheme.autoinit.codewrapper()
-        });
-    </script>
-{% endblock %}
-
 {% block sidebar %}
 <ul class="treemenu">
     <li data-visible="true">
