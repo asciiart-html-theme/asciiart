@@ -3,7 +3,7 @@ import {getDomElement} from "../common";
 class Sidebar {
   constructor(sidebarSelector) {
     this.sidebar = getDomElement(sidebarSelector);  
-    this.breakpoint = window.getComputedStyle(document.body).getPropertyValue('--md-width');
+    this.breakpoint = window.getComputedStyle(document.documentElement).getPropertyValue('--md-width');
     if(!this.breakpoint){
       this.breakpoint = 1700
     }

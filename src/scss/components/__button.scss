@@ -1,4 +1,5 @@
 @use '../color/_color';
+@use '../__var' as var;
 
 @mixin button_common()
 {
@@ -56,7 +57,7 @@ a {
   }
 
 
-    @media screen and (max-width: 1020px) {
+    @media screen and (max-width: var.$breakpoint-sm) {
         &[data-element-hidden="true"]::after {
             content: "+" !important; // override when false
         }
