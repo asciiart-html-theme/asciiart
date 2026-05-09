@@ -18,7 +18,7 @@
 </head>
 <body class="sidebar-layout">
   <div id="sidebar" class="aside-wrapper-fullheight bellow-nav">
-    <button class="button-close" data-control-element="#sidebar"></button>
+    <button class="button-close" aria-controls="#sidebar"></button>
     {% block header %}{% endblock %}
 
     <aside>
@@ -31,15 +31,8 @@
   </div>
 
   <div class="main-wrapper">
-    <div class="nav-wrapper sticky-top">
-        <div class="lead">
-          <button role="button" 
-            class="button-expand button-toggle" 
-            aria-controls="#sidebar"
-          ></button>
-        </div>
-        {% include '../../partials/main-nav.html' %}
-    </div>
+
+    <button class="button-fullheight" aria-controls="#sidebar">Toggle</button>
 
     <main>
         {% block content %}{% endblock %}

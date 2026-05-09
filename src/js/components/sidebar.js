@@ -9,6 +9,8 @@ class Sidebar {
     }
     
     this.breakpoint = parseInt(this.breakpoint)
+    
+    this.button_selector = `button[aria-controls="#${id}"], button[aria-controls="${id}"]`
 
     this.init();
   }
@@ -20,7 +22,16 @@ class Sidebar {
     const id = this.sidebar.id
     
     if(id){
-        document.querySelectorAll(`button[data-control-element="#`+id+`"`)
+        document.querySelectorAll( this.button_selector)
+        .forEach((button)=>{
+            if(button.classList.contains("button-close")){
+               button.addEventListener("click",()=>this.hide(button));
+               return; 
+            }
+            button.addEventListener("click",()=>this.toggle(button));
+        })
+
+        document.querySelectorAll(`button[aria-controls="#`+id+`"`)
         .forEach((button)=>{
             if(button.classList.contains("button-close")){
                button.addEventListener("click",()=>this.hide(button));
@@ -47,6 +58,7 @@ class Sidebar {
   handleResize() {
     if (window.innerWidth > this.breakpoint) {
       this.sidebar.removeAttribute('data-visible');
+      this.sidebar.removeAttribute('aria-expanded');
       this.updateButtons()
     }
   }
@@ -55,9 +67,10 @@ class Sidebar {
     const id = this.sidebar.id
 
     if(id){
-      document.querySelectorAll(`button[data-control-element="#`+id+`"`)
+      document.querySelectorAll(this.button_selector)
         .forEach((button)=>{
           button.dataset.elementHidden=!this.sidebar.checkVisibility()
+          button.setAttribute("aria-expanded", this.sidebar.checkVisibility());
         })
     }
   }
