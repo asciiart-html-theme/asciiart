@@ -17,7 +17,10 @@
   {% block scripts %}{% endblock %}
 </head>
 <body class="sidebar-layout">
-  <div id="sidebar" class="aside-wrapper-fullheight bellow-nav">
+  <div class="sidebar-btn">
+    <button role="button" class="button-expand button-toggle" aria-controls="#sidebar" aria-expanded="true"></button>
+  </div>
+  <div id="sidebar" class="aside-wrapper">
     <button class="button-close" aria-controls="#sidebar"></button>
     {% block header %}{% endblock %}
 
