@@ -32,8 +32,8 @@ main {
   height: auto;
   display: flex;
   flex-direction: column;
-  width: 40%;
-  max-width: 40%;
+  min-width: 450px;
+  max-width: 450px;
 
   .banner {
     font-size: 0.6rem;
@@ -70,7 +70,6 @@ main {
   width: 40%;
   background-color: var(--color-bg);
   padding: 1px;
-  overflow-y: scroll;
   bottom:0;
   
   .button-close {
