@@ -52,8 +52,8 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
                 </div>
                 <button class="copy">COPY</button>
             </div>
-            <pre id="cdn-setup-classic"><code> {{cdn_setup_clasic|escape|trim}}</code></pre>
-            <pre id="cdn-setup-module"><code>{{cdn_setup_esm|escape|trim }} </code></pre>
+            <pre role="tabpanel" id="cdn-setup-classic"><code> {{cdn_setup_clasic|escape|trim}}</code></pre>
+            <pre role="tabpanel" id="cdn-setup-module"><code>{{cdn_setup_esm|escape|trim }} </code></pre>
         </div>
     </article>
     <article id="npm">
@@ -76,8 +76,8 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
                 </div>
                 <button class="copy">COPY</button>
             </div>
-            <pre id="npm-use-classic"><code>{{ npm_usage_classic|escape|trim }}</code></pre>
-            <pre id="npm-use-module"><code>{{ npm_usage_esm|escape|trim }}</code></pre>
+            <pre role="tabpanel" id="npm-use-classic"><code>{{ npm_usage_classic|escape|trim }}</code></pre>
+            <pre role="tabpanel" id="npm-use-module"><code>{{ npm_usage_esm|escape|trim }}</code></pre>
         </div>
         <p>Or use a bundler instead:</p>
         <div class="code-wrapper">
