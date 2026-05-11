@@ -139,12 +139,7 @@ export const buildTemplates = () => {
     .pipe(gulp.dest(paths.dist.demo));
 };
 
-// --- Full Build ---
 
-export const build_js_css = gulp.series(jsBundle,compileSass)
-export const build = gulp.series(build_js_css,buildTemplates,gulp.parallel(copyJS, copyCSS));
-
-export default build;
 
 export const serve = (done) => {
   bs.init({
@@ -179,6 +174,9 @@ export const validateHTML = async () => {
   }
 };
 
+export const build_js_css = gulp.series(jsBundle,compileSass)
+export const build = gulp.series(build_js_css,buildTemplates,gulp.parallel(copyJS, copyCSS),validateHTML)
+
 // Watch
 export const watch = gulp.series(build, serve, function watchFiles() {
 
@@ -203,3 +201,4 @@ export const watch = gulp.series(build, serve, function watchFiles() {
   );
 });
 
+export default build;
