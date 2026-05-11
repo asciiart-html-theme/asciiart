@@ -8,8 +8,8 @@
 
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="{{baseUrl}}css/style.css">
-  <script type="application/javascript" src="{{baseUrl}}js/asciiart.min.js"></script>
-  <script type="application/javascript">
+  <script src="{{baseUrl}}js/asciiart.min.js"></script>
+  <script >
     document.addEventListener("DOMContentLoaded", () => {
       new AsciiartTheme.Sidebar("#sidebar");
     });      
@@ -18,7 +18,7 @@
 </head>
 <body class="sidebar-layout">
   <div class="sidebar-btn">
-    <button role="button" class="button-expand button-toggle" aria-controls="#sidebar" aria-expanded="true"></button>
+    <button class="button-expand button-toggle" aria-controls="#sidebar" aria-expanded="true"></button>
   </div>
   <div id="sidebar" class="aside-wrapper">
     <button class="button-close" aria-controls="#sidebar"></button>
