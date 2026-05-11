@@ -45,15 +45,15 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
         <h2>Using CDN</h2>
         <div class="code-wrapper">
             <div>
-                <h5>Html</h5>
-                <div class="tab-button-container">
-                    <button class="btn-tab" aria-selected="true" aria-controls="#cdn-setup-classic">Classic</button>
-                    <button class="btn-tab" aria-controls="#cdn-setup-module">Browser Module</button>
+                <span>Html</span>
+                <div role="tablist" class="tab-button-container">
+                    <button role="tab" class="btn-tab" aria-selected="true" aria-controls="cdn-setup-classic">Classic</button>
+                    <button role="tab" class="btn-tab" aria-controls="cdn-setup-module">Browser Module</button>
                 </div>
                 <button class="copy">COPY</button>
             </div>
-            <pre id="cdn-setup-classic"><code> {{cdn_setup_clasic|escape|trim}}</code></pre>
-            <pre id="cdn-setup-module"><code>{{cdn_setup_esm|escape|trim }} </code></pre>
+            <pre role="tabpanel" id="cdn-setup-classic"><code> {{cdn_setup_clasic|escape|trim}}</code></pre>
+            <pre role="tabpanel" id="cdn-setup-module"><code>{{cdn_setup_esm|escape|trim }} </code></pre>
         </div>
     </article>
     <article id="npm">
@@ -61,7 +61,7 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
         <p>Theme is also shipped via NPM so you can import and use it into your own project as well:</p>
         <div class="code-wrapper">
             <div>
-                <h5>Console</h5>
+                <span>Console</span>
             </div>
             <pre><code>npm install @pc_magas/asciiart</code></pre>
         </div>
@@ -69,20 +69,20 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
         <p>After installing the package you can import the minified javascript directly into youer html:</p>
         <div class="code-wrapper">
             <div>
-                <h5 class="sm-hidden">JS/HTML</h5>
-                <div class="tab-button-container">
-                    <button class="btn-tab" aria-selected="true" aria-controls="#npm-use-classic">Classic</button>
-                    <button class="btn-tab" aria-controls="#npm-use-module">Browser Module</button>
+                <span class="sm-hidden">JS/HTML</span>
+                <div role="tablist" class="tab-button-container">
+                    <button role="tab" class="btn-tab" aria-selected="true" aria-controls="npm-use-classic">Classic</button>
+                    <button role="tab" class="btn-tab" aria-controls="npm-use-module">Browser Module</button>
                 </div>
                 <button class="copy">COPY</button>
             </div>
-            <pre id="npm-use-classic"><code>{{ npm_usage_classic|escape|trim }}</code></pre>
-            <pre id="npm-use-module"><code>{{ npm_usage_esm|escape|trim }}</code></pre>
+            <pre role="tabpanel" id="npm-use-classic"><code>{{ npm_usage_classic|escape|trim }}</code></pre>
+            <pre role="tabpanel" id="npm-use-module"><code>{{ npm_usage_esm|escape|trim }}</code></pre>
         </div>
         <p>Or use a bundler instead:</p>
         <div class="code-wrapper">
             <div>
-                <h5>JS</h5>
+                <span>JS</span>
                 <button class="copy">COPY</button>
             </div>
             <pre><code>{{npm_usage_import|escape|trim}}</code></pre>
@@ -90,7 +90,7 @@ import {autoinit} from "https://unpkg.com/@pc_magas/asciiart/dist/js/asciiart.es
         <p>Css is loaded upon Html using a <code>&lt;link&gt;</code> tag:</p>
         <div class="code-wrapper">
             <div>
-                <h5>HTML/CSS</h5>
+                <span>HTML/CSS</span>
                 <button class="copy">COPY</button>
             </div>
             <pre><code>&lt;link rel="stylesheet" href="./node_modules/@pc_magas/asciiart/dist/asciiart.css"/ &gt;</code></pre>

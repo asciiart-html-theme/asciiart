@@ -1,10 +1,10 @@
 {% set demoHtml %}
-    {% include "pages/layouts/demos/sidebar-full.html" %}
+    {% include "pages/layouts/demos/sidebar-full-no-nav.html" %}
 {% endset %}
 
 {% set js %}
 <script src="/js/asciiart.min.js"></script>
-<script>
+<script >
     document.addEventListener("DOMContentLoaded", () => {
         // Initialize the Sidebar component
         new AsciiartTheme.Sidebar("#sidebar");
@@ -27,10 +27,10 @@
 <link rel="stylesheet" href="css/style.css">
 {% endset %}
 
-<section id="full">
-    <h1>Sidebar Full Layout</h1>
+<section id="full-no-nav">
+    <h1>Sidebar Full Layout (without navigation)</h1>
     <p>
-        A comprehensive 'Application-style' layout. The sidebar occupies the full height of the viewport on the left, while the navigation and content scale responsively on the right.
+        Sidebar takes over full space but the main content has no navigation.
     </p>
     <p>
         Upon small screen or upon window resizing sidebar moves offcanvas allowing the user to focus on content.
@@ -39,7 +39,7 @@
     <div class="code-wrapper">
         <div>
             <span>HTML Code</span>
-            <a href="/layouts/demos/sidebar-full.html" class="button" target="_blank">Preview</a>
+            <a href="/layouts/demos/sidebar-full-no-nav.html" class="button" target="_blank">Preview</a>
             <button class="copy">Copy</button>
         </div>
         <pre><code>{{ demoHtml | escape }}</code></pre>

@@ -69,6 +69,7 @@
             <li><a href="#treemenu">Treemenu</a></li>
         </ul>
     </li>
+    <li><a href="#miscelanous">Miscelanous classes</a></li>
  
 </ul>
 {% endblock %}
@@ -85,6 +86,7 @@
     <h1>Colors</h1>
     <p>Theme comes comes in color combinations consisting of 2 colors. Background color and text color.<br>
         For each color there are classes started with <code>color-*</code> indicating which color is selected:
+    </p>
         <table>
             <thead>
                 <tr>
@@ -134,12 +136,48 @@
                 </tr>
             </tbody>
         </table>
-    </p>
 </section>
 
 {% include "partials/content/components/navbar.html" %}
 {% include "partials/content/components/alerts.html" %}
 {% include "partials/content/components/codewrapper.html" %}
 {% include "partials/content/components/tree.html" %}
+
+{% set banner %}
+<header class="banner">
+   <pre>  ___           _ _  ___       _   
+ / _ \         (_|_)/ _ \     | |  
+/ /_\ \___  ___ _ _/ /_\ \_ __| |_ 
+|  _  / __|/ __| | |  _  | '__| __|
+| | | \__ \ (__| | | | | | |  | |_ 
+\_| |_/___/\___|_|_\_| |_/_|   \__|
+    </pre>
+</header>
+{% endset %}
+
+<section id="miscelanous">
+    <h1>Miscelanous classes</h1>
+    <article>
+        <h2>Hide upon small screens</h2>
+        <p>
+            You can use class <code>.sm-hidden</code> in order to hide an elemen in screend having &lt; 700px
+        </p>
+    </article>
+    <article>
+        <h2>Banner class</h2>
+        <p> If displaying asciiart wrap it around an element containing <code>.banner</code> class in order to display it nicely:</p>
+        <div class="code-wrapper">
+            <div>
+                <span>html</span>
+                <button class="copy">COPY</button>
+            </div>
+            <pre><code>{{ banner|escape|trim }}</code></pre>
+        </div>
+    </article>
+    <article>
+        <h2>Stick to top</h2>
+        <p>Via using class <code>.sticky-top</code> you can make an element stick into the top of the page.</p>
+    </article>
+</section>
 
 {% endblock %}

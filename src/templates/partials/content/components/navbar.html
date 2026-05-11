@@ -56,22 +56,20 @@
             </nav>
         </div>
         <p>Code:</p>
-        <pre class="code-wrapper">
+        <div class="code-wrapper">
             <div>
-                <h5>HTML</h5>
+                <span>HTML</span>
                 <button class="copy">COPY</button>
             </div>
-            <code>{{ basic_navbar | escape | trim }}
-                
-            </code>
-        </pre>
+            <pre><code>{{ basic_navbar | escape | trim }}</code></pre>
+        </div>
     </article>
     <article id="navbar-sticky">
         <h2>Sticky Navbar</h2>
         <p>If you want the navbar to stick on top of thew screen use <code>sticky-top</code> class:</p>
         <div class="code-wrapper">
             <div>
-                <h5>HTML</h5>
+                <span>HTML</span>
                 <button class="copy">COPY</button>
             </div>
             <pre><code>{{ sticky_navbar | escape | trim }}</code></pre>
@@ -90,7 +88,7 @@
         </div>
          <div class="code-wrapper">
             <div>
-                <h5>HTML</h5>
+                <span>HTML</span>
                 <button class="copy">COPY</button>
             </div>
             <pre><code> {{leading_elements | escape | trim }}</code></pre>
@@ -105,14 +103,13 @@
                 <a href="#">Item 3</a>
             </nav>
         </div>
-        <p>Using the class <code>active</code> you can hilight an active element indicating current visited page:
-             <div class="code-wrapper">
+        <p>Using the class <code>active</code> you can hilight an active element indicating current visited page:</p>
+        <div class="code-wrapper">
             <div>
-                <h5>HTML</h5>
+                <span>HTML</span>
                 <button class="copy">COPY</button>
             </div>
             <pre><code>{{highlight|escape|trim}} </code></pre>
         </div>
-        </p>
     </article>
 </section>

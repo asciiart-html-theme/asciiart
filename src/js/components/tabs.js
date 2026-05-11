@@ -7,11 +7,9 @@ export default class TabController {
 
         Array.from(this.wrapperElement.children).forEach(element => {
             element.addEventListener("click",()=>this.select(element))
-
-            const elementToControl = getDomElement(element.getAttribute('aria-controls'))
-
+            const elementToControl = document.getElementById(element.getAttribute('aria-controls'))
             if(!elementToControl){
-                console.error("No element to controll skipping")
+                console.error("No element to control skipping")
                 return;
             }
 
@@ -26,7 +24,7 @@ export default class TabController {
 
     select(clickedButton){
         Array.from(this.wrapperElement.children).forEach(element => {
-            const elementToControl = getDomElement(element.getAttribute('aria-controls'))
+            const elementToControl = document.getElementById(element.getAttribute('aria-controls'))
             console.log("Controlling Element",elementToControl)
 
             if(!elementToControl){

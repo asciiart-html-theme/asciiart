@@ -12,6 +12,8 @@ import dartSass from 'sass';
 import { join } from "path";
 import { mkdirSync, copyFileSync, readdirSync } from "fs";
 
+import { w3cHtmlValidator } from "w3c-html-validator";
+
 // --- Paths ---
 const paths = {
   src: {
@@ -137,12 +139,7 @@ export const buildTemplates = () => {
     .pipe(gulp.dest(paths.dist.demo));
 };
 
-// --- Full Build ---
 
-export const build_js_css = gulp.series(jsBundle,compileSass)
-export const build = gulp.series(build_js_css,buildTemplates,gulp.parallel(copyJS, copyCSS));
-
-export default build;
 
 export const serve = (done) => {
   bs.init({
@@ -159,6 +156,26 @@ export const reload = (done) => {
   bs.reload();
   done();
 };
+
+export const validateHTML = async () => {
+  const htmlFiles = readdirSync(paths.dist.demo)
+    .filter(file => file.endsWith(".html"));
+
+  for (const file of htmlFiles) {
+    const results = await w3cHtmlValidator.validate({
+      filename: join(paths.dist.demo, file),
+    });
+
+    w3cHtmlValidator.reporter(results);
+
+    if (!results.validates) {
+     console.error(`HTML validation failed: ${file}`);
+    }
+  }
+};
+
+export const build_js_css = gulp.series(jsBundle,compileSass)
+export const build = gulp.series(build_js_css,buildTemplates,gulp.parallel(copyJS, copyCSS))
 
 // Watch
 export const watch = gulp.series(build, serve, function watchFiles() {
@@ -180,7 +197,8 @@ export const watch = gulp.series(build, serve, function watchFiles() {
   
   gulp.watch(
     paths.src.templates.watch,
-    gulp.series(buildTemplates, reload)
+    gulp.series(buildTemplates , reload)
   );
 });
 
+export default build;

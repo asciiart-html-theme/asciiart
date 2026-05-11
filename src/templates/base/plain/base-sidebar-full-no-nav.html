@@ -9,7 +9,7 @@
   <!-- SCSS compiled CSS -->
   <link rel="stylesheet" href="{{baseUrl}}css/style.css">
   <script src="{{baseUrl}}js/asciiart.min.js"></script>
-  <script>
+  <script >
     document.addEventListener("DOMContentLoaded", () => {
       new AsciiartTheme.Sidebar("#sidebar");
     });      
@@ -17,7 +17,10 @@
   {% block scripts %}{% endblock %}
 </head>
 <body class="sidebar-layout">
-  <div id="sidebar" class="aside-wrapper-fullheight bellow-nav">
+  <div class="sidebar-btn">
+    <button class="button-expand button-toggle" aria-controls="#sidebar" aria-expanded="true"></button>
+  </div>
+  <div id="sidebar" class="aside-wrapper">
     <button class="button-close" aria-controls="#sidebar"></button>
     {% block header %}{% endblock %}
 
@@ -31,16 +34,6 @@
   </div>
 
   <div class="main-wrapper">
-    <div class="nav-wrapper sticky-top">
-        <div class="lead">
-          <button
-            class="button-expand button-toggle" 
-            aria-controls="#sidebar"
-          ></button>
-        </div>
-        {% include '../../partials/main-nav.html' %}
-    </div>
-
     <main>
         {% block content %}{% endblock %}
     </main>

@@ -1,0 +1,19 @@
+
+ul.inline-comma {
+    li {
+        display: inline;
+        &::after {
+            content: ",";
+        }
+
+        &:last-child::after {
+            content: "";
+        }
+    }
+}
+
+ul.inline {
+    li {
+        display: inline;
+    }
+}

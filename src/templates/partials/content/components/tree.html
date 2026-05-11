@@ -42,7 +42,7 @@
 {% endset %}
 
 {% set autoinitJS %}
-<script type="application/javascript" src="/js/asciiart.min.js"></script>
+<script src="/js/asciiart.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded",function(){
         AsciiartTheme.autoinit.treemenu()
@@ -67,15 +67,14 @@
     </article>
     <article>
         <h2>Usage</h2>
-        <p>In case you want to simply display a list in a form of tree use <code>tree</code> class instead. Javascript ignores this class:
+        <p>In case you want to simply display a list in a form of tree use <code>tree</code> class instead. Javascript ignores this class:</p>
          <div class="code-wrapper">
                 <div>
-                    <h5>HTML Code</h5>
+                    <span>HTML Code</span>
                     <button class="copy">Copy</button>
                 </div>
                 <pre><code>{{tree|escape|trim}}</code></pre>
             </div>    
-        </p>
     </article>
 </section>
 
@@ -90,29 +89,28 @@
     </article>
     <article>
         <h2>Usage</h2>
-        <p> Tree menu is an ideal way to represent navigation whilst retaining a nice, retro look. In order to work you need to initialize html:
+        <p> Tree menu is an ideal way to represent navigation whilst retaining a nice, retro look. In order to work you need to initialize html:</p>
             <div class="code-wrapper">
                 <div>
-                    <h5>HTML Code</h5>
+                    <span>HTML Code</span>
                     <button class="copy">Copy</button>
                 </div>
                 <pre><code>{{treemenu|escape|trim}}</code></pre>
             </div>    
-        </p>
-        <p>
-            Beyond html it also needs to be initialized via Javascript:
+        
+        <p>Beyond html it also needs to be initialized via Javascript:</p>
              <div class="code-wrapper">
                 <div>
-                    <h5>JS Code</h5>
-                    <div class="tab-button-container">
-                        <button class="btn-tab" role="tab" aria-selected="true" aria-controls="#treemenu-js">JS</button>
-                        <button class="btn-tab" role="tab" aria-controls="#treemenu-esm">ESM</button>
+                    <span>JS Code</span>
+                    <div role="tablist" class="tab-button-container">
+                        <button class="btn-tab" role="tab" aria-selected="true" aria-controls="treemenu-js">JS</button>
+                        <button class="btn-tab" role="tab" aria-controls="treemenu-esm">ESM</button>
                     </div>
                     <button class="copy">Copy</button>
                 </div>
-                <pre id="treemenu-js"><code>{{autoinitJS|escape|trim}}</code></pre>
-                <pre id="treemenu-esm"><code>{{autoinitESM|escape|trim}}</code></pre>
+                <pre role="tabpanel" id="treemenu-js"><code>{{autoinitJS|escape|trim}}</code></pre>
+                <pre role="tabpanel" id="treemenu-esm"><code>{{autoinitESM|escape|trim}}</code></pre>
             </div>    
-        </p>
+        
     </article>
 </section>
