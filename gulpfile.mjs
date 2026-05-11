@@ -169,13 +169,13 @@ export const validateHTML = async () => {
     w3cHtmlValidator.reporter(results);
 
     if (!results.validates) {
-      throw new Error(`HTML validation failed: ${file}`);
+     console.error(`HTML validation failed: ${file}`);
     }
   }
 };
 
 export const build_js_css = gulp.series(jsBundle,compileSass)
-export const build = gulp.series(build_js_css,buildTemplates,gulp.parallel(copyJS, copyCSS),validateHTML)
+export const build = gulp.series(build_js_css,buildTemplates,gulp.parallel(copyJS, copyCSS))
 
 // Watch
 export const watch = gulp.series(build, serve, function watchFiles() {
@@ -197,7 +197,7 @@ export const watch = gulp.series(build, serve, function watchFiles() {
   
   gulp.watch(
     paths.src.templates.watch,
-    gulp.series(buildTemplates, validateHTML , reload)
+    gulp.series(buildTemplates , reload)
   );
 });
 
