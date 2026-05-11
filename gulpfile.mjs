@@ -12,6 +12,8 @@ import dartSass from 'sass';
 import { join } from "path";
 import { mkdirSync, copyFileSync, readdirSync } from "fs";
 
+import { w3cHtmlValidator } from "w3c-html-validator";
+
 // --- Paths ---
 const paths = {
   src: {
@@ -160,6 +162,23 @@ export const reload = (done) => {
   done();
 };
 
+export const validateHTML = async () => {
+  const htmlFiles = readdirSync(paths.dist.demo)
+    .filter(file => file.endsWith(".html"));
+
+  for (const file of htmlFiles) {
+    const results = await w3cHtmlValidator.validate({
+      filename: join(paths.dist.demo, file),
+    });
+
+    w3cHtmlValidator.reporter(results);
+
+    if (!results.validates) {
+      throw new Error(`HTML validation failed: ${file}`);
+    }
+  }
+};
+
 // Watch
 export const watch = gulp.series(build, serve, function watchFiles() {
 
@@ -180,7 +199,7 @@ export const watch = gulp.series(build, serve, function watchFiles() {
   
   gulp.watch(
     paths.src.templates.watch,
-    gulp.series(buildTemplates, reload)
+    gulp.series(buildTemplates, validateHTML , reload)
   );
 });
 
