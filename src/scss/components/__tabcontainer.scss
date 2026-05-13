@@ -1,3 +1,5 @@
+@use '../color/_color';
+
 .tab-button-container {
     display: flex;
     overflow-x:scroll;
@@ -42,15 +44,24 @@
 
 .scrolltab {
     display: flex;
-
     .scroll-btn {
-        
-        .before {
-            content: "<";
+        background-color: var(--color-fe);
+        &.before{
+            &::before {
+             content: "<";
+            }
+            &::after {
+                content: "";
+            }
         }
         
-        .aftet {
-            content: ">";
+        &.after {
+            &::before {
+                content: ">";
+            }
+            &::after {
+                content: "";
+            }
         }
     }
 }
