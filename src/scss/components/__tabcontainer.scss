@@ -1,6 +1,27 @@
+@use '../color/_color';
+
 .tab-button-container {
     display: flex;
+    overflow-x:scroll;
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
     button {
+
+        flex-shrink: 0; /* Prevents buttons from shrinking to fit */
+        white-space: nowrap;
+        background: transparent;
+        border: 1px solid var(--color-fe);
+        padding: 5px 10px;
+        cursor: pointer;
+
         &[aria-selected="true"] {
             &::before {
                 content: ">";
@@ -16,6 +37,30 @@
             }
             &::after {
                 content: "<]";
+            }
+        }
+    }
+}
+
+.scrolltab {
+    display: flex;
+    .scroll-btn {
+        background-color: var(--color-fe);
+        &.before{
+            &::before {
+             content: "<";
+            }
+            &::after {
+                content: "";
+            }
+        }
+        
+        &.after {
+            &::before {
+                content: ">";
+            }
+            &::after {
+                content: "";
             }
         }
     }

@@ -1,5 +1,5 @@
 import {getDomElement} from "../common";
-
+import ScrollContainer from "./scrollcontainer";
 
 export default class TabController {
     constructor(wrapperElement){
@@ -20,6 +20,16 @@ export default class TabController {
 
             elementToControl.hidden=true
         });
+
+        this.initScroll()
+
+    }
+
+    initScroll(){
+        const scrollContainer = this.wrapperElement.parentElement
+        if(scrollContainer.classList.contains('scrolltab')){
+            this.scrollContainer = new ScrollContainer(scrollContainer,this.wrapperElement)
+        }
     }
 
     select(clickedButton){

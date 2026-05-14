@@ -56,10 +56,13 @@
         .tab-button-container {
            display: flex;
            flex-shrink: 10;
-            gap: 5px; // Space between JS and ESM buttons
-            align-items: center;
-            
-            button {
+           gap: 5px; // Space between JS and ESM buttons
+           
+           align-items: center;
+           overflow-x: scroll; 
+           flex-grow: 1;
+           
+           button {
                 background: transparent;
                 border: none;
                 color: inherit;
@@ -96,5 +99,33 @@
         max-height: 1000px;
         overflow-y: scroll;
         margin: 1px;
+    }
+}
+
+.scrolltab {
+    width: auto;
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+
+    .scroll-btn {
+        background-color: var(--color-fe);
+        &.before{
+            &::before {
+                content: "<";
+            }
+            &::after {
+                content: "";
+            }
+        }
+                
+        &.after {
+            &::before {
+                content: ">";
+            }
+            &::after {
+                content: "";
+            }
+        }
     }
 }
