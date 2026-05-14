@@ -18,7 +18,7 @@
         content: "]";
     }
 
-    &::hover {
+    &:hover {
         background-color: var(--color-hover-bg);
         color: var(--color-hover-fe);
     }
@@ -44,7 +44,7 @@ a {
 
 .button-toggle {
 
-  &[data-element-hidden="true"]::after {
+  &[aria-expanded="false"]::after {
     content: ">" !important; // override when false
   }
 
@@ -58,7 +58,7 @@ a {
 
 
     @media screen and (max-width: var.$breakpoint-sm) {
-        &[data-element-hidden="true"]::after {
+        &[aria-expanded="false"]::after {
             content: "+" !important; // override when false
         }
 
