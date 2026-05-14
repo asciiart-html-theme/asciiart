@@ -18,7 +18,7 @@
         flex-shrink: 0; /* Prevents buttons from shrinking to fit */
         white-space: nowrap;
         background: transparent;
-        border: 1px solid #ccc;
+        border: 1px solid var(--color-fe);
         padding: 5px 10px;
         cursor: pointer;
 
