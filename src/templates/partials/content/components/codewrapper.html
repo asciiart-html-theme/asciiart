@@ -1,3 +1,136 @@
+{% set codewrapper_basic %}
+<div class="code-wrapper">
+    <div>
+        <span>HTML</span>
+        <button class="copy">COPY</button>
+    </div>
+    <pre>
+        <code>
+            Piece of code here            
+        </code>
+    </pre>
+</div>
+{% endset %}
+
+{% set codewrapper_init_esm %}
+<script type="module">
+    import { autoinit } from "/js/asciiart.esm.js"; 
+
+    document.addEventListener("DOMContentLoaded", function () {
+        autoinit.codewrapper()
+    })
+</script>
+{% endset %}
+
+{% set codewrapper_init_js %}
+<script type="application/javascript" src="/js/asciiart.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        AsciiartTheme.autoinit.codewrapper()
+    })
+</script>
+{% endset %}
+
+
+{% set basic_navbar %}
+<div class="nav-wrapper">
+    <nav class="main-nav">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+    </nav>
+</div>
+{% endset %}
+
+{% set codewrapper_class_esm %}
+<script type="module">
+    import { CodeWrapper } from "/js/asciiart.esm.js"; 
+
+    document.addEventListener("DOMContentLoaded", function () {
+        new CodeWrapper("#mycontainer")
+    })
+</script>
+{% endset %}
+
+{% set codewrapper_class_js %}
+<script type="application/javascript" src="/js/asciiart.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new AsciiartTheme.CodeWrapper("#mycontainer")
+    })
+</script>
+{% endset %}
+
+{% set codewrapper_tabs_basic %}
+<div class="code-wrapper">
+    <div>
+        <span>Installation Instructions</span>
+
+        <div role="tablist" class="tab-button-container">
+            <button class="btn-tab" role="tab" aria-selected="true" aria-controls="windows">Windows</button>
+            <button class="btn-tab" role="tab" aria-controls="linux">Linux</button>
+        </div>
+
+        <button class="copy">COPY</button>
+    </div>
+
+    <pre id="windows">
+        <code>
+            windows installation            
+        </code>
+    </pre>
+
+    <pre id="linux">
+        <code>
+            linux installation            
+        </code>
+    </pre>
+</div>
+{% endset %}
+
+{% set codewrapper_tabs_title %}
+<div class="code-wrapper">
+    <div>
+        <div class="tab-button-container">
+            <button class="btn-tab" role="tab" aria-selected="true" aria-controls="windows">Windows</button>
+            <button class="btn-tab" role="tab" aria-controls="linux">Linux</button>
+        </div>
+
+        <span>Installation Instructions</span>
+
+        <button class="copy">COPY</button>
+    </div>
+
+    <pre id="windows">
+        <code>
+            windows installation            
+        </code>
+    </pre>
+
+    <pre id="linux">
+        <code>
+            linux installation            
+        </code>
+    </pre>
+</div>
+{% endset %}
+
+{% set codewrapper_links %}
+<div class="code-wrapper">
+    <div>
+        <span>Demo</span>
+        <a href="#">Preview</a>
+        <button class="copy">COPY</button>
+    </div>
+
+    <pre>
+        <code>
+            soime code here....  
+        </code>
+    </pre>
+</div>
+{% endset %}
+
 <section id="codewrapper">
     <h1>CodeWrapper</h1>
     <article id="codewrapper-basic">
@@ -8,21 +141,7 @@
             <span>HTML</span>
             <button class="copy">COPY</button>
         </div>
-        <pre>
-            <code>
-&lt;div class="code-wrapper"&gt;
-    &lt;div&gt;
-        &lt;span&gt;HTML&lt;/span&gt;
-        &lt;button class="copy"&gt;COPY&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;pre&gt;
-        &lt;code&gt;
-            Piece of code here            
-        &lt;/code&gt;
-    &lt;/pre&gt;
-&lt;/div&gt;
-            </code>
-        </pre>
+        <pre><code>{{ codewrapper_basic | escape | trim }}</code></pre>
     </div>
     <p>The component also need to initialize the copy buttons, both js and esm supported:</p>
     <div class="code-wrapper">
@@ -34,26 +153,8 @@
             </div>
             <button class="copy">COPY</button>
         </div>
-        <pre id="codewrapper-init-esm">
-            <code>
-&lt;script type=\"module\"&gt;
-    import { autoinit } from "/js/asciiart.esm.js"; 
-    document.addEventListener("DOMContentLoaded",function(){
-        autoinit.codewrapper()
-    })
-&lt;/script&gt;
-            </code>
-        </pre>
-        <pre id="codewrapper-init-js">
-            <code>
-&lt;script type="application/javascript" src="/js/asciiart.min.js&gt;&lt;/script&gt;
-&lt;script&gt;
-    document.addEventListener("DOMContentLoaded",function(){
-        AsciiartTheme.autoinit.codewrapper()
-    })
-&lt;/script&gt;
-            </code>
-        </pre>
+        <pre id="codewrapper-init-esm">{{ codewrapper_init_esm | escape | trim }}</code></pre>
+        <pre id="codewrapper-init-js"><code>{{ codewrapper_init_js | escape | trim }}</code></pre>
     </div>
 
     <p>Otherwise you can use the <code>CodeWrapper</code> class, ideal for a single element, both js and esm supported:</p>
@@ -66,26 +167,8 @@
             </div>
             <button class="copy">COPY</button>
         </div>
-        <pre id="codewrapper-class-esm" class="tab-code">
-            <code>
-&lt;script type=\"module\"&gt;
-    import { CodeWrapper } from "/js/asciiart.esm.js"; 
-    document.addEventListener("DOMContentLoaded",function(){
-        new CodeWrapper("#mycontainer")
-    })
-&lt;/script&gt;
-            </code>
-        </pre>
-        <pre id="codewrapper-class-js" class="tab-code">
-            <code>
-&lt;script type="application/javascript" src="/js/asciiart.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-    document.addEventListener("DOMContentLoaded",function(){
-        new AsciiartTheme.CodeWrapper("#mycontainer")
-    })
-&lt;/script&gt;
-            </code>
-        </pre>
+        <pre id="codewrapper-class-esm" class="tab-code"><code>{{ codewrapper_class_esm | escape | trim }}</code></pre>
+        <pre id="codewrapper-class-js" class="tab-code"><code>{{ codewrapper_class_js | escape | trim }} </code></pre>
     </div>
     
 </article>
@@ -97,30 +180,7 @@
                 <span>HTML</span>
                 <button class="copy">COPY</button>
             </div>
-        <pre>
-            <code>
-&lt;div class="code-wrapper"&gt;
-    &lt;div&gt;
-        &lt;span&gt;Installation Instructions&lt;/span&gt;
-        &lt;div role="tablist" class="tab-button-container"&gt;
-                &lt;button class="btn-tab" role="tab" aria-selected="true" aria-controls="windows">Windows&lt;/button&gt;
-                &lt;button class="btn-tab" role="tab" aria-controls="linux">Linux&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;button class="copy"&gt;COPY&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;pre id="windows"&gt;
-        &lt;code&gt;
-            windows installation            
-        &lt;/code&gt;
-    &lt;/pre&gt;
-    &lt;pre id="linux"&gt;
-        &lt;code&gt;
-            linux installation            
-        &lt;/code&gt;
-    &lt;/pre&gt;
-&lt;/div&gt;
-            </code>
-        </pre>
+        <pre><code>{{ codewrapper_tabs_basic | escape | trim }}</code></pre>
     </div>
 
      <p>Also codewrapper can contain multiple tabs as well. In that case left and right scroll button appear:</p>
@@ -186,30 +246,7 @@ mkdotenv --version
             <span>HTML</span>
             <button class="copy">COPY</button>
         </div>
-        <pre>
-            <code>
-&lt;div class="code-wrapper"&gt;
-    &lt;div&gt;
-        &lt;div class="tab-button-container"&gt;
-                &lt;button class="btn-tab" role="tab" aria-selected="true" aria-controls="windows">Windows&lt;/button&gt;
-                &lt;button class="btn-tab" role="tab" aria-controls="linux">Linux&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;span&gt;Installation Instructions&lt;/span&gt;
-        &lt;button class="copy"&gt;COPY&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;pre id="windows"&gt;
-        &lt;code&gt;
-            windows installation            
-        &lt;/code&gt;
-    &lt;/pre&gt;
-    &lt;pre id="linux"&gt;
-        &lt;code&gt;
-            linux installation            
-        &lt;/code&gt;
-    &lt;/pre&gt;
-&lt;/div&gt;
-            </code>
-        </pre>
+        <pre><code>{{ codewrapper_tabs_title | escape | trim }}</code></pre>
     </div>
 </article>
 <article id="#codewrapper-links">
@@ -220,21 +257,7 @@ mkdotenv --version
                 <span>HTML</span>
                 <button class="copy">COPY</button>
             </div>
-            <pre><code>
-&lt;div class="code-wrapper"&gt;
-    &lt;div&gt;
-        &lt;span&gt;Demo&lt;/span&gt;
-        &lt;a href="#"&gt;Preview&lt;a&gt;
-        &lt;button class="copy"&gt;COPY&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;pre&gt;
-        &lt;code&gt;
-            soime code here....  
-        &lt;/code&gt;
-    &lt;/pre&gt;
-&lt;/div&gt;
-            </code></pre>
+            <pre><code>{{ codewrapper_links | escape | trim }}</code></pre>
         </div>
-    
 </article>
 </section>
