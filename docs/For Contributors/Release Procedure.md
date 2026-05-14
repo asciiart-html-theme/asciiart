@@ -57,5 +57,5 @@ git merge development
 ## Push master
 
 ```
-git push origin master
+git push origin master --tags
 ```
