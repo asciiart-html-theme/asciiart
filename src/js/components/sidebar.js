@@ -60,7 +60,6 @@ class Sidebar {
     if(id){
       document.querySelectorAll(this.button_selector(id))
         .forEach((button)=>{
-          button.dataset.elementHidden=!this.sidebar.checkVisibility()
           button.setAttribute("aria-expanded", this.sidebar.checkVisibility());
         })
     }
