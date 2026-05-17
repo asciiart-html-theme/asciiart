@@ -1,41 +1,41 @@
 {% set treemenu %}
-<ul class="treemenu">
-                <li><a href="#">Typography</a></li>
-                <li><a href="#">Tables</a></li>
-                <li data-visible="true">
-                    <button aria-expanded="false">Navbar</button>
-                    <ul>
-                        <li><a href="#">Basic Usage</a></li>
-                        <li><a href="#">Sticky Top</a></li>
-                        <li><a href="#">Leading Elements</a></li>
+<ul class="treemenu" role="tree">
+                <li  role="treeitem"><a href="#">Typography</a></li>
+                <li role="treeitem" ><a href="#">Tables</a></li>
+                <li role="treeitem" data-visible="true" aria-expanded="true">
+                    <button>Navbar</button>
+                    <ul role="group">
+                        <li role="treeitem"><a href="#">Basic Usage</a></li>
+                        <li role="treeitem"><a href="#">Sticky Top</a></li>
+                        <li role="treeitem"><a href="#">Leading Elements</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Alerts</a></li>
-                <li><button aria-expanded="false">Codewrapper</button>
-                    <ul>
-                        <li><a href="#">Basic usage</a></li>
-                        <li><a href="#">Tabs</a></li>
+                <li role="treeitem"><a href="#">Alerts</a></li>
+                <li role="treeitem"  aria-expanded="false"><button>Codewrapper</button>
+                    <ul role="group">
+                        <li role="treeitem"><a href="#">Basic usage</a></li>
+                        <li role="treeitem"><a href="#">Tabs</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Treemenu</a></li>
+                <li role="treeitem"><a href="#">Treemenu</a></li>
             </ul>
 {% endset %}
 
 {% set tree %}
 <ul class="tree">
-                <li>Item</li>
-                <li>Item</li>
-                <li data-visible="true">
+                <li role="treemenu">Item</li>
+                <li role="treemenu">Item</li>
+                <li role="treemenu" data-visible="true" aria-expanded="true">
                     <span>Item with nested Items</span>
-                    <ul>
-                        <li><span>Nested Item 1</span></li>
-                        <li><span>Nested Item with nested Items</span>
-                             <ul>
-                                <li>Nested Item 1</li>
-                                <li>Nested Item 2</li>
+                    <ul role="group">
+                        <li role="treemenu"><span>Nested Item 1</span></li>
+                        <li role="treemenu"><span>Nested Item with nested Items</span>
+                             <ul role="group">
+                                <li role="treemenu">Nested Item 1</li>
+                                <li role="treemenu">Nested Item 2</li>
                             </ul>
                         </li>
-                        <li>Nested Item 3</li>
+                        <li role="treemenu">Nested Item 3</li>
                     </ul>
                 </li>
             </ul>
