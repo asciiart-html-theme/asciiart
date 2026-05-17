@@ -18,7 +18,8 @@
                 "color-amber",
                 "color-green",
                 "color-dos",
-                "color-paper"
+                "color-paper",
+                "color-original"
             ]
                 
             classes.forEach((className)=>document.querySelector("body").classList.remove(className))
@@ -27,8 +28,8 @@
                 "blue":"color-dos",
                 "amber":"color-amber",
                 "green":"color-green",
-                "tone-down":"color-black-tone-down",
-                "paper":"color-paper"
+                "paper":"color-paper",
+                "original":"color-original"
             }
             console.log(classMap[value])
             if(classMap[value]){
@@ -104,6 +105,13 @@
                     <td>rgb(0,0,0)</td>
                     <td>rgb(220,217,217)</td>
                     <td><button onclick="changeColor(this)" value="white">Change</button></td>
+                </tr>
+                <tr>
+                    <td>Original</td>
+                    <td><code>.color-original</code></td>
+                    <td>rgb(0,0,0)</td>
+                    <td>#EFEFEF</td>
+                    <td><button onclick="changeColor(this)" value="original">Change</button></td>
                 </tr>
                 <tr>
                     <td>Green</td>

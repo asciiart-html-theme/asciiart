@@ -1,12 +1,19 @@
 @use '../__var' as v;
 
 :root {
-  --color-black: #{v.$color-black};
+  
+    --color-black: #{v.$color-black};
+  
   --color-white: #{v.$color-white};
   --color-white-print: #{v.$color-white-print};
+  
   --color-amber: #{v.$color-amber};
   --color-green: #{v.$color-green};
+  
   --color-dos: #{v.$color-blue};
+
+  --color-original-bg: #{v.$color-dark-gray};
+  --color-original-gray: #{v.$color-light-gray};
 }
 
 @mixin color_def {
@@ -32,6 +39,11 @@
     --color-bg: var(--color-black);
     --color-fe: var(--color-white);
     @include color_def()
+}
+
+.color-original {
+    --color-fe: var(--color-original-gray);
+    @include color_def();
 }
 
 .color-amber {
