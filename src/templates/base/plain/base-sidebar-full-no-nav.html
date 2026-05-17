@@ -17,11 +17,11 @@
   {% block scripts %}{% endblock %}
 </head>
 <body class="sidebar-layout">
-  <div class="sidebar-btn">
-    <button class="button-expand button-toggle" aria-controls="#sidebar" aria-expanded="true"></button>
+  <div class="sidebar-btn"  aria-hidden="true">
+    <button class="button-expand button-toggle" aria-hidden="true" aria-controls="#sidebar" aria-expanded="true"></button>
   </div>
   <div id="sidebar" class="aside-wrapper">
-    <button class="button-close" aria-controls="#sidebar"></button>
+    <button class="button-close" aria-controls="#sidebar" aria-hidden="true"></button>
     {% block header %}{% endblock %}
 
     <aside>
