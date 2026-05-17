@@ -17,7 +17,7 @@ export class Treemenu {
     const parent = button.parentNode
     
     const visible=submenu.checkVisibility() ? "false" : "true"
-    parent.dataset.visible = visible;
+    parent.setAttribute('aria-expanded',visible)
   }
 }
 
