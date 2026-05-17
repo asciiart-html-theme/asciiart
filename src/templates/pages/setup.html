@@ -13,15 +13,15 @@
 {% endblock %}
 
 {% block sidebar %}
-<ul class="treemenu">
+<ul class="treemenu" role="tree" aria-label="Navigation Menu">
     <li data-visible="true">
         <button aria-expanded="false">Setup And Usage</button>
-        <ul>
-            <li><a href="#cdn">Using CDN</a></li>
-            <li><a href="#npm">Using NPM</a></li>
+        <ul role="group">
+            <li role="treeitem"><a href="#cdn">Using CDN</a></li>
+            <li role="treeitem"><a href="#npm">Using NPM</a></li>
         </ul>
     </li>
-    <li><a href="#sass">Using SaaS</a></li>
+    <li role="treeitem"><a href="#sass">Using SaaS</a></li>
 </ul>
 {% endblock %}
 

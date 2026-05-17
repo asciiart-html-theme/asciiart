@@ -16,9 +16,8 @@ export class Treemenu {
     const submenu = button.nextElementSibling;
     const parent = button.parentNode
     
-    const visible=submenu.checkVisibility() ? "false" : "true"    
+    const visible=submenu.checkVisibility() ? "false" : "true"
     parent.dataset.visible = visible;
-    
   }
 }
 
